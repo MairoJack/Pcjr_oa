@@ -1,0 +1,458 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_open"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginBottom="0.1dp"
+        android:layout_marginTop="0.1dp"
+        android:background="@drawable/select_white"
+        android:gravity="center_horizontal|center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="展开关联内容"
+            android:textColor="#3a9af8"
+            android:textSize="14dp" />
+
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginLeft="5dp"
+            android:src="@mipmap/icon_down_down" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/rl_union_task"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="0.1dp"
+            android:background="@color/color_content_background"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="关联任务"
+                android:textColor="@color/color_title"
+                android:textSize="@dimen/text_size_key" />
+
+            <TextView
+                android:id="@+id/txt_union_task"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/btn_right"
+                android:text="请选择"
+                android:textColor="@color/color_explain"
+                android:textSize="@dimen/text_size_value" />
+
+            <ImageView
+                android:id="@id/btn_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/icon_right" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_union_item"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="0.1dp"
+            android:background="@drawable/select_white"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="关联项目"
+                android:textColor="@color/color_title"
+                android:textSize="@dimen/text_size_key" />
+
+            <TextView
+                android:id="@+id/txt_union_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/btn_right"
+                android:text="请选择"
+                android:textColor="@color/color_explain"
+                android:textSize="@dimen/text_size_value" />
+
+            <ImageView
+                android:id="@id/btn_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/icon_right" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_union_product"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="0.1dp"
+            android:background="@drawable/select_white"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="关联产品"
+                android:textColor="@color/color_title"
+                android:textSize="@dimen/text_size_key" />
+
+            <TextView
+                android:id="@+id/txt_union_product"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/btn_right"
+                android:text="请选择"
+                android:textColor="@color/color_explain"
+                android:textSize="@dimen/text_size_value" />
+
+            <ImageView
+                android:id="@id/btn_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/icon_right" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_union_schedule"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="0.1dp"
+            android:background="@drawable/select_white"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="关联日程"
+                android:textColor="@color/color_title"
+                android:textSize="@dimen/text_size_key" />
+
+            <TextView
+                android:id="@+id/txt_union_schedule"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/btn_right"
+                android:text="请选择"
+                android:textColor="@color/color_explain"
+                android:textSize="@dimen/text_size_value" />
+
+            <ImageView
+                android:id="@id/btn_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/icon_right" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_union_document"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="0.1dp"
+            android:background="@drawable/select_white"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="关联文档"
+                android:textColor="@color/color_title"
+                android:textSize="@dimen/text_size_key" />
+
+            <TextView
+                android:id="@+id/txt_union_document"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/btn_right"
+                android:text="请选择"
+                android:textColor="@color/color_explain"
+                android:textSize="@dimen/text_size_value" />
+
+            <ImageView
+                android:id="@id/btn_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/icon_right" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_union_contract"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="0.1dp"
+            android:background="@drawable/select_white"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="关联合同"
+                android:textColor="@color/color_title"
+                android:textSize="@dimen/text_size_key" />
+
+            <TextView
+                android:id="@+id/txt_union_contract"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/btn_right"
+                android:text="请选择"
+                android:textColor="@color/color_explain"
+                android:textSize="@dimen/text_size_value" />
+
+            <ImageView
+                android:id="@id/btn_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/icon_right" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_union_customer"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="0.1dp"
+            android:background="@drawable/select_white"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="关联客户"
+                android:textColor="@color/color_title"
+                android:textSize="@dimen/text_size_key" />
+
+            <TextView
+                android:id="@+id/txt_union_customer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/btn_right"
+                android:text="请选择"
+                android:textColor="@color/color_explain"
+                android:textSize="@dimen/text_size_value" />
+
+            <ImageView
+                android:id="@id/btn_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/icon_right" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_union_contact"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="0.1dp"
+            android:background="@drawable/select_white"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="关联联系人"
+                android:textColor="@color/color_title"
+                android:textSize="@dimen/text_size_key" />
+
+            <TextView
+                android:id="@+id/txt_union_contact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/btn_right"
+                android:text="请选择"
+                android:textColor="@color/color_explain"
+                android:textSize="@dimen/text_size_value" />
+
+            <ImageView
+                android:id="@id/btn_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/icon_right" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_union_approve"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="0.1dp"
+            android:background="@drawable/select_white"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="关联审批"
+                android:textColor="@color/color_title"
+                android:textSize="@dimen/text_size_key" />
+
+            <TextView
+                android:id="@+id/txt_union_approve"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/btn_right"
+                android:text="请选择"
+                android:textColor="@color/color_explain"
+                android:textSize="@dimen/text_size_value" />
+
+            <ImageView
+                android:id="@id/btn_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/icon_right" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_union_data"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="0.1dp"
+            android:background="@drawable/select_white"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="关联数据"
+                android:textColor="@color/color_title"
+                android:textSize="@dimen/text_size_key" />
+
+            <TextView
+                android:id="@+id/txt_union_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/btn_right"
+                android:text="请选择"
+                android:textColor="@color/color_explain"
+                android:textSize="@dimen/text_size_value" />
+
+            <ImageView
+                android:id="@id/btn_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/icon_right" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_union_form"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="0.1dp"
+            android:background="@drawable/select_white"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="关联表单"
+                android:textColor="@color/color_title"
+                android:textSize="@dimen/text_size_key" />
+
+            <TextView
+                android:id="@+id/txt_union_form"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/btn_right"
+                android:text="请选择"
+                android:textColor="@color/color_explain"
+                android:textSize="@dimen/text_size_value" />
+
+            <ImageView
+                android:id="@id/btn_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/icon_right" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_close"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginBottom="0.1dp"
+        android:layout_marginTop="0.1dp"
+        android:background="@drawable/select_white"
+        android:gravity="center_horizontal|center_vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="收起"
+            android:textColor="#3a9af8"
+            android:textSize="14dp" />
+
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginLeft="5dp"
+            android:src="@mipmap/icon_up_up" />
+
+    </LinearLayout>
+
+</LinearLayout>

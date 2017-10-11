@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_background"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_content_background">
+
+        <LinearLayout
+            android:id="@+id/ll_search"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_corner"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/icon_search"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/icon_search_gray_48" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="搜索联系人"
+                android:textColor="@color/color_content"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@color/color_content_background"
+        android:gravity="center_vertical"
+        android:padding="15dp">
+
+        <EditText
+            android:id="@+id/txt_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="请输入催办说明"
+            android:inputType="textMultiLine"
+            android:text="催办催办催办催办催办催办"
+            android:textColor="@color/color_explain"
+            android:textColorHint="@color/color_content"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@color/color_content_background"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/color_line" />
+        <CheckBox
+            android:id="@+id/check_manager"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:button="@null"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="负责人"
+            android:textColor="@color/color_explain"
+            android:textSize="14dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="10dp"
+            android:background="@color/color_line" />
+
+        <CheckBox
+            android:id="@+id/check_participants"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:button="@null"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="参与人"
+            android:textColor="@color/color_explain"
+            android:textSize="14dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="10dp"
+            android:background="@color/color_line" />
+
+        <CheckBox
+            android:id="@+id/check_create"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:button="@null"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="创建人"
+            android:textColor="@color/color_explain"
+            android:textSize="14dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/color_line" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="其他同事"
+        android:textColor="@color/color_content"
+        android:textSize="14dp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

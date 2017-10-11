@@ -1,0 +1,23 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@drawable/select_white"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/txt_company"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        tools:text="海宁中国皮革城股份有限公司"
+        android:textColor="@color/color_title"
+        android:textSize="@dimen/text_size_key" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/icon_right" />
+</RelativeLayout>

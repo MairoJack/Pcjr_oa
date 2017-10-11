@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_reply"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="57dp"
+    android:layout_marginRight="15dp"
+    android:orientation="vertical"
+    android:paddingTop="5dp"
+    android:paddingBottom="10dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp">
+
+    <TextView
+        android:id="@+id/txt_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="猪拉拉："
+        android:textColor="#3161be"
+        android:textSize="14dp" />
+
+
+    <TextView
+        android:id="@+id/txt_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        tools:text="可设置或修改本信息可设置或关的基本信息基本信息"
+        android:textColor="@color/color_explain"
+        android:textSize="14dp" />
+
+</LinearLayout>

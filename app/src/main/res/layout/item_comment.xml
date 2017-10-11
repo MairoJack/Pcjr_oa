@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_content_background"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="10dp"
+    android:layout_marginBottom="1dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:src="@mipmap/image_avatar" />
+
+        <TextView
+            android:id="@+id/txt_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/img"
+            android:text="猪拉拉"
+            android:textColor="#3161be"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/txt_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:text="7-24"
+            android:textColor="@color/color_content"
+            android:textSize="11dp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/txt_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="42dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="可设置或修改本信息可设置或关的基本信息基本信息"
+        android:textColor="@color/color_explain"
+        android:textSize="14dp" />
+
+
+    <TextView
+        android:id="@+id/txt_reply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="5dp"
+        android:ellipsize="end"
+        android:text="回复TA"
+        android:textColor="@color/color_explain"
+        android:textSize="14dp" />
+
+</LinearLayout>

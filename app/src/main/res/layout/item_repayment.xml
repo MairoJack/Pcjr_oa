@@ -1,0 +1,69 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_content_background"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+
+    <TextView
+        android:id="@+id/txt_product_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textColor="@color/color_explain"
+        android:textSize="14dp"
+        tools:text="大城小爱NO.871-2018" />
+
+    <android.support.v7.widget.GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:columnCount="2"
+        app:rowCount="1">
+
+        <LinearLayout app:layout_columnWeight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="应还本金"
+                android:textColor="@color/color_explain"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/txt_actual_capital"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="0.00元"
+                android:textColor="@color/color_content"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+        <LinearLayout app:layout_columnWeight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="应还利息"
+                android:textColor="@color/color_explain"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/txt_actual_interest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="1832.23元"
+                android:textColor="@color/color_content"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+    </android.support.v7.widget.GridLayout>
+
+</LinearLayout>

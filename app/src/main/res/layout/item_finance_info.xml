@@ -1,0 +1,42 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:background="@color/color_content_background">
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:progress="1"
+        android:max="100"
+        style="@style/myProgress" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txt_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_centerVertical="true"
+            android:text="2017-09-29"
+            android:textColor="@color/color_explain"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/txt_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:text="35552324.23"
+            android:textColor="@color/color_explain"
+            android:textSize="14dp" />
+
+    </RelativeLayout>
+
+</FrameLayout>

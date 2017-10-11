@@ -1,0 +1,180 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_content_background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_product_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="@color/color_explain"
+            android:textSize="14dp"
+            tools:text="大城小爱NO.871-2018" />
+
+        <TextView
+            android:id="@+id/txt_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/corner_background_blue"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="募集完成"
+            android:textColor="@color/color_white"
+            android:textSize="11dp" />
+    </LinearLayout>
+
+    <android.support.v7.widget.GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F7F8F9"
+        android:padding="10dp"
+        app:columnCount="2"
+        app:rowCount="4">
+
+        <LinearLayout android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="产品期限"
+                android:textColor="@color/color_explain"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/txt_product_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="365天"
+                android:textColor="@color/color_content"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+        <LinearLayout android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="募集金额"
+                android:textColor="@color/color_explain"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/txt_collect_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="100万元"
+                android:textColor="@color/color_content"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+        <LinearLayout android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="预期年化"
+                android:textColor="@color/color_explain"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/txt_expected_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="7%"
+                android:textColor="@color/color_content"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+        <LinearLayout android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="募集天数"
+                android:textColor="@color/color_explain"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/txt_collect_days"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="3天"
+                android:textColor="@color/color_content"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+        <LinearLayout android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="募集用时"
+                android:textColor="@color/color_explain"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/txt_collect_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="1分16秒"
+                android:textColor="@color/color_content"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+        <LinearLayout android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="募集人数"
+                android:textColor="@color/color_explain"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/txt_collect_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="24人"
+                android:textColor="@color/color_content"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+        <LinearLayout android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="开售时间"
+                android:textColor="@color/color_explain"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/txt_public_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="2017-09-08 16:00:00"
+                android:textColor="@color/color_content"
+                android:textSize="12dp" />
+        </LinearLayout>
+    </android.support.v7.widget.GridLayout>
+
+</LinearLayout>

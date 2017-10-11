@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/color_background"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_toolbar_dropdown"/>
+
+    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FEFFFF"
+        app:mcv_arrowColor="@color/color_selected"
+        app:mcv_selectionColor="@color/color_selected"
+        app:mcv_showOtherDates="defaults"
+        app:mcv_tileHeight="30dp" />
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical">
+
+       <FrameLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+       </FrameLayout>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+</LinearLayout>

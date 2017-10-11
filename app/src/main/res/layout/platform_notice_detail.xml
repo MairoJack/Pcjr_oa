@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/color_background"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_toolbar" />
+
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        tools:text="标题标题标题标题标题标题"
+        android:textColor="#333333"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/txt_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        tools:text="2015-08-18 11:59:32"
+        android:textColor="#9f9f9f"
+        android:textSize="12dp" />
+
+
+    <TextView
+        android:id="@+id/txt_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        tools:text="\t\t尊敬的username，您的提现申请已成功受理，平台账户资金99999.99元将于下一个工作日内到达您绑定的银行卡。如非本人操作，请及时拨打皮城金融全国客服热线：400-101-3339或咨询QQ：3207721833。我们将竭诚为您服务！"
+        android:textColor="#777777"
+        android:textSize="13dp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical"
+        android:gravity="right">
+
+        <TextView
+            android:id="@+id/txt_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#777777"
+            android:textSize="13dp"
+            tools:text="某某某落款"/>
+
+        <TextView
+            android:id="@+id/txt_author_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#777777"
+            android:textSize="13dp"
+            tools:text="2017年7月24日"/>
+    </LinearLayout>
+</LinearLayout>

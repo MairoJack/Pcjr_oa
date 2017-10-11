@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_platform_notice"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:background="@drawable/select_corner_white"
+    android:gravity="center_vertical">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:src="@mipmap/image_avatar" />
+
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@id/img"
+        android:textColor="@color/color_explain"
+        android:textSize="15dp"
+        tools:text="项目名项目名项目名项目名" />
+
+
+    <TextView
+        android:id="@+id/txt_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_toLeftOf="@+id/txt_time"
+        android:layout_toRightOf="@+id/img"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/color_content"
+        android:textSize="12dp"
+        tools:text="项目负责人" />
+
+    <TextView
+        android:id="@+id/txt_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/color_content"
+        android:textSize="11dp"
+        tools:text="7-24" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="60dp"
+        android:background="#efefef" />
+</RelativeLayout>

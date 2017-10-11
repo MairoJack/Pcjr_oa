@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.pcjr.pcjr_oa">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.WAKE_LOCK"></uses-permission>
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".ui.views.activity.LoginActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.views.activity.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.PlatformNoticeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.PlatformNoticeDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.PersonalSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.CompanyDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.SearchActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
+        <activity
+            android:name=".ui.views.activity.StaffDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.FindPasswordStep1Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.FindPasswordStep2Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.FindPasswordStep3Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.FindPasswordSuccessActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.MyFollowActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.TaskManagerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.TaskEditActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.TaskAddActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.TaskFullActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.ParticipantActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.TagListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.TaskRemindSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.CompanyContactActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.ScheduleListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.ScheduleAddActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.ScheduleEditActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.ScheduleRemindSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.ProjectManagerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.ProjectAddActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.ProjectEditActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.ProjectFullActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.UnionProjectActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.UrgencyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.UrgeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.CommentDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.ChangePasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.AccountSafeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.GestureEditActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.GestureVerifyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.ApprovalActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.LeaveApprovalActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.ApprovalPendingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.SimpleSelectActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.WorkSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.CustomerManagerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.CustomerAddActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.CustomerFullActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.CustomerEditActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.FinanceInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.UserCountActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.CountDateSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.ProductDataActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.RepaymentInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.RepaymentInfoDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.WebViewActivity"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_background"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_content_background"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="2017-09-01至2017-09-30日产品数据"
+            android:textColor="@color/color_content"
+            android:textSize="14dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="产品数量（笔）"
+                        android:textColor="@color/color_explain"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/txt_product_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="53"
+                        android:textColor="@color/color_title"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/txt_product_number_today"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="今日 2"
+                        android:textColor="@color/color_content"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="成交总笔数（笔）"
+                        android:textColor="@color/color_explain"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/txt_deal_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1607"
+                        android:textColor="@color/color_title"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/txt_deal_number_today"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="今日 2"
+                        android:textColor="@color/color_content"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="平均用时（秒）"
+                        android:textColor="@color/color_explain"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/txt_average_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="46"
+                        android:textColor="@color/color_title"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/txt_average_today"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="今日 2"
+                        android:textColor="@color/color_content"
+                        android:textSize="12dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/color_line"
+                android:gravity="center_horizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="成交额总额（万元）"
+                        android:textColor="@color/color_explain"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/txt_deal_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5123"
+                        android:textColor="@color/color_title"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/txt_deal_amount_today"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="今日 2"
+                        android:textColor="@color/color_content"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="产品平均年化（%）"
+                        android:textColor="@color/color_explain"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/txt_average_rate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="7.8"
+                        android:textColor="@color/color_title"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/txt_average_rate_today"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="今日 7"
+                        android:textColor="@color/color_content"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="参与投资总人数（人）"
+                        android:textColor="@color/color_explain"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/txt_invest_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1201"
+                        android:textColor="@color/color_title"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/txt_invest_number_today"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="今日 30"
+                        android:textColor="@color/color_content"
+                        android:textSize="14dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_today_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="7dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="7dp"
+        android:text="今日产品（2）"
+        android:textColor="@color/color_content"
+        android:textSize="14dp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+</LinearLayout>

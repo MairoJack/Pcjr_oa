@@ -1,0 +1,98 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/color_background"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txt_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="12dp"
+        android:background="@drawable/corner_gray"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:textColor="#ffffff"
+        tools:text="2017-07-24 20:08"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/select_corner_white">
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="10dp"
+            tools:text="标题标题标题"
+            android:textColor="#727273"
+            android:textSize="16dp"
+            android:maxLines="1"
+            android:ellipsize="end"/>
+
+        <View
+            android:id="@+id/mark_sign"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/corner_red"/>
+        <TextView
+            android:id="@+id/txt_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            tools:text="内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容"
+            android:textColor="#a5a6a8"
+            android:textSize="14dp"
+            android:maxLines="2"
+            android:ellipsize="end"/>
+        
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/txt_content"
+            android:background="#efefef" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/line"
+            android:text="查看详情"
+            android:textColor="#a5a6a8"
+            android:textSize="13dp"
+            android:maxLines="1"
+            android:ellipsize="end"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/icon_right"/>
+    </RelativeLayout>
+</LinearLayout>

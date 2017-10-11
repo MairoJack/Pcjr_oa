@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Pcjr_oa</string>
+
+    <!-- error msg -->
+    <string name="mobile_error">手机号码错误</string>
+    <string name="password_error">密码格式错误</string>
+    <string name="verify_error">请输入验证码</string>
+    <string name="progress_dialog">正在加载...</string>
+
+    <!-- url -->
+    <string name="forget">忘记密码</string>
+    <string name="forget_url">https://m.pcjr.com/forgetpassword</string>
+
+    <!-- Gesture code starting -->
+    <string name="setup_gesture_code">设置手势密码</string>
+    <string name="setup_gesture_pattern">绘制解锁图案</string>
+    <string name="setup_gesture_pattern_again">再次绘制解锁图案</string>
+    <string name="forget_gesture_code">忘记手势密码?</string>
+    <string name="use_other_account_login">用其他账号登录</string>
+    <string name="set_gesture_pattern">绘制解锁图案</string>
+    <string name="set_gesture_pattern_reason">设置手势密码，防止他人未经授权查看</string>
+    <string name="reset_gesture_code">重新设置手势密码</string>
+    <!-- End -->
+</resources>
