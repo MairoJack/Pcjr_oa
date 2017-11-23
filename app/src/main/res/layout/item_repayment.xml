@@ -17,14 +17,15 @@
         android:textSize="14dp"
         tools:text="大城小爱NO.871-2018" />
 
-    <android.support.v7.widget.GridLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        app:columnCount="2"
-        app:rowCount="1">
+        android:orientation="horizontal">
 
-        <LinearLayout app:layout_columnWeight="1"
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:orientation="horizontal">
 
             <TextView
@@ -44,7 +45,9 @@
                 android:textSize="12dp" />
         </LinearLayout>
 
-        <LinearLayout app:layout_columnWeight="1"
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:orientation="horizontal">
 
             <TextView
@@ -64,6 +67,6 @@
                 android:textSize="12dp" />
         </LinearLayout>
 
-    </android.support.v7.widget.GridLayout>
+    </LinearLayout>
 
 </LinearLayout>

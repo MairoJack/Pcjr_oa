@@ -20,7 +20,7 @@
             android:layout_marginLeft="10dp"
             android:scaleType="centerInside"
             android:src="@mipmap/icon_search_48"
-            android:background="@drawable/select_black"/>
+            android:background="?selectableItemBackgroundBorderless"/>
 
         <TextView
             android:id="@+id/txt_title"
@@ -47,7 +47,7 @@
             android:layout_marginRight="10dp"
             android:textSize="16dp"
             android:textColor="#FFFFFF"
-            android:background="@drawable/select_black"
+            android:background="?selectableItemBackgroundBorderless"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:text="签到"/>

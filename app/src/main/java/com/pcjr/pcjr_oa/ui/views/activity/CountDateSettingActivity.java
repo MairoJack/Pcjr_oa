@@ -1,13 +1,14 @@
 package com.pcjr.pcjr_oa.ui.views.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.pcjr.pcjr_oa.R;
-import com.pcjr.pcjr_oa.core.BaseAppCompatActivity;
 import com.pcjr.pcjr_oa.core.BaseToolbarActivity;
+import com.pcjr.pcjr_oa.utils.DateUtils;
 import com.pcjr.pcjr_oa.widget.Dialog;
 
 import butterknife.BindView;
@@ -40,9 +41,9 @@ public class CountDateSettingActivity extends BaseToolbarActivity {
     @Override
     protected void initListeners() {
 
-        rlStartTime.setOnClickListener(v-> Dialog.datePicker(this,"开始时间",txtStartTime));
+        rlStartTime.setOnClickListener(v-> Dialog.dateYMDPicker(this,"开始时间",txtStartTime));
 
-        rlEndTime.setOnClickListener(v->Dialog.datePicker(this,"结束时间",txtEndTime));
+        rlEndTime.setOnClickListener(v->Dialog.dateYMDPicker(this,"结束时间",txtEndTime));
     }
 
     @Override
@@ -58,6 +59,24 @@ public class CountDateSettingActivity extends BaseToolbarActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == R.id.btn_ok){
+            String startDate = txtStartTime.getText().toString().trim();
+            String endDate = txtEndTime.getText().toString().trim();
+            if(startDate.equals("请选择")){
+                Dialog.show("请设置开始日期",this);
+                return false;
+            }
+            if(endDate.equals("请选择")){
+                Dialog.show("请设置结束日期",this);
+                return false;
+            }
+            if(DateUtils.getDaysOfTowDiffDate(startDate,endDate) > 31){
+                Dialog.show("起止日期范围不能超过一个月",this);
+                return false;
+            }
+            Intent intent = new Intent();
+            intent.putExtra("startDate",startDate);
+            intent.putExtra("endDate",endDate);
+            setResult(RESULT_OK,intent);
             finish();
         }
         return super.onOptionsItemSelected(item);

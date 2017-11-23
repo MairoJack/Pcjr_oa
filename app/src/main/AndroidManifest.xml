@@ -181,6 +181,12 @@
             android:name=".ui.views.activity.RepaymentInfoDetailActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".ui.views.activity.ContactListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.ContactAddActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".ui.views.activity.WebViewActivity"
             android:screenOrientation="portrait" />
     </application>

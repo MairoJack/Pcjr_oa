@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import com.pcjr.pcjr_oa.R;
 import com.pcjr.pcjr_oa.core.BaseFragment;
 import com.pcjr.pcjr_oa.ui.views.activity.CompanyContactActivity;
+import com.pcjr.pcjr_oa.ui.views.activity.ContactListActivity;
 import com.pcjr.pcjr_oa.ui.views.activity.SearchActivity;
 import com.pcjr.pcjr_oa.utils.ViewUtil;
 
@@ -28,7 +29,7 @@ public class ContactFragment extends BaseFragment {
 
     @BindView(R.id.ll_company_contact) LinearLayout llCompanyContact;
     @BindView(R.id.ll_mobile_contact) LinearLayout llMobileContact;
-    @BindView(R.id.ll_general_contact) LinearLayout llGeneralContact;
+    @BindView(R.id.ll_customer_contact) LinearLayout llCustomerContact;
     @BindView(R.id.ll_special_follow) LinearLayout llSpecialFollow;
 
     @BindView(R.id.icon_search) ImageView iconSearch;
@@ -49,6 +50,10 @@ public class ContactFragment extends BaseFragment {
             startActivity(new Intent(getContext(), CompanyContactActivity.class));
         });
 
+        llCustomerContact.setOnClickListener(v->{
+            if(ViewUtil.isFastDoubleClick())return;
+            startActivity(new Intent(getContext(), ContactListActivity.class));
+        });
 
         llSearch.setOnClickListener(v->{
             if(ViewUtil.isFastDoubleClick())return;

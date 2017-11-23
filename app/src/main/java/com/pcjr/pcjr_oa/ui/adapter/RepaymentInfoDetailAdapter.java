@@ -6,8 +6,7 @@ import com.pcjr.pcjr_oa.R;
 import com.pcjr.pcjr_oa.bean.Repayment;
 
 /**
- *
- *  Created by Mario on 2017/10/9下午2:07
+ * Created by Mario on 2017/10/9下午2:07
  */
 public class RepaymentInfoDetailAdapter extends BaseQuickAdapter<Repayment, BaseViewHolder> {
 
@@ -18,8 +17,8 @@ public class RepaymentInfoDetailAdapter extends BaseQuickAdapter<Repayment, Base
 
     @Override
     protected void convert(BaseViewHolder helper, Repayment item) {
-        helper.setText(R.id.txt_product_name,item.getTitle());
-        helper.setText(R.id.txt_actual_capital, item.getActualCapital());
-        helper.setText(R.id.txt_actual_interest, item.getActualInterest());
+        helper.setText(R.id.txt_product_name, item.getProductName());
+        helper.setText(R.id.txt_actual_capital, item.getEstimatedCapital() + "元");
+        helper.setText(R.id.txt_actual_interest, item.getEstimatedInterest() + "元");
     }
 }

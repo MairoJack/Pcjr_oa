@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:background="@drawable/select_corner_white"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:id="@+id/txt_avatar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/avatar_background_48"
+        android:backgroundTint="@color/color_selected"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="拉拉"
+        android:textColor="@color/color_white"
+        android:textSize="14dp" />
+
+    <TextView
+        android:id="@+id/txt_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@id/txt_avatar"
+        android:text="杜拉拉"
+        android:textColor="@color/color_explain"
+        android:textSize="16dp" />
+
+
+    <TextView
+        android:id="@+id/txt_belong_customer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/txt_avatar"
+        android:text="部门部门部门"
+        android:textColor="@color/color_content"
+        android:textSize="12dp" />
+
+    <TextView
+        android:id="@+id/txt_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/txt_belong_customer"
+        android:text="2017-08-08"
+        android:textColor="@color/color_content"
+        android:textSize="12dp" />
+
+    <ImageView
+        android:id="@+id/btn_telephone"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="5dp"
+        android:layout_toLeftOf="@+id/img_right"
+        android:background="@drawable/select_white"
+        android:scaleType="centerInside"
+        android:src="@mipmap/icon_mobile" />
+
+    <ImageView
+        android:id="@+id/img_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15dp"
+        android:src="@mipmap/icon_right" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="60dp"
+        android:background="#efefef" />
+</RelativeLayout>

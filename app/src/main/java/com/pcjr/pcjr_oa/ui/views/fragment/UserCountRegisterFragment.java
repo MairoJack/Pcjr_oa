@@ -3,7 +3,6 @@ package com.pcjr.pcjr_oa.ui.views.fragment;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,14 +10,18 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.pcjr.pcjr_oa.R;
-import com.pcjr.pcjr_oa.bean.Recharge;
+import com.pcjr.pcjr_oa.bean.Days;
+import com.pcjr.pcjr_oa.bean.Member;
 import com.pcjr.pcjr_oa.core.BaseFragment;
-import com.pcjr.pcjr_oa.ui.adapter.UserCountRegisterAdapter;
+import com.pcjr.pcjr_oa.ui.adapter.UserCountAdapter;
 import com.pcjr.pcjr_oa.ui.decorator.RecycleViewDivider;
+import com.pcjr.pcjr_oa.ui.presenter.UserCountPresenter;
+import com.pcjr.pcjr_oa.ui.presenter.ivview.MemberView;
+import com.pcjr.pcjr_oa.utils.DateUtils;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -27,19 +30,22 @@ import butterknife.BindView;
  *  用户统计-注册人数
  *  Created by Mario on 2017/10/10下午3:54
  */
-public class UserCountRegisterFragment extends BaseFragment implements SwipeRefreshLayout.OnRefreshListener{
+public class UserCountRegisterFragment extends BaseFragment implements SwipeRefreshLayout.OnRefreshListener,MemberView{
 
     public static final String TAG = UserCountRegisterFragment.class.getSimpleName();
 
     @BindView(R.id.recycler_view) RecyclerView mRecyclerView;
     @BindView(R.id.swipeLayout) SwipeRefreshLayout mSwipeRefreshLayout;
-    private List<Recharge> list;
-    private UserCountRegisterAdapter adapter;
+    @BindView(R.id.txt_register_number) TextView txtRegisterNumber;
+    @BindView(R.id.txt_title) TextView txtTitle;
+    private UserCountAdapter adapter;
+    private UserCountPresenter presenter;
     private View notDataView;
 
     private boolean isPrepared;
     private boolean mHasLoadedOnce;
-
+    private String startDate ;
+    private String endDate;
     @Override
     protected int getLayoutId() {
         return R.layout.user_count_register;
@@ -53,8 +59,11 @@ public class UserCountRegisterFragment extends BaseFragment implements SwipeRefr
         mRecyclerView.addItemDecoration(new RecycleViewDivider(getContext(),1,20, Color.parseColor("#eeeeee")));
         notDataView = inflater.inflate(R.layout.empty_view, (ViewGroup) mRecyclerView.getParent(), false);
 
-        adapter = new UserCountRegisterAdapter();
+        adapter = new UserCountAdapter();
         mRecyclerView.setAdapter(adapter);
+
+        presenter = new UserCountPresenter();
+        presenter.attachView(this);
     }
 
     @Override
@@ -64,6 +73,8 @@ public class UserCountRegisterFragment extends BaseFragment implements SwipeRefr
 
     @Override
     protected void initData() {
+        startDate = DateUtils.getNDayBeforeCurrentDate(10);
+        endDate = DateUtils.getCurrentDate();
         isPrepared = true;
         lazyLoad();
 
@@ -83,52 +94,63 @@ public class UserCountRegisterFragment extends BaseFragment implements SwipeRefr
         return fragment;
     }
 
-    private void getData(){
-        list = new ArrayList<>();
-
-        Recharge r = new Recharge();
-        r.setDate(1483203661);
-        r.setAmount("1");
-        list.add(r);
-
-        r = new Recharge();
-        r.setDate(1483203661);
-        r.setAmount("2");
-        list.add(r);
-
-        r = new Recharge();
-        r.setDate(1483203661);
-        r.setAmount("3");
-        list.add(r);
-
-        r = new Recharge();
-        r.setDate(1483203661);
-        r.setAmount("4");
-        list.add(r);
-
-        r = new Recharge();
-        r.setDate(1483203661);
-        r.setAmount("5");
-        list.add(r);
-        double max = 0;
-        for(Recharge recharge : list){
-            Double amount = Double.valueOf(recharge.getAmount());
-            if(amount > max){
-                max = amount;
-            }
-        }
-        adapter.setMax(max);
-        adapter.setNewData(list);
+    public void changeDate(String startDate,String endDate){
+        this.startDate = startDate;
+        this.endDate = endDate;
+        mSwipeRefreshLayout.post(()->mSwipeRefreshLayout.setRefreshing(true));
+        onRefresh();
     }
+
 
     @Override
     public void onRefresh() {
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                getData();
-                mSwipeRefreshLayout.setRefreshing(false);
+        long start = DateUtils.getMillisOfDate(startDate);
+        long end = DateUtils.getMillisOfDate(endDate) + 86400;
+        txtTitle.setText(startDate + "至" + endDate + "日注册人数（人）");
+        presenter.getMemberNumDurationInfo(start,end);
+    }
+
+    @Override
+    public void onFailure(Throwable e) {
+        if(mSwipeRefreshLayout.isRefreshing()) mSwipeRefreshLayout.setRefreshing(false);
+        showToast(getString(R.string.network_error));
+    }
+
+    @Override
+    public void onSuccess(Object data) {
+
+    }
+
+    @Override
+    public void onMemberNumDurationInfoSuccess(Member data) {
+        mHasLoadedOnce = true;
+        if(mSwipeRefreshLayout.isRefreshing()) mSwipeRefreshLayout.setRefreshing(false);
+        txtRegisterNumber.setText(data.getToday_member_num());
+        List<Days> list = data.getList();
+        if(list.size() == 0){
+            adapter.setNewData(null);
+            adapter.setEmptyView(notDataView);
+        } else {
+            double max = 0;
+            for(Days day : list){
+                Double num = Double.valueOf(day.getNum());
+                if(num > max){
+                    max = num;
+                }
             }
-        }, 1000);
+            adapter.setMax(max);
+            adapter.setNewData(list);
+        }
+    }
+
+    @Override
+    public void onEffectiveMemberNumDurationInfoSuccess(Member data) {
+
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        presenter.detachView();
     }
 }

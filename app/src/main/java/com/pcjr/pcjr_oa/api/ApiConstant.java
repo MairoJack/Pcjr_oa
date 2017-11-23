@@ -13,7 +13,8 @@ public class ApiConstant {
      * test
      */
     public final static String API_URL = "http://192.168.30.205:88/api/";
-    public final static String MAPI_URL = "http://192.168.30.205:88/mapi/";
+    public final static String MAPI_URL = "http://192.168.30.205:88/";
+
     /**
      * pro
      */

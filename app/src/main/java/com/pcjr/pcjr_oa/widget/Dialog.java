@@ -48,6 +48,21 @@ public class Dialog {
         timePickerView.show();
     }
 
+    public static void dateYMDPicker(Context context,String title, TextView txtDate) {
+        boolean[] type = new boolean[]{true, true, true, false, false, false};
+        TimePickerView timePickerView = new TimePickerView.Builder(context, (date, view) -> {
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(date);
+            txtDate.setText(DateUtils.dateTimeToStr(date, DateUtils.DATE_FORMAT_YYYY_MM_DD));
+        }).setTitleText(title)
+                .setSubmitColor(Color.parseColor("#ff4341"))
+                .setCancelColor(Color.parseColor("#ff4341"))
+                .setType(type)
+                .build();
+        timePickerView.setDate(Calendar.getInstance());
+        timePickerView.show();
+    }
+
     public static void show(String msg, Context context) {
         if (null != context) {
             AlertDialog.Builder builder = new AlertDialog.Builder(context);

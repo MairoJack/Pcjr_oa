@@ -5,6 +5,7 @@ package com.pcjr.pcjr_oa.core.mvp;
 import com.pcjr.pcjr_oa.data.DataManager;
 
 import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposable;
 
 /**
  * Created by Mario on 2016/7/8.
@@ -25,6 +26,7 @@ public class BasePresenter<T extends MvpView> implements Presenter<T>{
     @Override
     public void detachView() {
         this.mMvpView = null;
+        this.mCompositeDisposable.clear();
         this.mCompositeDisposable.dispose();
         this.mCompositeDisposable = null;
         this.mDataManager = null;

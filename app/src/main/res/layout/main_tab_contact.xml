@@ -110,7 +110,7 @@
                 android:text="手机通讯录"/>
         </LinearLayout>
         <LinearLayout
-            android:id="@+id/ll_general_contact"
+            android:id="@+id/ll_customer_contact"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -122,7 +122,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:scaleType="centerInside"
-                android:src="@mipmap/icon_often_contact" />
+                android:src="@mipmap/icon_customer_contact" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -130,7 +130,7 @@
                 android:layout_marginTop="5dp"
                 android:textSize="12dp"
                 android:textColor="#616263"
-                android:text="常用联系人"/>
+                android:text="客户联系人"/>
         </LinearLayout>
         <LinearLayout
             android:id="@+id/ll_special_follow"

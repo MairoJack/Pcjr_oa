@@ -37,6 +37,7 @@ public class Constant {
     public final static int REQUEST_CUSTOMER_TYPE = 213;            //设置客户类型
     public final static int REQUEST_CUSTOMER_CREDIT_LEVEL = 214;    //设置客户信用等级
     public final static int REQUEST_CUSTOMER_STATUS = 215;          //设置客户状态
+    public final static int REQUEST_COUNT_DATE = 216;               //设置统计起止日期
 
     public final static String[] SELECT_LEAVE_TYPE = new String[]{"事假","病假","年假","调休","婚假","产假","其他"};
     public final static String[] SELECT_OPENNESS = new String[]{"上级可见(默认)","仅自己可见","公开"};

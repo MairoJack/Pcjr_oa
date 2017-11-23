@@ -148,6 +148,11 @@ public abstract class BaseDropDownActivity extends BaseToolbarActivity {
     private void backgroundAlpha(float f) {
         WindowManager.LayoutParams lp = getWindow().getAttributes();
         lp.alpha = f;
+        if (f == 1) {
+            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+        } else {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+        }
         getWindow().setAttributes(lp);
     }
 

@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_centerVertical="true"
-            android:text="2017-09-29"
+            tools:text="2017-09-29"
             android:textColor="@color/color_explain"
             android:textSize="14dp" />
 
@@ -33,7 +33,7 @@
             android:layout_marginRight="15dp"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
-            android:text="35552324.23"
+            tools:text="35552324.23"
             android:textColor="@color/color_explain"
             android:textSize="14dp" />
 

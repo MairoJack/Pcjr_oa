@@ -1,29 +1,18 @@
 package com.pcjr.pcjr_oa.bean;
 
 import java.io.Serializable;
+import java.util.List;
+
+import lombok.Data;
 
 /**
  *  充值
  *  Created by Mario on 2017/10/9下午2:06
  */
+@Data
 public class Recharge implements Serializable {
 
-    private String amount;
-    private long date;
+    private String today_recharge_amount;
 
-    public String getAmount() {
-        return amount;
-    }
-
-    public void setAmount(String amount) {
-        this.amount = amount;
-    }
-
-    public long getDate() {
-        return date;
-    }
-
-    public void setDate(long date) {
-        this.date = date;
-    }
+    private List<Days> list;
 }

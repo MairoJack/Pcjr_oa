@@ -3,8 +3,16 @@ package com.pcjr.pcjr_oa.data;
 import com.pcjr.pcjr_oa.App;
 import com.pcjr.pcjr_oa.api.ApiConstant;
 import com.pcjr.pcjr_oa.bean.BaseBean;
+import com.pcjr.pcjr_oa.bean.Member;
+import com.pcjr.pcjr_oa.bean.PlatformData;
+import com.pcjr.pcjr_oa.bean.Product;
+import com.pcjr.pcjr_oa.bean.ProductSummary;
+import com.pcjr.pcjr_oa.bean.Recharge;
+import com.pcjr.pcjr_oa.bean.Repayment;
+import com.pcjr.pcjr_oa.bean.RepaymentInfo;
 import com.pcjr.pcjr_oa.bean.StaffCompany;
 import com.pcjr.pcjr_oa.bean.Token;
+import com.pcjr.pcjr_oa.bean.Withdraw;
 import com.pcjr.pcjr_oa.constant.Constant;
 import com.pcjr.pcjr_oa.exception.LoginExpireException;
 import com.pcjr.pcjr_oa.exception.UnauthorizedException;
@@ -37,7 +45,7 @@ public class DataManager {
         return dataManager;
     }
 
-    /*
+    /*                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
      * -------------------------- ApiModel Start------------------------------
      */
     public Observable<BaseBean<Token>> login(String username, String password, String key) {
@@ -62,6 +70,60 @@ public class DataManager {
                 .flatMap(new CheckAuth<>())
                 .compose(RxUtils.applyIOToMainThreadSchedulers())
                 .retryWhen(new RetryWithUnAuth());
+
+    }
+
+    public Observable<BaseBean<ProductSummary>> getProductDurationInfo(long startDate, long endDate) {
+        return this.oAuthModel.getProductDurationInfo(startDate, endDate)
+                .compose(RxUtils.applyIOToMainThreadSchedulers());
+
+    }
+
+    public Observable<BaseBean<List<Product>>> getTodayProductInfo() {
+        return this.oAuthModel.getTodayProductInfo()
+                .compose(RxUtils.applyIOToMainThreadSchedulers());
+
+    }
+
+    public Observable<BaseBean<RepaymentInfo>> getRepaymentDurationInfo(long startDate, long endDate) {
+        return this.oAuthModel.getRepaymentDurationInfo(startDate, endDate)
+                .compose(RxUtils.applyIOToMainThreadSchedulers());
+
+    }
+
+    public Observable<BaseBean<RepaymentInfo>> getOneDayRepaymentDetail(String oneDay) {
+        return this.oAuthModel.getOneDayRepaymentDetail(oneDay)
+                .compose(RxUtils.applyIOToMainThreadSchedulers());
+
+    }
+
+    public Observable<BaseBean<Recharge>> getRechargeDurationInfo(long startDate, long endDate) {
+        return this.oAuthModel.getRechargeDurationInfo(startDate, endDate)
+                .compose(RxUtils.applyIOToMainThreadSchedulers());
+
+    }
+
+    public Observable<BaseBean<Withdraw>> getWithdrawDurationInfo(long startDate, long endDate) {
+        return this.oAuthModel.getWithdrawDurationInfo(startDate, endDate)
+                .compose(RxUtils.applyIOToMainThreadSchedulers());
+
+    }
+
+    public Observable<BaseBean<Member>> getMemberNumDurationInfo(long startDate, long endDate) {
+        return this.oAuthModel.getMemberNumDurationInfo(startDate, endDate)
+                .compose(RxUtils.applyIOToMainThreadSchedulers());
+
+    }
+
+    public Observable<BaseBean<Member>> getEffectiveMemberNumDurationInfo(long startDate, long endDate) {
+        return this.oAuthModel.getEffectiveMemberNumDurationInfo(startDate, endDate)
+                .compose(RxUtils.applyIOToMainThreadSchedulers());
+
+    }
+
+    public Observable<BaseBean<PlatformData>> getPlatformData() {
+        return this.oAuthModel.getPlatformData()
+                .compose(RxUtils.applyIOToMainThreadSchedulers());
 
     }
 

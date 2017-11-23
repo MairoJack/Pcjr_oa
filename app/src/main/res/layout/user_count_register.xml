@@ -24,16 +24,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="35"
+            android:text="---"
             android:textColor="@color/color_title"
             android:textSize="24dp" />
     </LinearLayout>
 
     <TextView
+        android:id="@+id/txt_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:text="2017-09-01至2017-09-30日注册人数（人）"
+        android:text="---至---日实名人数（人）"
         android:textColor="@color/color_content"
         android:textSize="14dp" />
 

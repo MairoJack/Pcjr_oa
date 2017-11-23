@@ -27,7 +27,7 @@
             android:id="@+id/txt_repayment_amount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="204238725.53"
+            android:text="---"
             android:textColor="@color/color_title"
             android:textSize="24dp" />
 

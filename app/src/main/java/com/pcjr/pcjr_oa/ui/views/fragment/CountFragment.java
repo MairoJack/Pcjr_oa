@@ -10,11 +10,13 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.pcjr.pcjr_oa.R;
+import com.pcjr.pcjr_oa.bean.PlatformData;
 import com.pcjr.pcjr_oa.core.BaseFragment;
+import com.pcjr.pcjr_oa.core.mvp.MvpView;
+import com.pcjr.pcjr_oa.ui.presenter.CountPresenter;
 import com.pcjr.pcjr_oa.ui.views.activity.FinanceInfoActivity;
 import com.pcjr.pcjr_oa.ui.views.activity.ProductDataActivity;
 import com.pcjr.pcjr_oa.ui.views.activity.RepaymentInfoActivity;
-import com.pcjr.pcjr_oa.ui.views.activity.TaskAddActivity;
 import com.pcjr.pcjr_oa.ui.views.activity.UserCountActivity;
 import com.pcjr.pcjr_oa.utils.ViewUtil;
 
@@ -24,7 +26,7 @@ import butterknife.BindView;
  *  统计
  *  Created by Mario on 2017/7/20上午11:14
  */
-public class CountFragment extends BaseFragment {
+public class CountFragment extends BaseFragment implements MvpView<PlatformData>{
 
     public static final String TAG = CountFragment.class.getSimpleName();
 
@@ -41,6 +43,8 @@ public class CountFragment extends BaseFragment {
     @BindView(R.id.rl_repayment_info)  RelativeLayout rlRepaymentInfo;
     @BindView(R.id.rl_finance_info)  RelativeLayout rlFinanceInfo;
     @BindView(R.id.rl_user_count)  RelativeLayout rlUserCount;
+
+    private CountPresenter presenter;
     @Override
     protected int getLayoutId() {
         return R.layout.main_tab_count;
@@ -48,6 +52,8 @@ public class CountFragment extends BaseFragment {
 
     @Override
     protected void initViews(LayoutInflater inflater,View self, Bundle savedInstanceState){
+        presenter = new CountPresenter();
+        presenter.attachView(this);
     }
 
     @Override
@@ -75,7 +81,7 @@ public class CountFragment extends BaseFragment {
 
     @Override
     protected void initData() {
-
+        presenter.getPlatformData();
     }
 
     @Override
@@ -86,5 +92,22 @@ public class CountFragment extends BaseFragment {
     public static Fragment newInstance(String content) {
         CountFragment fragment = new CountFragment();
         return fragment;
+    }
+
+    @Override
+    public void onFailure(Throwable e) {
+        showToast(getString(R.string.network_error));
+    }
+
+    @Override
+    public void onSuccess(PlatformData data) {
+        txtAvailableBalance.setText(data.getAvailableBalance());
+        txtYesterdayBalance.setText("昨日 "+data.getYesterdayAvailableBalance());
+        txtTodayRecharge.setText(data.getRechargeAmount());
+        txtYesterdayRecharge.setText("昨日 "+data.getYesterdayRechargeAmount());
+        txtTodayMember.setText(data.getMemberNum());
+        txtYesterdayMember.setText("昨日 "+data.getYesterdayMemberNum());
+        txtTodayWithdraw.setText(data.getWithdrawAmount());
+        txtYesterdayWithdraw.setText("昨日 "+data.getYesterdayWithdrawAmount());
     }
 }

@@ -150,6 +150,11 @@ public abstract class BaseDropDownFragment extends BaseFragment {
     private void backgroundAlpha(float f) {
         WindowManager.LayoutParams lp = getActivity().getWindow().getAttributes();
         lp.alpha = f;
+        if (f == 1) {
+            getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+        } else {
+            getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+        }
         getActivity().getWindow().setAttributes(lp);
     }
 

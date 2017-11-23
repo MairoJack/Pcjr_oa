@@ -1,102 +1,72 @@
 package com.pcjr.pcjr_oa.bean;
 
-import com.google.gson.annotations.Expose;
-
+import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
+
+import lombok.Data;
 
 /**
  *  产品
- *  Created by Mario on 2017/10/10上午10:30
+ *  Created by Mario on 2017/11/22下午1:56
  */
+@Data
 public class Product implements Serializable{
-    @Expose
-    private String productName;
-    @Expose
-    private String month;
-    @Expose
-    private String amount;
-    @Expose
-    private String rate;
-    @Expose
-    private String days;
-    @Expose
-    private String time;
-    @Expose
-    private int number;
-    @Expose
-    private long date;
-    @Expose
+
+    /**
+     * 产品ID
+     */
+    private String id;
+    /**
+     * 产品名称
+     */
+    private String name;
+    /**
+     * 状态 0:待审核  1:发售中  2:已结束
+     */
     private int status;
+    /**
+     * 产品金额
+     */
+    private String amount;
+    /**
+     * 产品期限
+     */
+    private String month;
+    /**
+     * 预期年化
+     */
+    @SerializedName("year_income")
+    private String yearIncome;
+    /**
+     * 发售时间
+     */
+    @SerializedName("pub_date")
+    private long pubDate;
+    /**
+     * 募集天数
+     */
+    @SerializedName("raise_date")
+    private String raiseDate;
+    /**
+     * 回款日期
+     */
+    @SerializedName("repayment_date")
+    private String repaymentDate;
+    /**
+     * 募集金额
+     */
+    @SerializedName("sale_amount")
+    private String saleAmount;
+    /**
+     * 募集用时
+     */
+    @SerializedName("finish_time")
+    private String finishTime;
+    /**
+     * 募集人数
+     */
+    @SerializedName("buyer_num")
+    private String buyerNum;
 
-    public String getProductName() {
-        return productName;
-    }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    public String getMonth() {
-        return month;
-    }
-
-    public void setMonth(String month) {
-        this.month = month;
-    }
-
-    public String getAmount() {
-        return amount;
-    }
-
-    public void setAmount(String amount) {
-        this.amount = amount;
-    }
-
-    public String getRate() {
-        return rate;
-    }
-
-    public void setRate(String rate) {
-        this.rate = rate;
-    }
-
-    public String getDays() {
-        return days;
-    }
-
-    public void setDays(String days) {
-        this.days = days;
-    }
-
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
-    }
-
-    public int getNumber() {
-        return number;
-    }
-
-    public void setNumber(int number) {
-        this.number = number;
-    }
-
-    public long getDate() {
-        return date;
-    }
-
-    public void setDate(long date) {
-        this.date = date;
-    }
-
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
-    }
 }

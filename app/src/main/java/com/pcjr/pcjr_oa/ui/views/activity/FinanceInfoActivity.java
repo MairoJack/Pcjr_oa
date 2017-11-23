@@ -10,9 +10,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.pcjr.pcjr_oa.R;
+import com.pcjr.pcjr_oa.constant.Constant;
 import com.pcjr.pcjr_oa.core.BaseToolbarActivity;
 import com.pcjr.pcjr_oa.ui.adapter.TabFragmentAdapter;
+import com.pcjr.pcjr_oa.ui.presenter.FinanceInfoWithdrawPresenter;
 import com.pcjr.pcjr_oa.ui.views.fragment.FinanceInfoRechargeFragment;
+import com.pcjr.pcjr_oa.ui.views.fragment.FinanceInfoWithdrawFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +35,8 @@ public class FinanceInfoActivity extends BaseToolbarActivity {
 
     private List<Fragment> fragmentList;
     private List<String> titleList;
+    private FinanceInfoRechargeFragment financeInfoRechargeFragment;
+    private FinanceInfoWithdrawFragment financeInfoWithdrawFragment;
     @Override
     protected int getLayoutId() {
         return R.layout.finance_info;
@@ -44,8 +49,10 @@ public class FinanceInfoActivity extends BaseToolbarActivity {
 
         mImmersionBar.titleBar(mToolbar).init();
         fragmentList = new ArrayList<>();
-        fragmentList.add(FinanceInfoRechargeFragment.newInstance());
-        fragmentList.add(FinanceInfoRechargeFragment.newInstance());
+        financeInfoRechargeFragment = (FinanceInfoRechargeFragment) FinanceInfoRechargeFragment.newInstance();
+        financeInfoWithdrawFragment = (FinanceInfoWithdrawFragment) FinanceInfoWithdrawFragment.newInstance();
+        fragmentList.add(financeInfoRechargeFragment);
+        fragmentList.add(financeInfoWithdrawFragment);
 
         titleList = new ArrayList<>();
         titleList.add("充值");
@@ -81,10 +88,24 @@ public class FinanceInfoActivity extends BaseToolbarActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == R.id.btn_date){
-            startActivity(new Intent(this,CountDateSettingActivity.class));
+            startActivityForResult(new Intent(this,CountDateSettingActivity.class),Constant.REQUEST_COUNT_DATE);
         }
         return super.onOptionsItemSelected(item);
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK) {
+            switch (requestCode) {
+                case Constant.REQUEST_COUNT_DATE:
+                    String startDate = data.getStringExtra("startDate");
+                    String endDate = data.getStringExtra("endDate");
+                    financeInfoRechargeFragment.changeDate(startDate,endDate);
+                    financeInfoWithdrawFragment.changeDate(startDate,endDate);
+                    break;
+            }
+        }
+    }
 }

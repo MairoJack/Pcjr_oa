@@ -21,15 +21,17 @@
             android:textSize="14dp" />
 
         <TextView
+            android:id="@+id/txt_today_recharge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="204238725.53"
+            android:text="---"
             android:textColor="@color/color_title"
             android:textSize="24dp" />
     </LinearLayout>
 
     <TextView
+        android:id="@+id/txt_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
