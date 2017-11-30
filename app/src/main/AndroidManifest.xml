@@ -31,7 +31,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.views.activity.PlatformNoticeActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.views.activity.PlatformNoticeDetailActivity"
             android:screenOrientation="portrait" />

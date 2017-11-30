@@ -116,15 +116,15 @@ public class TagListActivity extends BaseDropDownActivity implements SearchView.
         Tag tag = new Tag("我们哭了");
         tag.setSelected(true);
         tagList.add(tag);
-        tag = new Tag("我们笑着");
+        tag = new Tag("我们笑着望天望天望天");
         tagList.add(tag);
         tag = new Tag("我们抬头望天空");
         tagList.add(tag);
         tag = new Tag("我们还亮着几颗");
         tagList.add(tag);
-        tag = new Tag("我们唱着");
+        tag = new Tag("我们");
         tagList.add(tag);
-        tag = new Tag("我们的歌");
+        tag = new Tag("我们的歌得得得得得得");
         tagList.add(tag);
         tag = new Tag("我们才懂得拥抱");
         tagList.add(tag);
