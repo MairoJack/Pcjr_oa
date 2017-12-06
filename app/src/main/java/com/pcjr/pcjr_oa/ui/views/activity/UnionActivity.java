@@ -13,7 +13,6 @@ import com.pcjr.pcjr_oa.utils.ViewUtil;
 
 import butterknife.BindView;
 
-
 /**
  *  关联
  *  Created by Mario on 2017/8/17上午9:16
@@ -34,6 +33,8 @@ public abstract class UnionActivity extends BaseAppCompatActivity {
     @BindView(R.id.rl_union_approve) RelativeLayout rlUnionApprove;
     @BindView(R.id.rl_union_data) RelativeLayout rlUnionData;
     @BindView(R.id.rl_union_form) RelativeLayout rlUnionForm;
+    @BindView(R.id.rl_union_share) RelativeLayout rlUnionShare;
+    @BindView(R.id.rl_union_activity) RelativeLayout rlUnionActivity;
 
     @BindView(R.id.txt_union_item) TextView txtUnionItem;
     @BindView(R.id.txt_union_product) TextView txtUnionProduct;
@@ -45,6 +46,8 @@ public abstract class UnionActivity extends BaseAppCompatActivity {
     @BindView(R.id.txt_union_approve) TextView txtUnionApprove;
     @BindView(R.id.txt_union_data) TextView txtUnionData;
     @BindView(R.id.txt_union_form) TextView txtUnionForm;
+    @BindView(R.id.txt_union_share) TextView txtUnionShare;
+    @BindView(R.id.txt_union_activity) TextView txtUnionActivity;
 
     @Override
     protected void initToolbar(Bundle savedInstanceState) {
@@ -115,6 +118,15 @@ public abstract class UnionActivity extends BaseAppCompatActivity {
             startActivityForResult(new Intent(this,UnionActivity.class),Constant.REQUEST_UNION_FORM);
         });
 
+        rlUnionShare.setOnClickListener(v->{
+            if(ViewUtil.isFastDoubleClick()) return;
+            startActivityForResult(new Intent(this,UnionActivity.class),Constant.REQUEST_UNION_SHARE);
+        });
+
+        rlUnionActivity.setOnClickListener(v->{
+            if(ViewUtil.isFastDoubleClick()) return;
+            startActivityForResult(new Intent(this,UnionActivity.class),Constant.REQUEST_UNION_ACTIVITY);
+        });
 
     }
 
@@ -143,6 +155,10 @@ public abstract class UnionActivity extends BaseAppCompatActivity {
                     txtUnionData.setText(result);break;
                 case Constant.REQUEST_UNION_FORM:
                     txtUnionForm.setText(result);break;
+                case Constant.REQUEST_UNION_SHARE:
+                    txtUnionShare.setText(result);break;
+                case Constant.REQUEST_UNION_ACTIVITY:
+                    txtUnionActivity.setText(result);break;
             }
         }
     }

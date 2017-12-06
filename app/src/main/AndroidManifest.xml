@@ -157,10 +157,22 @@
             android:name=".ui.views.activity.CustomerAddActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.views.activity.CustomerFullActivity"
+            android:name=".ui.views.activity.CustomerFullPersonalActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.views.activity.CustomerEditActivity"
+            android:name=".ui.views.activity.CustomerFullCompanyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.CustomerEditCompanyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.CustomerEditPersonalActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.CustomerInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.CustomerDetailActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.views.activity.FinanceInfoActivity"

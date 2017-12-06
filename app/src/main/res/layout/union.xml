@@ -357,6 +357,8 @@
                 android:src="@mipmap/icon_right" />
         </RelativeLayout>
 
+
+
         <RelativeLayout
             android:id="@+id/rl_union_data"
             android:layout_width="match_parent"
@@ -428,6 +430,79 @@
                 android:layout_centerVertical="true"
                 android:src="@mipmap/icon_right" />
         </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_union_share"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="0.1dp"
+            android:background="@drawable/select_white"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="关联共享"
+                android:textColor="@color/color_title"
+                android:textSize="@dimen/text_size_key" />
+
+            <TextView
+                android:id="@+id/txt_union_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/btn_right"
+                android:text="请选择"
+                android:textColor="@color/color_explain"
+                android:textSize="@dimen/text_size_value" />
+
+            <ImageView
+                android:id="@id/btn_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/icon_right" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_union_activity"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="0.1dp"
+            android:background="@drawable/select_white"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="关联活动"
+                android:textColor="@color/color_title"
+                android:textSize="@dimen/text_size_key" />
+
+            <TextView
+                android:id="@+id/txt_union_activity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/btn_right"
+                android:text="请选择"
+                android:textColor="@color/color_explain"
+                android:textSize="@dimen/text_size_value" />
+
+            <ImageView
+                android:id="@id/btn_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/icon_right" />
+        </RelativeLayout>
+
     </LinearLayout>
 
     <LinearLayout

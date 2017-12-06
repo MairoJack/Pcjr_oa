@@ -24,11 +24,12 @@
 
 
         <TextView
+            android:id="@+id/txt_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="完善任务"
+            android:text="完善企业客户"
             android:textColor="#FFFFFF"
             android:textSize="18dp" />
 
@@ -67,7 +68,7 @@
             <RelativeLayout
                 android:id="@+id/rl_customer_name"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="0.1dp"
                 android:background="@drawable/select_white"
                 android:padding="10dp">
@@ -91,22 +92,6 @@
                     android:textColor="@color/color_selected"
                     android:textSize="18dp" />
 
-                <LinearLayout
-                    android:id="@+id/ll_customer_avatar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="10dp"
-                    android:layout_toLeftOf="@+id/txt_customer_name">
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_marginLeft="5dp"
-                        android:src="@mipmap/image_avatar" />
-
-                </LinearLayout>
-
                 <TextView
                     android:id="@+id/txt_customer_name"
                     android:layout_width="wrap_content"
@@ -128,9 +113,9 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/rl_customer_status"
+                android:id="@+id/rl_customer_credit"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="0.1dp"
                 android:background="@drawable/select_white"
                 android:padding="10dp">
@@ -139,18 +124,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="客户状态"
+                    android:text="客户信用"
                     android:textColor="@color/color_title"
                     android:textSize="@dimen/text_size_key" />
 
                 <TextView
-                    android:id="@+id/txt_customer_status"
+                    android:id="@+id/txt_customer_credit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="5dp"
                     android:layout_toLeftOf="@+id/btn_right"
-                    android:text="普通客户"
+                    android:text="请选择"
                     android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_value" />
 
@@ -228,18 +213,29 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="0.1dp"
                 android:background="@drawable/select_white"
                 android:padding="10dp">
 
                 <TextView
+                    android:id="@+id/explain_mobile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="手机"
+                    android:text="联系电话"
                     android:textColor="@color/color_title"
                     android:textSize="@dimen/text_size_key" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_toRightOf="@+id/explain_mobile"
+                    android:text="*"
+                    android:textColor="@color/color_selected"
+                    android:textSize="18dp" />
 
                 <EditText
                     android:id="@+id/txt_mobile"
@@ -255,7 +251,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="0.1dp"
                 android:background="@drawable/select_white"
                 android:padding="10dp">
@@ -264,12 +260,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="电话"
+                    android:text="传真"
                     android:textColor="@color/color_title"
                     android:textSize="@dimen/text_size_key" />
 
                 <EditText
-                    android:id="@+id/txt_telephone"
+                    android:id="@+id/txt_fax"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -281,9 +277,8 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/rl_customer_type"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="0.1dp"
                 android:background="@drawable/select_white"
                 android:padding="10dp">
@@ -292,38 +287,58 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="客户类型"
+                    android:text="地址"
                     android:textColor="@color/color_title"
                     android:textSize="@dimen/text_size_key" />
 
-                <TextView
-                    android:id="@+id/txt_customer_type"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="5dp"
-                    android:layout_toLeftOf="@+id/btn_right"
-                    android:text="请选择"
-                    android:textColor="@color/color_explain"
-                    android:textSize="@dimen/text_size_value" />
-
-                <ImageView
-                    android:id="@id/btn_right"
+                <EditText
+                    android:id="@+id/txt_address"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:src="@mipmap/icon_right" />
+                    android:background="@null"
+                    android:hint="请填写"
+                    android:textColor="@color/color_explain"
+                    android:textSize="@dimen/text_size_value" />
+
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="0.1dp"
                 android:background="@drawable/select_white"
                 android:padding="10dp">
 
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="邮政编码"
+                    android:textColor="@color/color_title"
+                    android:textSize="@dimen/text_size_key" />
+
+                <EditText
+                    android:id="@+id/txt_postcode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@null"
+                    android:hint="请填写"
+                    android:textColor="@color/color_explain"
+                    android:textSize="@dimen/text_size_value" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="0.1dp"
+                android:background="@drawable/select_white"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/explain_identity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -331,35 +346,18 @@
                     android:textColor="@color/color_title"
                     android:textSize="@dimen/text_size_key" />
 
-                <EditText
-                    android:id="@+id/txt_id_card"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:background="@null"
-                    android:hint="请填写"
-                    android:textColor="@color/color_explain"
-                    android:textSize="@dimen/text_size_value" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginTop="0.1dp"
-                android:background="@drawable/select_white"
-                android:padding="10dp">
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="企业代码"
-                    android:textColor="@color/color_title"
-                    android:textSize="@dimen/text_size_key" />
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_toRightOf="@+id/explain_identity"
+                    android:text="*"
+                    android:textColor="@color/color_selected"
+                    android:textSize="18dp" />
 
                 <EditText
-                    android:id="@+id/txt_enterprise_code"
+                    android:id="@+id/txt_identity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -372,7 +370,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="0.1dp"
                 android:background="@drawable/select_white"
                 android:padding="10dp">
@@ -400,7 +398,7 @@
             <LinearLayout
                 android:id="@+id/ll_customer_open"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="40dp"
                 android:layout_marginBottom="0.1dp"
                 android:layout_marginTop="0.1dp"
                 android:background="@drawable/select_white"
@@ -425,11 +423,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:visibility="gone">
+                android:visibility="visible">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="45dp"
+                    android:layout_height="40dp"
                     android:layout_marginTop="15dp"
                     android:background="@drawable/select_white"
                     android:padding="10dp">
@@ -456,7 +454,7 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="45dp"
+                    android:layout_height="40dp"
                     android:layout_marginTop="0.1dp"
                     android:background="@drawable/select_white"
                     android:padding="10dp">
@@ -482,35 +480,9 @@
                 </RelativeLayout>
 
                 <RelativeLayout
+                    android:id="@+id/rl_sex"
                     android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    android:layout_marginTop="0.1dp"
-                    android:background="@drawable/select_white"
-                    android:padding="10dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:text="邮箱"
-                        android:textColor="@color/color_title"
-                        android:textSize="@dimen/text_size_key" />
-
-                    <EditText
-                        android:id="@+id/txt_email"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:background="@null"
-                        android:hint="请填写"
-                        android:textColor="@color/color_explain"
-                        android:textSize="@dimen/text_size_value" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="45dp"
+                    android:layout_height="40dp"
                     android:layout_marginTop="0.1dp"
                     android:background="@drawable/select_white"
                     android:padding="10dp">
@@ -523,21 +495,66 @@
                         android:textColor="@color/color_title"
                         android:textSize="@dimen/text_size_key" />
 
-                    <EditText
+                    <TextView
                         android:id="@+id/txt_sex"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:background="@null"
-                        android:hint="请填写"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dp"
+                        android:layout_toLeftOf="@+id/btn_right"
+                        android:text="请选择"
                         android:textColor="@color/color_explain"
                         android:textSize="@dimen/text_size_value" />
+
+                    <ImageView
+                        android:id="@id/btn_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/icon_right" />
 
                 </RelativeLayout>
 
                 <RelativeLayout
+                    android:id="@+id/rl_marital_status"
                     android:layout_width="match_parent"
-                    android:layout_height="45dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="0.1dp"
+                    android:background="@drawable/select_white"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="婚姻状况"
+                        android:textColor="@color/color_title"
+                        android:textSize="@dimen/text_size_key" />
+
+                    <TextView
+                        android:id="@+id/txt_marital_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dp"
+                        android:layout_toLeftOf="@+id/btn_right"
+                        android:text="请选择"
+                        android:textColor="@color/color_explain"
+                        android:textSize="@dimen/text_size_value" />
+
+                    <ImageView
+                        android:id="@id/btn_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/icon_right" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
                     android:layout_marginTop="0.1dp"
                     android:background="@drawable/select_white"
                     android:padding="10dp">
@@ -564,7 +581,7 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="45dp"
+                    android:layout_height="40dp"
                     android:layout_marginTop="0.1dp"
                     android:background="@drawable/select_white"
                     android:padding="10dp">
@@ -573,12 +590,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:text="联系方式"
+                        android:text="邮箱"
                         android:textColor="@color/color_title"
                         android:textSize="@dimen/text_size_key" />
 
                     <EditText
-                        android:id="@+id/txt_contact_way"
+                        android:id="@+id/txt_email"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
@@ -591,7 +608,7 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="45dp"
+                    android:layout_height="40dp"
                     android:layout_marginTop="0.1dp"
                     android:background="@drawable/select_white"
                     android:padding="10dp">
@@ -600,12 +617,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:text="联系地址"
+                        android:text="反担保情况"
                         android:textColor="@color/color_title"
                         android:textSize="@dimen/text_size_key" />
 
                     <EditText
-                        android:id="@+id/txt_contact_address"
+                        android:id="@+id/txt_counter_guarantee"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
@@ -618,7 +635,61 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="45dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="0.1dp"
+                    android:background="@drawable/select_white"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="借款人情况"
+                        android:textColor="@color/color_title"
+                        android:textSize="@dimen/text_size_key" />
+
+                    <EditText
+                        android:id="@+id/txt_borrower"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:background="@null"
+                        android:hint="请填写"
+                        android:textColor="@color/color_explain"
+                        android:textSize="@dimen/text_size_value" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="0.1dp"
+                    android:background="@drawable/select_white"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="信用记录"
+                        android:textColor="@color/color_title"
+                        android:textSize="@dimen/text_size_key" />
+
+                    <EditText
+                        android:id="@+id/txt_credit_record"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:background="@null"
+                        android:hint="请填写"
+                        android:textColor="@color/color_explain"
+                        android:textSize="@dimen/text_size_value" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
                     android:layout_marginTop="0.1dp"
                     android:background="@drawable/select_white"
                     android:padding="10dp">
@@ -647,7 +718,7 @@
             <LinearLayout
                 android:id="@+id/ll_customer_close"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="40dp"
                 android:layout_marginBottom="0.1dp"
                 android:layout_marginTop="0.1dp"
                 android:background="@drawable/select_white"
@@ -680,320 +751,20 @@
                 android:textSize="14dp" />
 
             <RelativeLayout
-                android:id="@+id/rl_things_invest"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginTop="0.1dp"
-                android:background="@color/color_content_background"
-                android:padding="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignBottom="@+id/btn_right"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:text="个人资产及外投资情况"
-                    android:textColor="@color/color_title"
-                    android:textSize="@dimen/text_size_key" />
-
-                <TextView
-                    android:id="@+id/txt_things_invest"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="5dp"
-                    android:layout_toLeftOf="@+id/btn_right"
-                    android:text="请选择"
-                    android:textColor="@color/color_explain"
-                    android:textSize="@dimen/text_size_value" />
-
-                <ImageView
-                    android:id="@id/btn_right"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:src="@mipmap/icon_right" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/rl_manage_stock"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginTop="0.1dp"
-                android:background="@color/color_content_background"
-                android:padding="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="经营主体及股权构成"
-                    android:textColor="@color/color_title"
-                    android:textSize="@dimen/text_size_key" />
-
-                <TextView
-                    android:id="@+id/txt_manage_stock"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="5dp"
-                    android:layout_toLeftOf="@+id/btn_right"
-                    android:text="请选择"
-                    android:textColor="@color/color_explain"
-                    android:textSize="@dimen/text_size_value" />
-
-                <ImageView
-                    android:id="@id/btn_right"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:src="@mipmap/icon_right" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/rl_enterprise_stock"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginTop="0.1dp"
-                android:background="@color/color_content_background"
-                android:padding="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="关联企业及股权构成"
-                    android:textColor="@color/color_title"
-                    android:textSize="@dimen/text_size_key" />
-
-                <TextView
-                    android:id="@+id/txt_enterprise_stock"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="5dp"
-                    android:layout_toLeftOf="@+id/btn_right"
-                    android:text="请选择"
-                    android:textColor="@color/color_explain"
-                    android:textSize="@dimen/text_size_value" />
-
-                <ImageView
-                    android:id="@id/btn_right"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:src="@mipmap/icon_right" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/rl_finance_guarantee"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginTop="0.1dp"
-                android:background="@color/color_content_background"
-                android:padding="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="融资及对外担保"
-                    android:textColor="@color/color_title"
-                    android:textSize="@dimen/text_size_key" />
-
-                <TextView
-                    android:id="@+id/txt_finance_guarantee"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="5dp"
-                    android:layout_toLeftOf="@+id/btn_right"
-                    android:text="请选择"
-                    android:textColor="@color/color_explain"
-                    android:textSize="@dimen/text_size_value" />
-
-                <ImageView
-                    android:id="@id/btn_right"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:src="@mipmap/icon_right" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/rl_management_status"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginTop="0.1dp"
-                android:background="@color/color_content_background"
-                android:padding="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="企业生产经营状况"
-                    android:textColor="@color/color_title"
-                    android:textSize="@dimen/text_size_key" />
-
-                <TextView
-                    android:id="@+id/txt_management_status"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="5dp"
-                    android:layout_toLeftOf="@+id/btn_right"
-                    android:text="请选择"
-                    android:textColor="@color/color_explain"
-                    android:textSize="@dimen/text_size_value" />
-
-                <ImageView
-                    android:id="@id/btn_right"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:src="@mipmap/icon_right" />
-            </RelativeLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="7dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="7dp"
-                android:text="相关人员及资料"
-                android:textColor="@color/color_content"
-                android:textSize="14dp" />
-
-            <RelativeLayout
-                android:id="@+id/rl_participants"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginTop="0.1dp"
-                android:background="@drawable/select_white"
-                android:padding="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignBottom="@+id/btn_right"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:text="参与人"
-                    android:textColor="@color/color_title"
-                    android:textSize="@dimen/text_size_key" />
-
-                <TextView
-                    android:id="@+id/txt_participants"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="5dp"
-                    android:layout_toLeftOf="@+id/btn_right"
-                    android:text="请选择"
-                    android:textColor="@color/color_explain"
-                    android:textSize="@dimen/text_size_value" />
-
-                <ImageView
-                    android:id="@id/btn_right"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:src="@mipmap/icon_right" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/rl_sharer"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginTop="0.1dp"
-                android:background="@drawable/select_white"
-                android:padding="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="共享人"
-                    android:textColor="@color/color_title"
-                    android:textSize="@dimen/text_size_key" />
-
-                <TextView
-                    android:id="@+id/txt_sharer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="5dp"
-                    android:layout_toLeftOf="@+id/btn_right"
-                    android:text="请选择"
-                    android:textColor="@color/color_explain"
-                    android:textSize="@dimen/text_size_value" />
-
-                <ImageView
-                    android:id="@id/btn_right"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:src="@mipmap/icon_right" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/rl_tag"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginTop="0.1dp"
-                android:background="@drawable/select_white"
-                android:padding="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="标签"
-                    android:textColor="@color/color_title"
-                    android:textSize="@dimen/text_size_key" />
-
-                <TextView
-                    android:id="@+id/txt_tag"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="5dp"
-                    android:layout_toLeftOf="@+id/btn_right"
-                    android:text="请选择"
-                    android:textColor="@color/color_explain"
-                    android:textSize="@dimen/text_size_value" />
-
-                <ImageView
-                    android:id="@id/btn_right"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:src="@mipmap/icon_right" />
-            </RelativeLayout>
-
-            <RelativeLayout
                 android:id="@+id/rl_attachment"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="0.1dp"
-                android:background="@drawable/select_white"
+                android:background="@color/color_content_background"
                 android:padding="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="附件"
+                    android:layout_alignBottom="@+id/btn_right"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:text="相关附件"
                     android:textColor="@color/color_title"
                     android:textSize="@dimen/text_size_key" />
 
@@ -1024,7 +795,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="7dp"
                 android:text="关联事项"
-                android:textColor="@color/color_title"
+                android:textColor="@color/color_content"
                 android:textSize="14dp" />
 
             <include layout="@layout/union" />

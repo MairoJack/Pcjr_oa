@@ -42,30 +42,6 @@
         android:textColor="@color/color_content"
         android:textSize="12dp" />
 
-    <View
-        android:id="@+id/line"
-        android:layout_width="1dp"
-        android:layout_height="18dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="12dp"
-        android:layout_toRightOf="@+id/txt_name"
-        android:background="@color/color_line" />
-
-    <TextView
-        android:id="@+id/txt_status"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_toLeftOf="@+id/txt_time"
-        android:layout_toRightOf="@+id/line"
-        android:ellipsize="end"
-        android:maxLines="1"
-        android:text="审批中"
-        android:textColor="#6eb0ff"
-        android:textSize="12dp" />
-
     <TextView
         android:id="@+id/txt_time"
         android:layout_width="wrap_content"

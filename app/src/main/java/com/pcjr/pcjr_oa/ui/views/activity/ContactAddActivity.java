@@ -58,7 +58,7 @@ public class ContactAddActivity extends BaseAppCompatActivity {
 
         btnSave.setOnClickListener(v->{
             if(ViewUtil.isFastDoubleClick()) return;
-            startActivity(new Intent(this,CustomerFullActivity.class));
+            startActivity(new Intent(this,CustomerFullPersonalActivity.class));
         });
 
     }

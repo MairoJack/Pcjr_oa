@@ -20,10 +20,6 @@ public class CustomerAdapter extends BaseQuickAdapter<Customer, BaseViewHolder> 
     protected void convert(BaseViewHolder helper, Customer item) {
         helper.setText(R.id.txt_title, item.getTitle());
         helper.setText(R.id.txt_name, item.getName());
-        switch (item.getType()){
-            case 0:helper.setText(R.id.txt_status,"普通客户");break;
-            case 1:helper.setText(R.id.txt_status,"潜在客户");break;
-        }
         helper.setText(R.id.txt_time, DateUtils.longTimeToStr(item.getTime(), DateUtils.DATE_FORMAT_YYYY_MM_DD));
     }
 

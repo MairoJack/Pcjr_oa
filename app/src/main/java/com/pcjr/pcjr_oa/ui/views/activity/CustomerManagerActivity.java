@@ -66,7 +66,7 @@ public class CustomerManagerActivity extends BaseDropDownActivity implements Swi
         });
 
         adapter.setOnItemClickListener((adapter,view,position)-> {
-            startActivity(new Intent(this,CustomerEditActivity.class));
+            startActivity(new Intent(this,CustomerInfoActivity.class));
         });
 
     }
@@ -102,31 +102,6 @@ public class CustomerManagerActivity extends BaseDropDownActivity implements Swi
         cs = new ClassifySection(c);
         classifySectionList.add(cs);
 
-        cs = new ClassifySection(true, "客户类型");
-        classifySectionList.add(cs);
-        c = new Classify("全部客户",1);
-        c.setSelected(true);
-        cs = new ClassifySection(c);
-        classifySectionList.add(cs);
-        c = new Classify("客户",1);
-        cs = new ClassifySection(c);
-        classifySectionList.add(cs);
-        c = new Classify("借款人",1);
-        cs = new ClassifySection(c);
-        classifySectionList.add(cs);
-        c = new Classify("平台出面人",1);
-        cs = new ClassifySection(c);
-        classifySectionList.add(cs);
-        c = new Classify("商户",1);
-        cs = new ClassifySection(c);
-        classifySectionList.add(cs);
-        c = new Classify("供应商",1);
-        cs = new ClassifySection(c);
-        classifySectionList.add(cs);
-        c = new Classify("代理商",1);
-        cs = new ClassifySection(c);
-        classifySectionList.add(cs);
-
         cs = new ClassifySection(true, "客户排序");
         classifySectionList.add(cs);
         c = new Classify("按创建时间",2);
@@ -136,6 +111,10 @@ public class CustomerManagerActivity extends BaseDropDownActivity implements Swi
         c = new Classify("按客户名称",2);
         cs = new ClassifySection(c);
         classifySectionList.add(cs);
+        c = new Classify("按更新时间",2);
+        cs = new ClassifySection(c);
+        classifySectionList.add(cs);
+
 
         positions = new int[]{1,10,18};
         initGridPopData();
@@ -165,7 +144,7 @@ public class CustomerManagerActivity extends BaseDropDownActivity implements Swi
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_search_add,menu);
+        getMenuInflater().inflate(R.menu.menu_customer,menu);
         MenuItem menuItem = menu.findItem(R.id.btn_search);
         searchView = (SearchView) menuItem.getActionView();
         searchView.setOnQueryTextListener(this);
@@ -187,9 +166,16 @@ public class CustomerManagerActivity extends BaseDropDownActivity implements Swi
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId() == R.id.btn_add){
-            startActivity(new Intent(this,CustomerAddActivity.class));
+        if (item.getItemId() == android.R.id.home) {
+            this.onBackPressed();
+            return true;
         }
+        if (item.getItemId() == R.id.btn_search) {
+            return true;
+        }
+        Intent intent = new Intent(this,CustomerAddActivity.class);
+        intent.putExtra("type",item.getOrder());
+        startActivity(intent);
         return super.onOptionsItemSelected(item);
 
     }

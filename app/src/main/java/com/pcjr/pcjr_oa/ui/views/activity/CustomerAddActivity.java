@@ -67,7 +67,13 @@ public class CustomerAddActivity extends BaseAppCompatActivity {
 
         btnSave.setOnClickListener(v->{
             if(ViewUtil.isFastDoubleClick()) return;
-            startActivity(new Intent(this,CustomerFullActivity.class));
+            int type = getIntent().getIntExtra("type",0);
+            if(type == 0 ) {
+                startActivity(new Intent(this,CustomerFullPersonalActivity.class));
+            } else {
+                startActivity(new Intent(this,CustomerFullCompanyActivity.class));
+            }
+
         });
 
         rlManager.setOnClickListener(v->{
