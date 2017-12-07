@@ -17,7 +17,6 @@ import butterknife.BindView;
 public class CustomerFullCompanyActivity extends CustomerActivity {
 
     @BindView(R.id.btn_confirm) Button btnConfirm;
-    @BindView(R.id.btn_modify) Button btnModify;
 
     @BindView(R.id.txt_credit_code) TextView txtCreditCode;
     @BindView(R.id.txt_institution_code) TextView txtInstitutionCode;

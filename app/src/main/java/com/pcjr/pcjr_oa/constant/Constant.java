@@ -40,7 +40,9 @@ public class Constant {
     public final static int REQUEST_CUSTOMER_CREDIT_LEVEL = 214;    //设置客户信用等级
     public final static int REQUEST_SEX = 215;                      //设置性别
     public final static int REQUEST_MARITAL_STATUS = 216;           //设置婚姻状况
-    public final static int REQUEST_COUNT_DATE = 217;               //设置统计起止日期
+    public final static int REQUEST_ROLE = 217;                     //设置角色关系
+    public final static int REQUEST_INTIMACY = 218;                 //设置亲密度
+    public final static int REQUEST_COUNT_DATE = 219;               //设置统计起止日期
 
     public final static String[] SELECT_LEAVE_TYPE = new String[]{"事假","病假","年假","调休","婚假","产假","其他"};
     public final static String[] SELECT_OPENNESS = new String[]{"上级可见(默认)","仅自己可见","公开"};
@@ -48,6 +50,8 @@ public class Constant {
     public final static String[] SELECT_CUSTOMER_CREDIT_LEVEL = new String[]{"A级","B级","C级"};
     public final static String[] SELECT_SEX = new String[]{"男","女"};
     public final static String[] SELECT_MARITAL_STATUS = new String[]{"已婚","未婚","保密"};
+    public final static String[] SELECT_ROLE = new String[]{"普通人","决策人","分项决策人","商务决策"};
+    public final static String[] SELECT_INTIMACY = new String[]{"初相识","一般关系","朋友关系"};
 
     public final static String KEY = "key";
     public final static String ACCESS_TOKEN = "access_token";

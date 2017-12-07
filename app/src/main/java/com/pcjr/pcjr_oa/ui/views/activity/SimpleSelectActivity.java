@@ -5,7 +5,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuItem;
+
 import com.pcjr.pcjr_oa.R;
+import com.pcjr.pcjr_oa.bean.IntentSelect;
 import com.pcjr.pcjr_oa.bean.SelectItem;
 import com.pcjr.pcjr_oa.core.BaseToolbarActivity;
 import com.pcjr.pcjr_oa.ui.adapter.SimpleSelectAdapter;
@@ -24,7 +28,7 @@ public class SimpleSelectActivity extends BaseToolbarActivity {
     private List<SelectItem> list;
     private SimpleSelectAdapter adapter;
     private int lastPosition = 0;
-
+    private IntentSelect intentSelect;
     @Override
     protected int getLayoutId() {
         return R.layout.simple_select_list;
@@ -58,15 +62,14 @@ public class SimpleSelectActivity extends BaseToolbarActivity {
 
     @Override
     protected void initData() {
+        intentSelect = (IntentSelect) getIntent().getSerializableExtra("intentSelect");
         list = new ArrayList<>();
-        String[] data = getIntent().getStringArrayExtra("data");
-        String select = getIntent().getStringExtra("select");
-        String title = getIntent().getStringExtra("title");
-        setTitle(title);
+        String[] data = intentSelect.getData();
+        setTitle(intentSelect.getTitle());
         for(int i = 0; i < data.length; i++){
             String s = data[i];
             SelectItem si = new SelectItem(s);
-            if(s.equals(select)){
+            if(s.equals(intentSelect.getSelect())){
                 lastPosition = i;
                 si.setSelected(true);
             }
@@ -75,4 +78,31 @@ public class SimpleSelectActivity extends BaseToolbarActivity {
         adapter = new SimpleSelectAdapter(list);
         mRecyclerView.setAdapter(adapter);
     }
- }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        if(!intentSelect.isSetting()) {
+            for (int i = 0; i < menu.size(); i++){
+                menu.getItem(i).setVisible(false);
+                menu.getItem(i).setEnabled(false);
+            }
+        }
+        return super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_setting,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() == R.id.btn_setting){
+            Intent intent = new Intent(this,SimpleSelectSettingActivity.class);
+            intent.putExtra("intentSelect",intentSelect);
+            startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
+    }
+}

@@ -13,7 +13,6 @@ public class SelectItem implements Serializable{
 
     private boolean isSelected = false;
 
-
     public SelectItem(String name) {
         this.name = name;
     }

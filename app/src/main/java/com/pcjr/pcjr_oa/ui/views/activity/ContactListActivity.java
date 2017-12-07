@@ -64,7 +64,7 @@ public class ContactListActivity extends BaseToolbarActivity implements SwipeRef
     protected void initListeners() {
 
         adapter.setOnItemClickListener((adapter,view,position)-> {
-            startActivity(new Intent(this,ScheduleEditActivity.class));
+            startActivity(new Intent(this,ContactDetailActivity.class));
         });
     }
 

@@ -148,6 +148,9 @@
             android:name=".ui.views.activity.SimpleSelectActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".ui.views.activity.SimpleSelectSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".ui.views.activity.WorkSettingActivity"
             android:screenOrientation="portrait" />
         <activity
@@ -197,6 +200,15 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.views.activity.ContactAddActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.ContactFullActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.ContactEditActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.ContactDetailActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.views.activity.WebViewActivity"

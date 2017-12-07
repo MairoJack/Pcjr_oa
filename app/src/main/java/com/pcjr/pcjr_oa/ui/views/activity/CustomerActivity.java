@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.pcjr.pcjr_oa.R;
+import com.pcjr.pcjr_oa.bean.IntentSelect;
 import com.pcjr.pcjr_oa.constant.Constant;
 import com.pcjr.pcjr_oa.utils.ViewUtil;
 
@@ -67,9 +68,8 @@ public abstract class CustomerActivity extends UnionActivity {
         rlCustomerCredit.setOnClickListener(v->{
            if(ViewUtil.isFastDoubleClick()) return;
            Intent intent = new Intent(this,SimpleSelectActivity.class);
-           intent.putExtra("title","客户信用等级");
-           intent.putExtra("select",txtCustomerCredit.getText());
-           intent.putExtra("data",Constant.SELECT_CUSTOMER_CREDIT_LEVEL);
+           intent.putExtra("intentSelect",new IntentSelect(
+                    "客户信用等级",txtCustomerCredit.getText().toString(),Constant.SELECT_CUSTOMER_CREDIT_LEVEL));
            startActivityForResult(intent, Constant.REQUEST_CUSTOMER_CREDIT_LEVEL);
        });
 

@@ -1,5 +1,4 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -18,18 +17,19 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
-            android:background="?selectableItemBackgroundBorderless"
+            android:background="@drawable/select_black"
             android:text="取消"
             android:textColor="#FFFFFF"
             android:textSize="16dp" />
 
 
         <TextView
+            android:id="@+id/txt_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="新建客户"
+            android:text="完善联系人"
             android:textColor="#FFFFFF"
             android:textSize="18dp" />
 
@@ -40,7 +40,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
-            android:background="?selectableItemBackgroundBorderless"
+            android:background="@drawable/select_black"
             android:text="完成"
             android:textColor="#FFFFFF"
             android:textSize="16dp" />
@@ -48,8 +48,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -60,10 +59,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:background="@drawable/select_white"
-                android:paddingTop="10dp"
-                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
                 android:paddingLeft="15dp"
-                android:paddingBottom="10dp">
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
 
                 <TextView
                     android:id="@+id/explain_name"
@@ -107,10 +106,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:background="@drawable/select_white"
-                android:paddingTop="10dp"
-                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
                 android:paddingLeft="15dp"
-                android:paddingBottom="10dp">
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -151,10 +150,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:background="@drawable/select_white"
-                android:paddingTop="10dp"
-                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
                 android:paddingLeft="15dp"
-                android:paddingBottom="10dp">
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -186,10 +185,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:background="@drawable/select_white"
-                android:paddingTop="10dp"
-                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
                 android:paddingLeft="15dp"
-                android:paddingBottom="10dp">
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -221,10 +220,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:background="@drawable/select_white"
-                android:paddingTop="10dp"
-                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
                 android:paddingLeft="15dp"
-                android:paddingBottom="10dp">
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -256,10 +255,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:background="@drawable/select_white"
-                android:paddingTop="10dp"
-                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
                 android:paddingLeft="15dp"
-                android:paddingBottom="10dp">
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -293,10 +292,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:background="@drawable/select_white"
-                android:paddingTop="10dp"
-                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
                 android:paddingLeft="15dp"
-                android:paddingBottom="10dp">
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -337,10 +336,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:background="@drawable/select_white"
-                android:paddingTop="10dp"
-                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
                 android:paddingLeft="15dp"
-                android:paddingBottom="10dp">
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -373,10 +372,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:background="@drawable/select_white"
-                android:paddingTop="10dp"
-                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
                 android:paddingLeft="15dp"
-                android:paddingBottom="10dp">
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -418,10 +417,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:background="@drawable/select_white"
-                android:paddingTop="10dp"
-                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
                 android:paddingLeft="15dp"
-                android:paddingBottom="10dp">
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -462,10 +461,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:background="@drawable/select_white"
-                android:paddingTop="10dp"
-                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
                 android:paddingLeft="15dp"
-                android:paddingBottom="10dp">
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -493,17 +492,42 @@
                 android:layout_marginLeft="15dp"
                 android:background="@color/color_line" />
 
-            <Button
-                android:id="@+id/btn_save"
+
+            <LinearLayout
+                android:id="@+id/ll_customer_close"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_margin="15dp"
-                android:background="@drawable/btn_red"
-                android:text="保存并完善信息"
-                android:textColor="#ffffff"
-                android:textSize="16dp" />
+                android:layout_height="40dp"
+                android:layout_marginBottom="0.1dp"
+                android:layout_marginTop="0.1dp"
+                android:background="@drawable/select_white"
+                android:gravity="center_horizontal|center_vertical"
+                android:visibility="gone">
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="收起"
+                android:textColor="#3a9af8"
+                android:textSize="14dp" />
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_marginLeft="5dp"
+                    android:src="@mipmap/icon_up_up" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="7dp"
+                android:text="关联事项"
+                android:textColor="@color/color_content"
+                android:textSize="14dp" />
+
+            <include layout="@layout/union" />
 
         </LinearLayout>
     </ScrollView>

@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.pcjr.pcjr_oa.R;
+import com.pcjr.pcjr_oa.bean.IntentSelect;
 import com.pcjr.pcjr_oa.constant.Constant;
 import com.pcjr.pcjr_oa.utils.ViewUtil;
 
@@ -93,9 +94,8 @@ public abstract class ScheduleActivity extends UnionActivity {
         rlOpenness.setOnClickListener(v->{
             if(ViewUtil.isFastDoubleClick()) return;
             Intent intent = new Intent(this,SimpleSelectActivity.class);
-            intent.putExtra("title","公开程度");
-            intent.putExtra("select",txtOpenness.getText());
-            intent.putExtra("data",Constant.SELECT_OPENNESS);
+            intent.putExtra("intentSelect",new IntentSelect(
+                    "公开程度",txtOpenness.getText().toString(),Constant.SELECT_OPENNESS));
             startActivityForResult(intent,Constant.REQUEST_OPENNESS);
         });
 

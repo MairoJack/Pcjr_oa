@@ -2,25 +2,27 @@ package com.pcjr.pcjr_oa.ui.views.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.pcjr.pcjr_oa.R;
 import com.pcjr.pcjr_oa.bean.IntentSelect;
 import com.pcjr.pcjr_oa.constant.Constant;
-import com.pcjr.pcjr_oa.core.BaseAppCompatActivity;
 import com.pcjr.pcjr_oa.utils.ViewUtil;
 
 import butterknife.BindView;
 
 /**
- *  新建联系人
- *  Created by Mario on 2017/10/30上午11:12
+ *  客户联系人基类
+ *  Created by Mario on 2017/9/20下午3:22
  */
-public class ContactAddActivity extends BaseAppCompatActivity {
+public abstract class ContactActivity extends UnionActivity {
 
+    @BindView(R.id.btn_cancel) Button btnCancel;
 
     @BindView(R.id.rl_belong_customer) RelativeLayout rlBelongCustomer;
     @BindView(R.id.rl_sex) RelativeLayout rlSex;
@@ -39,19 +41,6 @@ public class ContactAddActivity extends BaseAppCompatActivity {
     @BindView(R.id.txt_intimacy) TextView txtIntimacy;
     @BindView(R.id.txt_remark) EditText txtRemark;
 
-    @BindView(R.id.btn_cancel) Button btnCancel;
-    @BindView(R.id.btn_finish) Button btnFinish;
-    @BindView(R.id.btn_save) Button btnSave;
-
-    @Override
-    protected int getLayoutId() {
-        return R.layout.contact_add;
-    }
-
-    @Override
-    protected void initViews(Bundle savedInstanceState) {
-    }
-
     @Override
     protected void initToolbar(Bundle savedInstanceState) {
 
@@ -60,12 +49,9 @@ public class ContactAddActivity extends BaseAppCompatActivity {
     @Override
     protected void initListeners() {
 
-        btnCancel.setOnClickListener(v->{
-            if(ViewUtil.isFastDoubleClick()) return;
-            finish();
-        });
+        super.initListeners();
 
-        btnFinish.setOnClickListener(v->{
+        btnCancel.setOnClickListener(v->{
             if(ViewUtil.isFastDoubleClick()) return;
             finish();
         });
@@ -93,18 +79,6 @@ public class ContactAddActivity extends BaseAppCompatActivity {
                     "亲密度",txtIntimacy.getText().toString(),Constant.SELECT_INTIMACY,true));
             startActivityForResult(intent, Constant.REQUEST_INTIMACY);
         });
-
-
-        btnSave.setOnClickListener(v->{
-            if(ViewUtil.isFastDoubleClick()) return;
-            startActivity(new Intent(this,ContactFullActivity.class));
-        });
-
-    }
-
-    @Override
-    protected void initData() {
-
     }
 
     @Override
