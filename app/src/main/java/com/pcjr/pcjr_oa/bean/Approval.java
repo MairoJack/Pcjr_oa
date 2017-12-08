@@ -20,7 +20,7 @@ public class Approval implements Serializable{
     @Expose
     private int img;
     @Expose
-    private int status;
+    private int status = -1;
 
     private boolean isSelected = false;
 
@@ -33,6 +33,12 @@ public class Approval implements Serializable{
         this.name = name;
         this.time = time;
         this.status = status;
+    }
+
+    public Approval(String title, String name, long time) {
+        this.title = title;
+        this.name = name;
+        this.time = time;
     }
 
     public String getId() {

@@ -20,9 +20,14 @@ public class ApprovalAdapter extends BaseQuickAdapter<Approval, BaseViewHolder> 
     protected void convert(BaseViewHolder helper, Approval item) {
         helper.setText(R.id.txt_title, item.getTitle());
         helper.setText(R.id.txt_name, item.getName());
-        switch (item.getStatus()){
-            case 0:helper.setText(R.id.txt_status,"审批中");break;
-            case 1:helper.setText(R.id.txt_status,"已完成");break;
+        if(item.getStatus() == -1){
+            helper.setVisible(R.id.txt_status,false);
+        } else {
+            helper.setVisible(R.id.txt_status,true);
+            switch (item.getStatus()){
+                case 0:helper.setText(R.id.txt_status,"审批中");break;
+                case 1:helper.setText(R.id.txt_status,"已完成");break;
+            }
         }
         helper.setText(R.id.txt_time, DateUtils.longTimeToStr(item.getTime(), DateUtils.DATE_FORMAT_YYYY_MM_DD));
     }

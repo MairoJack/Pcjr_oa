@@ -64,8 +64,6 @@ public abstract class BaseDropDownActivity extends BaseToolbarActivity {
 
         btnDown.setOnClickListener(v -> {
             if(ViewUtil.isFastDoubleClick()) return;
-            temps[0] = positions[0];
-            temps[1] = positions[1];
             btnDown.setImageResource(R.mipmap.icon_down);
             animator.start();
             mPopTop.showAsDropDown(mToolbar);
@@ -125,7 +123,7 @@ public abstract class BaseDropDownActivity extends BaseToolbarActivity {
     protected void initGridPopData(){
         classifyGridAdapter = new ClassifyGridAdapter(classifySectionList);
         classifyRecyclerView.setAdapter(classifyGridAdapter);
-        temps = new int[positions.length];
+        temps = positions.clone();
         initGridPopListener();
     }
 
@@ -161,13 +159,28 @@ public abstract class BaseDropDownActivity extends BaseToolbarActivity {
         animator.start();
         backgroundAlpha(1f);
 
-        if(temps[0] == positions[0] && temps[1] == positions[1]){
-            return null;
-        }else {
-            ClassifySection cs1 = classifySectionList.get(positions[0]);
-            ClassifySection cs2 = classifySectionList.get(positions[1]);
-            return  cs1.t.getName() + "," + cs2.t.getName();
+        String result = "";
+        boolean isSame = true;
+        for (int i = 0 ;i < positions.length ; i++){
+            String name = classifySectionList.get(positions[i]).t.getName();
+            result += name +",";
+            if(temps[i] != positions[i]){
+                isSame = false;
+            }
         }
+        if(isSame){
+            return null;
+        }else{
+            return result;
+        }
+//        if(temps[0] == positions[0] && temps[1] == positions[1]){
+//            return null;
+//        }
+//         else {
+//            ClassifySection cs1 = classifySectionList.get(positions[0]);
+//            ClassifySection cs2 = classifySectionList.get(positions[1]);
+//            return  cs1.t.getName() + "," + cs2.t.getName();
+//        }
     }
 
     protected String closeListPop(){

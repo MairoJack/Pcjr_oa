@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_background"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_toolbar" />
+
+    <EditText
+        android:id="@+id/txt_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:padding="15dp"
+        android:background="@color/color_content_background"
+        android:gravity="left|top"
+        android:minLines="6"
+        android:hint="请填写您的意见"
+        android:textColor="@color/color_explain"
+        android:textSize="16dp"
+        android:textColorHint="@color/color_content"
+        android:inputType="textMultiLine"/>
+    <RelativeLayout
+        android:id="@+id/rl_return_node"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/select_white"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="退回节点"
+            android:textColor="@color/color_explain"
+            android:textSize="@dimen/text_size_key" />
+
+        <TextView
+            android:id="@+id/txt_return_node"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/btn_right"
+            android:text="请选择"
+            android:textColor="@color/color_content"
+            android:textSize="@dimen/text_size_value" />
+
+        <ImageView
+            android:id="@id/btn_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/icon_right" />
+    </RelativeLayout>
+
+</LinearLayout>

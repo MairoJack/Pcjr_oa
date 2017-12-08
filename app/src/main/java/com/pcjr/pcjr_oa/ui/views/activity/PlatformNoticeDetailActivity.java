@@ -51,13 +51,4 @@ public class PlatformNoticeDetailActivity extends BaseToolbarActivity {
         authorTime.setText(DateUtils.longTimeToStr(object.getSend_date(),DateUtils.DATE_FORMAT_NIAN_YUE_RI));
 
     }
-
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
-            finish();
-        }
-        return false;
-
-    }
 }

@@ -56,4 +56,11 @@ public class Constant {
     public final static String KEY = "key";
     public final static String ACCESS_TOKEN = "access_token";
     public final static String REFRESH_TOKEN = "refresh_token";
+
+
+//    public final static String COLOR_RED = "#F43F4A";
+//    public final static String COLOR_GREEN = "#63CA91";
+//    public final static String COLOR_GRAY = "#A6A6A6";
+//    public final static String COLOR_YELLOW = "#E7BC23";
+//    public final static String COLOR_DARK = "#606060";
 }

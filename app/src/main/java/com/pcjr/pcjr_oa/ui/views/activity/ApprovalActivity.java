@@ -71,12 +71,15 @@ public class ApprovalActivity extends BaseDropDownActivity implements  SearchVie
     @Override
     protected void initListeners() {
         mPopTop.setOnDismissListener(() -> {
-            showToast(closeGridPop());
-        });
-
-        llPendingItem.setOnClickListener(v->{
-            if(ViewUtil.isFastDoubleClick()) return;
-            startActivity(new Intent(this,ApprovalPendingActivity.class));
+            String type = closeGridPop();
+            if(type == null) return;
+            if(type.contains("待办审批") || type.contains("下属待办审批")){
+                startActivity(new Intent(this,ApprovalPendingActivity.class));
+            } else if (type.contains("全部审批") || type.contains("已办审批")){
+                startActivity(new Intent(this,ApprovalFinishActivity.class));
+            } else if (type.contains("草稿审批") || type.contains("回收站")){
+                startActivity(new Intent(this,ApprovalDraftActivity.class));
+            }
         });
 
         adapter.setOnItemClickListener((a,v,p)->{
@@ -84,8 +87,8 @@ public class ApprovalActivity extends BaseDropDownActivity implements  SearchVie
             WorkSection object = (WorkSection) a.getItem(p);
             if(!object.isHeader){
                 WorkItem work = object.t;
-                if(work.getName().equals("请假审批")){
-                    startActivity(new Intent(this,LeaveApprovalActivity.class));
+                if(work.getName().equals("业务审批")){
+                    startActivity(new Intent(this,ApprovalBusinessAddActivity.class));
                 }
             }
         });
@@ -112,9 +115,6 @@ public class ApprovalActivity extends BaseDropDownActivity implements  SearchVie
         c = new Classify("已办审批",0);
         cs = new ClassifySection(c);
         classifySectionList.add(cs);
-        c = new Classify("我关注的审批",0);
-        cs = new ClassifySection(c);
-        classifySectionList.add(cs);
         c = new Classify("我共享的审批",0);
         cs = new ClassifySection(c);
         classifySectionList.add(cs);
@@ -139,80 +139,22 @@ public class ApprovalActivity extends BaseDropDownActivity implements  SearchVie
         c = new Classify("按申请人",1);
         cs = new ClassifySection(c);
         classifySectionList.add(cs);
-        positions = new int[]{1,11};
+        positions = new int[]{1,10};
         initGridPopData();
 
         mDatas = new ArrayList<>();
-        WorkSection workSection = new WorkSection(true,"审批分类一(4)");
+        WorkSection workSection = new WorkSection(true,"审批分类");
         mDatas.add(workSection);
 
         WorkItem workItem = new WorkItem();
-        workItem.setName("通用审批");
-        workItem.setImg(R.mipmap.icon_general_item);
+        workItem.setName("业务审批");
+        workItem.setImg(R.mipmap.icon_business_item);
         workSection = new WorkSection(workItem);
         mDatas.add(workSection);
 
         workItem = new WorkItem();
-        workItem.setName("立项审批");
-        workItem.setImg(R.mipmap.icon_setup_item);
-        workSection = new WorkSection(workItem);
-        mDatas.add(workSection);
-
-        workItem = new WorkItem();
-        workItem.setName("担保审批");
-        workItem.setImg(R.mipmap.icon_guarantee_item);
-        workSection = new WorkSection(workItem);
-        mDatas.add(workSection);
-
-        workItem = new WorkItem();
-        workItem.setName("贷后审批");
-        workItem.setImg(R.mipmap.icon_daihou_item);
-        workSection = new WorkSection(workItem);
-        mDatas.add(workSection);
-
-
-        workSection = new WorkSection(true,"审批分类一(7)");
-        mDatas.add(workSection);
-
-        workItem = new WorkItem();
-        workItem.setName("请假审批");
-        workItem.setImg(R.mipmap.icon_leave);
-        workSection = new WorkSection(workItem);
-        mDatas.add(workSection);
-
-        workItem = new WorkItem();
-        workItem.setName("调休审批");
-        workItem.setImg(R.mipmap.icon_rest);
-        workSection = new WorkSection(workItem);
-        mDatas.add(workSection);
-
-        workItem = new WorkItem();
-        workItem.setName("加班");
-        workItem.setImg(R.mipmap.icon_overtime);
-        workSection = new WorkSection(workItem);
-        mDatas.add(workSection);
-
-        workItem = new WorkItem();
-        workItem.setName("外出审批");
-        workItem.setImg(R.mipmap.icon_out);
-        workSection = new WorkSection(workItem);
-        mDatas.add(workSection);
-
-        workItem = new WorkItem();
-        workItem.setName("出差审批");
-        workItem.setImg(R.mipmap.icon_business_trip);
-        workSection = new WorkSection(workItem);
-        mDatas.add(workSection);
-
-        workItem = new WorkItem();
-        workItem.setName("用车审批");
-        workItem.setImg(R.mipmap.icon_use_car);
-        workSection = new WorkSection(workItem);
-        mDatas.add(workSection);
-
-        workItem = new WorkItem();
-        workItem.setName("用印审批");
-        workItem.setImg(R.mipmap.icon_use_seal);
+        workItem.setName("上线审批");
+        workItem.setImg(R.mipmap.icon_online_item);
         workSection = new WorkSection(workItem);
         mDatas.add(workSection);
 

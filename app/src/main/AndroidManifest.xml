@@ -145,6 +145,21 @@
             android:name=".ui.views.activity.ApprovalPendingActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".ui.views.activity.ApprovalPendingDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.ApprovalFinishActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.ApprovalDraftActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.ApprovalBusinessAddActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.ApprovalBusinessFullActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".ui.views.activity.SimpleSelectActivity"
             android:screenOrientation="portrait" />
         <activity
@@ -209,6 +224,21 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.views.activity.ContactDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.LogListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.QueryRecordListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.AgreeOrRejectActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.FreeReturnActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.FlowActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.views.activity.WebViewActivity"

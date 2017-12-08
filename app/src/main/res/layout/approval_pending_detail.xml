@@ -27,44 +27,82 @@
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp">
 
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_avatar"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@mipmap/image_avatar" />
+
                 <TextView
                     android:id="@+id/txt_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="25dp"
-                    android:text="联系人：恩啦啦"
+                    android:layout_toRightOf="@+id/img_avatar"
+                    android:text="申请人：杜拉拉"
                     android:textColor="@color/color_explain"
                     android:textSize="16dp" />
 
                 <TextView
-                    android:id="@+id/txt_belong_customer"
+                    android:id="@+id/txt_department"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="26dp"
+                    android:layout_toRightOf="@+id/txt_name"
+                    android:text="啦啦啦部门"
+                    android:textColor="@color/color_content"
+                    android:textSize="13dp" />
+
+                <TextView
+                    android:id="@+id/txt_status"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/txt_name"
-                    android:layout_marginTop="5dp"
-                    android:text="所属客户：啦啦啦、啦啦啦、啦啦啦"
+                    android:layout_toRightOf="@+id/img_avatar"
+                    android:text="审批中"
                     android:textColor="#4caafe"
                     android:textSize="14dp" />
 
-                <TextView
-                    android:id="@+id/txt_time"
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
-                    android:background="@drawable/corner_gray_5dp"
                     android:paddingBottom="2dp"
                     android:paddingTop="2dp"
-                    android:text="  2017-12-05"
-                    android:textColor="@color/color_explain"
-                    android:textSize="14dp" />
+                    android:background="@drawable/corner_gray_5dp">
+
+                    <TextView
+                        android:id="@+id/txt_approval_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="审批编号：20018231229482023"
+                        android:textColor="@color/color_explain"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/txt_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:text="2017-12-05"
+                        android:textColor="@color/color_explain"
+                        android:textSize="14dp" />
+
+                </RelativeLayout>
+
 
 
             </RelativeLayout>
 
             <LinearLayout
-                android:id="@+id/rl_customer_name"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/select_white"
                 android:orientation="horizontal"
                 android:padding="5dp">
@@ -74,205 +112,17 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:layout_weight="3"
-                    android:text="联系电话"
+                    android:text="实际借款人"
                     android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_key" />
 
                 <TextView
-                    android:id="@+id/txt_mobile"
+                    android:id="@+id/txt_actual_borrower"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
                     android:layout_weight="1"
-                    android:text="1368287328"
-                    android:textColor="@color/color_explain"
-                    android:textSize="@dimen/text_size_value" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:background="@drawable/select_white"
-                android:orientation="horizontal"
-                android:padding="5dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_weight="3"
-                    android:text="地址"
-                    android:textColor="@color/color_content"
-                    android:textSize="@dimen/text_size_key" />
-
-                <TextView
-                    android:id="@+id/txt_address"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="地址地址地址地址地址"
-                    android:textColor="@color/color_explain"
-                    android:textSize="@dimen/text_size_value" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:background="@drawable/select_white"
-                android:orientation="horizontal"
-                android:padding="5dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_weight="3"
-                    android:text="所在公司"
-                    android:textColor="@color/color_content"
-                    android:textSize="@dimen/text_size_key" />
-
-                <TextView
-                    android:id="@+id/txt_company"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="啦啦啦公司"
-                    android:textColor="@color/color_explain"
-                    android:textSize="@dimen/text_size_value" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:background="@drawable/select_white"
-                android:orientation="horizontal"
-                android:padding="5dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_weight="3"
-                    android:text="职位"
-                    android:textColor="@color/color_content"
-                    android:textSize="@dimen/text_size_key" />
-
-                <TextView
-                    android:id="@+id/txt_job"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="拉拉职位"
-                    android:textColor="@color/color_explain"
-                    android:textSize="@dimen/text_size_value" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:background="@drawable/select_white"
-                android:orientation="horizontal"
-                android:padding="5dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_weight="3"
-                    android:text="性别"
-                    android:textColor="@color/color_content"
-                    android:textSize="@dimen/text_size_key" />
-
-                <TextView
-                    android:id="@+id/txt_sex"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="女"
-                    android:textColor="@color/color_explain"
-                    android:textSize="@dimen/text_size_value" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:background="@drawable/select_white"
-                android:orientation="horizontal"
-                android:padding="5dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_weight="3"
-                    android:text="邮箱"
-                    android:textColor="@color/color_content"
-                    android:textSize="@dimen/text_size_key" />
-
-                <TextView
-                    android:id="@+id/txt_email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="sss.lalala.com"
-                    android:textColor="@color/color_explain"
-                    android:textSize="@dimen/text_size_value" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:background="@drawable/select_white"
-                android:orientation="horizontal"
-                android:padding="5dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_weight="3"
-                    android:text="角色关系"
-                    android:textColor="@color/color_content"
-                    android:textSize="@dimen/text_size_key" />
-
-                <TextView
-                    android:id="@+id/txt_role"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="拉拉职位"
-                    android:textColor="@color/color_explain"
-                    android:textSize="@dimen/text_size_value" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:background="@drawable/select_white"
-                android:orientation="horizontal"
-                android:padding="5dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_weight="3"
-                    android:text="亲密度"
-                    android:textColor="@color/color_content"
-                    android:textSize="@dimen/text_size_key" />
-
-                <TextView
-                    android:id="@+id/txt_intimacy"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="拉拉职位"
+                    android:text="啦啦啦啦"
                     android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_value" />
 
@@ -290,16 +140,240 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:layout_weight="3"
-                    android:text="备注"
+                    android:text="出面借款人"
                     android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_key" />
 
                 <TextView
-                    android:id="@+id/txt_remark"
+                    android:id="@+id/txt_show_borrower"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1"
+                    android:text="啦啦啦啦"
+                    android:textColor="@color/color_explain"
+                    android:textSize="@dimen/text_size_value" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/select_white"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="3"
+                    android:text="项目来源"
+                    android:textColor="@color/color_content"
+                    android:textSize="@dimen/text_size_key" />
+
+                <TextView
+                    android:id="@+id/txt_project_source"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1"
+                    android:text="项目来源来源项目来源来源项目来源来源项目来源来源项目来源来源项目来源来源"
+                    android:textColor="@color/color_explain"
+                    android:textSize="@dimen/text_size_value" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/select_white"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="3"
+                    android:text="项目类型"
+                    android:textColor="@color/color_content"
+                    android:textSize="@dimen/text_size_key" />
+
+                <TextView
+                    android:id="@+id/txt_project_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1"
+                    android:text="房贷项目"
+                    android:textColor="@color/color_explain"
+                    android:textSize="@dimen/text_size_value" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/select_white"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="3"
+                    android:text="意向金额"
+                    android:textColor="@color/color_content"
+                    android:textSize="@dimen/text_size_key" />
+
+                <TextView
+                    android:id="@+id/txt_expect_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1"
+                    android:text="1000000.00元"
+                    android:textColor="@color/color_explain"
+                    android:textSize="@dimen/text_size_value" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/select_white"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="3"
+                    android:text="审批金额"
+                    android:textColor="@color/color_content"
+                    android:textSize="@dimen/text_size_key" />
+
+                <TextView
+                    android:id="@+id/txt_approval_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1"
+                    android:text="1000000.00元"
+                    android:textColor="@color/color_explain"
+                    android:textSize="@dimen/text_size_value" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/select_white"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="3"
+                    android:text="担保方式"
+                    android:textColor="@color/color_content"
+                    android:textSize="@dimen/text_size_key" />
+
+                <TextView
+                    android:id="@+id/txt_guarantee_method"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1"
+                    android:text="抵押"
+                    android:textColor="@color/color_explain"
+                    android:textSize="@dimen/text_size_value" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/select_white"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="3"
+                    android:text="借款用途"
+                    android:textColor="@color/color_content"
+                    android:textSize="@dimen/text_size_key" />
+
+                <TextView
+                    android:id="@+id/txt_loan_usage"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="备注备注备注备注备注备注备注"
+                    android:text="借款用途借款用途借款用途借款用途借款用途借款用途借款用途借款用途"
+                    android:textColor="@color/color_explain"
+                    android:textSize="@dimen/text_size_value" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/select_white"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="3"
+                    android:text="主要风险点"
+                    android:textColor="@color/color_content"
+                    android:textSize="@dimen/text_size_key" />
+
+                <TextView
+                    android:id="@+id/txt_main_risk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1"
+                    android:text="主要风险点主要风险点主要风险点主要风险点主要风险点主要风险点"
+                    android:textColor="@color/color_explain"
+                    android:textSize="@dimen/text_size_value" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/select_white"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="3"
+                    android:text="防范措施"
+                    android:textColor="@color/color_content"
+                    android:textSize="@dimen/text_size_key" />
+
+                <TextView
+                    android:id="@+id/txt_prevention"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1"
+                    android:text="防范措施防范措施防范措施防范措施防范措施防范措施防范措施"
                     android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_value" />
 
@@ -311,7 +385,7 @@
                 android:layout_marginBottom="7dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="7dp"
-                android:text="关联事项"
+                android:text="其他费用及缴费形式"
                 android:textColor="@color/color_content"
                 android:textSize="14dp" />
 
@@ -327,58 +401,48 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:layout_weight="3"
-                    android:text="关联任务"
+                    android:text="担保费金额"
                     android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_key" />
 
-                <LinearLayout
+                <TextView
+                    android:id="@+id/txt_guarantee_amount"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
                     android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:text="100000.00元"
+                    android:textColor="@color/color_explain"
+                    android:textSize="@dimen/text_size_value" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:orientation="horizontal">
+            </LinearLayout>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="任务标题一"
-                            android:textColor="@color/color_explain"
-                            android:textSize="@dimen/text_size_value" />
+            <LinearLayout
+                android:id="@+id/rl_customer_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/select_white"
+                android:orientation="horizontal"
+                android:padding="5dp">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:text="查看"
-                            android:textColor="@color/color_blue"
-                            android:textSize="@dimen/text_size_value" />
-                    </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="3"
+                    android:text="缴费形式"
+                    android:textColor="@color/color_content"
+                    android:textSize="@dimen/text_size_key" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="任务标题二"
-                            android:textColor="@color/color_explain"
-                            android:textSize="@dimen/text_size_value" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:text="查看"
-                            android:textColor="@color/color_blue"
-                            android:textSize="@dimen/text_size_value" />
-                    </LinearLayout>
-                </LinearLayout>
+                <TextView
+                    android:id="@+id/txt_guarantee_payment_method"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1"
+                    android:text="担保费缴费形式缴费形式"
+                    android:textColor="@color/color_explain"
+                    android:textSize="@dimen/text_size_value" />
 
             </LinearLayout>
 
@@ -394,58 +458,19 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:layout_weight="3"
-                    android:text="关联项目"
+                    android:text="服务费金额"
                     android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_key" />
 
-                <LinearLayout
+                <TextView
+                    android:id="@+id/txt_service_amount"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
                     android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="项目标题一"
-                            android:textColor="@color/color_explain"
-                            android:textSize="@dimen/text_size_value" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:text="查看"
-                            android:textColor="@color/color_blue"
-                            android:textSize="@dimen/text_size_value" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="项目标题二"
-                            android:textColor="@color/color_explain"
-                            android:textSize="@dimen/text_size_value" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:text="查看"
-                            android:textColor="@color/color_blue"
-                            android:textSize="@dimen/text_size_value" />
-                    </LinearLayout>
-                </LinearLayout>
+                    android:text="100000.00元"
+                    android:textColor="@color/color_explain"
+                    android:textSize="@dimen/text_size_value" />
 
             </LinearLayout>
 
@@ -461,57 +486,19 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:layout_weight="3"
-                    android:text="标签"
+                    android:text="缴费形式"
                     android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_key" />
 
-                <LinearLayout
+                <TextView
+                    android:id="@+id/txt_service_payment_method"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
                     android:layout_weight="1"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="60dp"
-                        android:layout_height="20dp"
-                        android:background="@drawable/corner_gray"
-                        android:gravity="center_horizontal"
-                        android:text="标签一"
-                        android:textColor="@color/color_explain"
-                        android:textSize="@dimen/text_size_value" />
-
-                    <TextView
-                        android:layout_width="60dp"
-                        android:layout_height="20dp"
-                        android:layout_marginLeft="10dp"
-                        android:background="@drawable/corner_gray"
-                        android:gravity="center_horizontal"
-                        android:text="标签二"
-                        android:textColor="@color/color_explain"
-                        android:textSize="@dimen/text_size_value" />
-
-                    <TextView
-                        android:layout_width="60dp"
-                        android:layout_height="20dp"
-                        android:layout_marginLeft="10dp"
-                        android:background="@drawable/corner_gray"
-                        android:gravity="center_horizontal"
-                        android:text="标签三"
-                        android:textColor="@color/color_explain"
-                        android:textSize="@dimen/text_size_value" />
-
-                    <TextView
-                        android:layout_width="60dp"
-                        android:layout_height="20dp"
-                        android:layout_marginLeft="10dp"
-                        android:background="@drawable/corner_gray"
-                        android:gravity="center_horizontal"
-                        android:text="标签四"
-                        android:textColor="@color/color_explain"
-                        android:textSize="@dimen/text_size_value" />
-
-
-                </LinearLayout>
+                    android:text="服务费缴费形式缴费形式"
+                    android:textColor="@color/color_explain"
+                    android:textSize="@dimen/text_size_value" />
 
             </LinearLayout>
 
@@ -527,61 +514,49 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:layout_weight="3"
-                    android:text="附件"
+                    android:text="保证金金额"
                     android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_key" />
 
-                <LinearLayout
+                <TextView
+                    android:id="@+id/txt_deposit_amount"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
                     android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="附件标题一"
-                            android:textColor="@color/color_explain"
-                            android:textSize="@dimen/text_size_value" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:text="查看"
-                            android:textColor="@color/color_blue"
-                            android:textSize="@dimen/text_size_value" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="附件标题二"
-                            android:textColor="@color/color_explain"
-                            android:textSize="@dimen/text_size_value" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:text="查看"
-                            android:textColor="@color/color_blue"
-                            android:textSize="@dimen/text_size_value" />
-                    </LinearLayout>
-                </LinearLayout>
+                    android:text="100000.00元"
+                    android:textColor="@color/color_explain"
+                    android:textSize="@dimen/text_size_value" />
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/select_white"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="3"
+                    android:text="缴费形式"
+                    android:textColor="@color/color_content"
+                    android:textSize="@dimen/text_size_key" />
+
+                <TextView
+                    android:id="@+id/txt_deposit_payment_method"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1"
+                    android:text="保证金缴费形式缴费形式"
+                    android:textColor="@color/color_explain"
+                    android:textSize="@dimen/text_size_value" />
+
+            </LinearLayout>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -611,6 +586,72 @@
         android:paddingTop="7dp">
 
         <LinearLayout
+            android:id="@+id/ll_agree"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/select_text"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_agree_light_48" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="同意"
+                android:textColor="@color/color_explain"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_return"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/select_text"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_return_light_48" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="退回"
+                android:textColor="@color/color_explain"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_reject"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/select_text"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_reject_light_48" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="驳回"
+                android:textColor="@color/color_explain"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/ll_feedback"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -633,7 +674,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ll_query_records"
+            android:id="@+id/ll_more"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -644,56 +685,12 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/icon_query_record_light_48" />
+                android:src="@mipmap/icon_more_48" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="查询记录"
-                android:textColor="@color/color_explain"
-                android:textSize="12dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_log"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/select_text"
-            android:gravity="center_vertical|center_horizontal"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/icon_log_light_48" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="操作日志"
-                android:textColor="@color/color_explain"
-                android:textSize="12dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_delete"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/select_text"
-            android:gravity="center_vertical|center_horizontal"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/icon_delete_48" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="删除"
+                android:text="更多"
                 android:textColor="@color/color_explain"
                 android:textSize="12dp" />
         </LinearLayout>

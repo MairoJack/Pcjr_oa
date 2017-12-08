@@ -1,6 +1,5 @@
 package com.pcjr.pcjr_oa.ui.views.activity;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -24,10 +23,10 @@ import java.util.List;
 import butterknife.BindView;
 
 /**
- *  待办审批/下属待办审批
+ *  草稿审批/回收站审批
  *  Created by Mario on 2017/9/13上午9:35
  */
-public class ApprovalPendingActivity extends BaseDropDownActivity implements SwipeRefreshLayout.OnRefreshListener,SearchView.OnQueryTextListener{
+public class ApprovalDraftActivity extends BaseDropDownActivity implements SwipeRefreshLayout.OnRefreshListener,SearchView.OnQueryTextListener{
 
 
     @BindView(R.id.swipeLayout) SwipeRefreshLayout mSwipeRefreshLayout;
@@ -46,7 +45,7 @@ public class ApprovalPendingActivity extends BaseDropDownActivity implements Swi
     @Override
     protected void initViews(Bundle savedInstanceState) {
         showBack();
-        setTitle("待办审批");
+        setTitle("草稿审批");
 
         initGridPop();
 
@@ -66,7 +65,7 @@ public class ApprovalPendingActivity extends BaseDropDownActivity implements Swi
         });
 
         adapter.setOnItemClickListener((adapter,view,position)-> {
-            startActivity(new Intent(this,ApprovalPendingDetailActivity.class));
+            //startActivity(new Intent(this,ApprovalEditActivity.class));
         });
 
     }
@@ -87,44 +86,29 @@ public class ApprovalPendingActivity extends BaseDropDownActivity implements Swi
         cs= new ClassifySection(c);
         classifySectionList.add(cs);
 
-        cs = new ClassifySection(true, "审批排序");
-        classifySectionList.add(cs);
-        c = new Classify("按到期时间",1);
-        c.setSelected(true);
-        cs = new ClassifySection(c);
-        classifySectionList.add(cs);
-        c = new Classify("按反馈时间",1);
-        cs = new ClassifySection(c);
-        classifySectionList.add(cs);
-        c = new Classify("按申请时间",1);
-        cs = new ClassifySection(c);
-        classifySectionList.add(cs);
-        c = new Classify("按申请人",1);
-        cs = new ClassifySection(c);
-        classifySectionList.add(cs);
-        positions = new int[]{1,5};
+        positions = new int[]{1};
         initGridPopData();
 
         list = new ArrayList<>();
-        Approval p = new Approval("审批名称审批名称审批名称审批名","杜拉拉",1501055624,0);
+        Approval p = new Approval("审批名称审批名称审批名称审批名","杜拉拉",1501055624);
         list.add(p);
-        p = new Approval("名字显示审批表申请人","杜拉拉",1501055624,1);
+        p = new Approval("名字显示审批表申请人","杜拉拉",1501055624);
         list.add(p);
-        p = new Approval("审批名称审批名称审批名称审批名","杜拉拉",1501055624,0);
+        p = new Approval("审批名称审批名称审批名称审批名","杜拉拉",1501055624);
         list.add(p);
-        p= new Approval("名字显示审批表申请人","杜拉拉",1501055624,0);
+        p= new Approval("名字显示审批表申请人","杜拉拉",1501055624);
         list.add(p);
-        p= new Approval("审批名称审批名称审批名称审批名","杜拉拉",1501055624,0);
+        p= new Approval("审批名称审批名称审批名称审批名","杜拉拉",1501055624);
         list.add(p);
-        p= new Approval("名字显示审批表申请人","杜拉拉",1501055624,0);
+        p= new Approval("名字显示审批表申请人","杜拉拉",1501055624);
         list.add(p);
-        p= new Approval("审批名称审批名称审批名称审批名","杜拉拉",1501055624,0);
+        p= new Approval("审批名称审批名称审批名称审批名","杜拉拉",1501055624);
         list.add(p);
-        p= new Approval("名字显示审批表申请人","杜拉拉",1501055624,1);
+        p= new Approval("名字显示审批表申请人","杜拉拉",1501055624);
         list.add(p);
-        p= new Approval("审批名称审批名称审批名称审批名","杜拉拉",1501055624,0);
+        p= new Approval("审批名称审批名称审批名称审批名","杜拉拉",1501055624);
         list.add(p);
-        p= new Approval("名字显示审批表申请人","杜拉拉",1501055624,1);
+        p= new Approval("名字显示审批表申请人","杜拉拉",1501055624);
         list.add(p);
         adapter.setNewData(list);
     }

@@ -1,6 +1,5 @@
 package com.pcjr.pcjr_oa.ui.views.activity;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -24,10 +23,10 @@ import java.util.List;
 import butterknife.BindView;
 
 /**
- *  待办审批/下属待办审批
+ *  全部审批/已办审批
  *  Created by Mario on 2017/9/13上午9:35
  */
-public class ApprovalPendingActivity extends BaseDropDownActivity implements SwipeRefreshLayout.OnRefreshListener,SearchView.OnQueryTextListener{
+public class ApprovalFinishActivity extends BaseDropDownActivity implements SwipeRefreshLayout.OnRefreshListener,SearchView.OnQueryTextListener{
 
 
     @BindView(R.id.swipeLayout) SwipeRefreshLayout mSwipeRefreshLayout;
@@ -46,7 +45,7 @@ public class ApprovalPendingActivity extends BaseDropDownActivity implements Swi
     @Override
     protected void initViews(Bundle savedInstanceState) {
         showBack();
-        setTitle("待办审批");
+        setTitle("已办审批");
 
         initGridPop();
 
@@ -66,7 +65,7 @@ public class ApprovalPendingActivity extends BaseDropDownActivity implements Swi
         });
 
         adapter.setOnItemClickListener((adapter,view,position)-> {
-            startActivity(new Intent(this,ApprovalPendingDetailActivity.class));
+            //startActivity(new Intent(this,ApprovalEditActivity.class));
         });
 
     }
@@ -74,35 +73,54 @@ public class ApprovalPendingActivity extends BaseDropDownActivity implements Swi
     @Override
     protected void initData() {
         classifySectionList = new ArrayList<>();
-        ClassifySection cs = new ClassifySection(true, "类型");
+        ClassifySection cs = new ClassifySection(true, "状态");
         classifySectionList.add(cs);
         Classify c = new Classify("全部审批",0);
         c.setSelected(true);
         cs= new ClassifySection(c);
         classifySectionList.add(cs);
-        c = new Classify("业务审批",0);
+        c = new Classify("审批完成",0);
         cs= new ClassifySection(c);
         classifySectionList.add(cs);
-        c = new Classify("上线审批",0);
+        c = new Classify("审批中",0);
         cs= new ClassifySection(c);
+        classifySectionList.add(cs);
+        c = new Classify("已取消",0);
+        cs= new ClassifySection(c);
+        classifySectionList.add(cs);
+        c = new Classify("已驳回",0);
+        cs= new ClassifySection(c);
+        classifySectionList.add(cs);
+
+        cs = new ClassifySection(true, "类型");
+        classifySectionList.add(cs);
+        c = new Classify("全部审批",1);
+        c.setSelected(true);
+        cs = new ClassifySection(c);
+        classifySectionList.add(cs);
+        c = new Classify("业务审批",1);
+        cs = new ClassifySection(c);
+        classifySectionList.add(cs);
+        c = new Classify("上线审批",1);
+        cs = new ClassifySection(c);
         classifySectionList.add(cs);
 
         cs = new ClassifySection(true, "审批排序");
         classifySectionList.add(cs);
-        c = new Classify("按到期时间",1);
+        c = new Classify("按到期时间",2);
         c.setSelected(true);
         cs = new ClassifySection(c);
         classifySectionList.add(cs);
-        c = new Classify("按反馈时间",1);
+        c = new Classify("按反馈时间",2);
         cs = new ClassifySection(c);
         classifySectionList.add(cs);
-        c = new Classify("按申请时间",1);
+        c = new Classify("按申请时间",2);
         cs = new ClassifySection(c);
         classifySectionList.add(cs);
-        c = new Classify("按申请人",1);
+        c = new Classify("按申请人",2);
         cs = new ClassifySection(c);
         classifySectionList.add(cs);
-        positions = new int[]{1,5};
+        positions = new int[]{1,7,11};
         initGridPopData();
 
         list = new ArrayList<>();
