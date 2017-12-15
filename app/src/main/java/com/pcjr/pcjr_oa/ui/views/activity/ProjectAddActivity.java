@@ -73,7 +73,7 @@ public class ProjectAddActivity extends BaseAppCompatActivity {
 
         rlManager.setOnClickListener(v->{
             if(ViewUtil.isFastDoubleClick()) return;
-            startActivityForResult(new Intent(this,ParticipantActivity.class), Constant.REQUEST_MANAGER);
+            startActivityForResult(new Intent(this,PersonSingleSelectionActivity.class), Constant.REQUEST_MANAGER);
         });
 
         rlStartTime.setOnClickListener(v-> Dialog.datePicker(this,"开始时间",txtStartTime));

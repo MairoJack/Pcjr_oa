@@ -13,7 +13,7 @@ import android.widget.CheckBox;
 import com.pcjr.pcjr_oa.R;
 import com.pcjr.pcjr_oa.bean.Person;
 import com.pcjr.pcjr_oa.core.BaseToolbarActivity;
-import com.pcjr.pcjr_oa.ui.adapter.ParticipantAdapter;
+import com.pcjr.pcjr_oa.ui.adapter.PersonAdapter;
 import com.pcjr.pcjr_oa.widget.Dialog;
 
 import java.util.ArrayList;
@@ -35,7 +35,7 @@ public class UrgeActivity extends BaseToolbarActivity{
     @BindView(R.id.check_create) CheckBox checkCreate;
 
     private List<Person> list;
-    private ParticipantAdapter adapter;
+    private PersonAdapter adapter;
     private boolean m = false,p = false ,c = false ,l = false;
     private Person selectedItem;
     @Override
@@ -96,21 +96,21 @@ public class UrgeActivity extends BaseToolbarActivity{
 
     @Override
     protected void initData() {
-        list = new ArrayList<>();
-
-        Person p = new Person();
-        p.setName("杜拉拉");
-        p.setDepartment("部门111111");
-        p.setJob("职位11");
-        list.add(p);
-
-        p = new Person();
-        p.setName("萧拉拉");
-        p.setDepartment("部门2222111");
-        p.setJob("职位22");
-        list.add(p);
-        adapter = new ParticipantAdapter(list);
-        mRecyclerView.setAdapter(adapter);
+//        list = new ArrayList<>();
+//
+//        Person p = new Person();
+//        p.setName("杜拉拉");
+//        p.setDepartment("部门111111");
+//        p.setJob("职位11");
+//        list.add(p);
+//
+//        p = new Person();
+//        p.setName("萧拉拉");
+//        p.setDepartment("部门2222111");
+//        p.setJob("职位22");
+//        list.add(p);
+//        adapter = new PersonAdapter(list);
+        //mRecyclerView.setAdapter(adapter);
     }
 
     @Override

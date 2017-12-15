@@ -1,8 +1,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/color_background"
     android:orientation="vertical">
 
@@ -15,35 +15,35 @@
             android:id="@+id/btn_cancel"
             android:layout_width="48dp"
             android:layout_height="32dp"
-            android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
-            android:textSize="16dp"
-            android:textColor="#FFFFFF"
             android:background="@drawable/select_black"
-            android:text="取消"/>
+            android:text="取消"
+            android:textColor="#FFFFFF"
+            android:textSize="16dp" />
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18dp"
-            android:textColor="#FFFFFF"
-            android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
-            android:text="新建客户"/>
+            android:layout_centerVertical="true"
+            android:text="新建个人客户"
+            android:textColor="#FFFFFF"
+            android:textSize="18dp" />
 
         <Button
             android:id="@+id/btn_finish"
             android:layout_width="48dp"
             android:layout_height="32dp"
-            android:layout_marginRight="10dp"
-            android:textSize="16dp"
-            android:textColor="#FFFFFF"
-            android:background="@drawable/select_black"
-            android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
-            android:text="完成"/>
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/select_black"
+            android:text="完成"
+            android:textColor="#FFFFFF"
+            android:textSize="16dp" />
     </RelativeLayout>
 
     <ScrollView
@@ -67,28 +67,31 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
                     android:text="客户名称"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/txt_name"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="2dp"
+                    android:layout_toRightOf="@+id/txt_name"
                     android:text="*"
                     android:textColor="@color/color_selected"
-                    android:textSize="18dp"/>
+                    android:textSize="18dp" />
 
                 <EditText
                     android:id="@+id/txt_customer_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"
                     android:background="@null"
+                    android:gravity="right"
                     android:hint="请填写(必填)"
-                    android:textColor="@color/color_explain"
+                    android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
 
             </RelativeLayout>
@@ -97,71 +100,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0.1dp"
                 android:layout_marginLeft="15dp"
-                android:background="@color/color_line"/>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:background="@drawable/select_white"
-                android:padding="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="手机"
-                    android:textColor="@color/color_title"
-                    android:textSize="@dimen/text_size_key" />
-
-                <EditText
-                    android:id="@+id/txt_mobile"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:background="@null"
-                    android:hint="请填写"
-                    android:textColor="@color/color_explain"
-                    android:textSize="@dimen/text_size_value" />
-
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.1dp"
-                android:layout_marginLeft="15dp"
-                android:background="@color/color_line"/>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:background="@drawable/select_white"
-                android:padding="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="电话"
-                    android:textColor="@color/color_title"
-                    android:textSize="@dimen/text_size_key" />
-
-                <EditText
-                    android:id="@+id/txt_telephone"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:background="@null"
-                    android:hint="请填写"
-                    android:textColor="@color/color_explain"
-                    android:textSize="@dimen/text_size_value" />
-
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.1dp"
-                android:layout_marginLeft="15dp"
-                android:background="@color/color_line"/>
+                android:background="@color/color_line" />
 
             <RelativeLayout
                 android:id="@+id/rl_manager"
@@ -176,33 +115,33 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
                     android:text="客户经理"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/explain_manager"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="12dp"
+                    android:layout_toRightOf="@+id/explain_manager"
                     android:text="*"
                     android:textColor="@color/color_selected"
-                    android:textSize="18dp"/>
+                    android:textSize="18dp" />
 
                 <TextView
                     android:id="@+id/txt_avatar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="拉拉"
-                    android:textSize="12dp"
-                    android:textColor="@color/color_white"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
                     android:layout_centerVertical="true"
-                    android:layout_toLeftOf="@+id/txt_manager"
                     android:layout_marginRight="5dp"
-                    android:backgroundTint="@color/color_selected"
-                    android:background="@drawable/avatar_background_32"/>
+                    android:layout_toLeftOf="@+id/txt_manager"
+                    android:background="@drawable/avatar_background_red_48"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="--"
+                    android:textColor="@color/color_white"
+                    android:textSize="12dp" />
 
                 <!--<de.hdodenhof.circleimageview.CircleImageView-->
                 <!--android:id="@+id/img_avatar"-->
@@ -221,8 +160,8 @@
                     android:layout_centerVertical="true"
                     android:layout_marginRight="5dp"
                     android:layout_toLeftOf="@+id/btn_right"
-                    android:text="杜拉拉"
-                    android:textColor="@color/color_explain"
+                    android:text="请选择"
+                    android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
 
                 <ImageView
@@ -232,6 +171,102 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:src="@mipmap/icon_right" />
+            </RelativeLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_marginLeft="15dp"
+                android:background="@color/color_line" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/select_white"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/explain_mobile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:text="联系电话"
+                    android:textColor="@color/color_explain"
+                    android:textSize="@dimen/text_size_key" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_toRightOf="@+id/explain_mobile"
+                    android:text="*"
+                    android:textColor="@color/color_selected"
+                    android:textSize="18dp" />
+
+                <EditText
+                    android:id="@+id/txt_mobile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"
+                    android:background="@null"
+                    android:gravity="right"
+                    android:hint="请填写"
+                    android:inputType="phone"
+                    android:textColor="@color/color_content"
+                    android:textSize="@dimen/text_size_value" />
+
+
+            </RelativeLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_marginLeft="15dp"
+                android:background="@color/color_line" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/select_white"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/explain_identity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:text="身份证"
+                    android:textColor="@color/color_explain"
+                    android:textSize="@dimen/text_size_key" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_toRightOf="@+id/explain_identity"
+                    android:text="*"
+                    android:textColor="@color/color_selected"
+                    android:textSize="18dp" />
+
+                <EditText
+                    android:id="@+id/txt_identity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"
+                    android:background="@null"
+                    android:gravity="right"
+                    android:hint="请填写(必填)"
+                    android:textColor="@color/color_content"
+                    android:textSize="@dimen/text_size_value" />
+
             </RelativeLayout>
 
             <Button

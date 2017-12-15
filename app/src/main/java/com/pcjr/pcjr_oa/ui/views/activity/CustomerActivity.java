@@ -91,9 +91,9 @@ public abstract class CustomerActivity extends UnionActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode,resultCode,data);
         if(resultCode == RESULT_OK){
-            String result = data.getStringExtra("result");
             switch (requestCode){
                 case Constant.REQUEST_CUSTOMER_CREDIT_LEVEL:
+                    String result = data.getStringExtra("result");
                     txtCustomerCredit.setText(result);
                     break;
 

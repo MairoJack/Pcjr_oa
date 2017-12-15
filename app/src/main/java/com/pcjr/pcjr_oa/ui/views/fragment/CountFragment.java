@@ -96,7 +96,7 @@ public class CountFragment extends BaseFragment implements MvpView<PlatformData>
 
     @Override
     public void onFailure(Throwable e) {
-        showToast(getString(R.string.network_error));
+        error(e);
     }
 
     @Override

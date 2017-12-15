@@ -1,52 +1,32 @@
 package com.pcjr.pcjr_oa.bean;
 
-import com.google.gson.annotations.Expose;
-
 import java.io.Serializable;
+import lombok.Data;
 
 /**
  *  基础返回消息
  *  Created by Mario on 2017/9/28上午10:42
  */
+@Data
 public class BaseBean<T> implements Serializable {
-    @Expose
+    /**
+     * 是否成功
+     */
     private boolean success;
-    @Expose
+    /**
+     * 返回消息
+     */
     private String msg;
-    @Expose
+    /**
+     * 消息码
+     */
     private int code;
-    @Expose
+    /**
+     * 数据
+     */
     private T data;
-
-    public boolean isSuccess() {
-        return success;
-    }
-
-    public void setSuccess(boolean success) {
-        this.success = success;
-    }
-
-    public T getData() {
-        return data;
-    }
-
-    public void setData(T data) {
-        this.data = data;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
-
-    public int getCode() {
-        return code;
-    }
-
-    public void setCode(int code) {
-        this.code = code;
-    }
+    /**
+     * 分页
+     */
+    private Pager pager;
 }

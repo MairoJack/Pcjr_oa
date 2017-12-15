@@ -27,22 +27,28 @@
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp">
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/img_avatar"
+
+                <TextView
+                    android:id="@+id/txt_avatar"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_marginBottom="20dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="20dp"
-                    android:src="@mipmap/image_avatar" />
+                    android:background="@drawable/avatar_background_red_48"
+                    android:backgroundTint="@color/color_selected"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="公司"
+                    android:textColor="@color/color_white"
+                    android:textSize="12dp" />
 
                 <TextView
                     android:id="@+id/txt_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="25dp"
-                    android:layout_toRightOf="@+id/img_avatar"
-                    android:text="海宁啦啦啦啦有限公司"
+                    android:layout_toRightOf="@+id/txt_avatar"
+                    android:text="--------"
                     android:textColor="@color/color_explain"
                     android:textSize="16dp" />
 
@@ -56,7 +62,7 @@
                     android:background="@drawable/corner_blue"
                     android:paddingLeft="4dp"
                     android:paddingRight="4dp"
-                    android:text="客户信用：A级"
+                    android:text="客户信用：--级"
                     android:textColor="@color/color_white"
                     android:textSize="13dp" />
 
@@ -65,8 +71,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/txt_name"
-                    android:layout_toRightOf="@+id/img_avatar"
-                    android:text="客户经理：啦啦啦"
+                    android:layout_toRightOf="@+id/txt_avatar"
+                    android:text="客户经理：----"
                     android:textColor="#4caafe"
                     android:textSize="14dp" />
 
@@ -78,7 +84,8 @@
                     android:background="@drawable/corner_gray_5dp"
                     android:paddingBottom="2dp"
                     android:paddingTop="2dp"
-                    android:text="  创建人：啦啦啦 2017-12-05"
+                    android:paddingLeft="5dp"
+                    android:text="--------"
                     android:textColor="@color/color_explain"
                     android:textSize="14dp" />
 
@@ -88,16 +95,17 @@
             <LinearLayout
                 android:id="@+id/rl_customer_name"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/select_white"
                 android:orientation="horizontal"
+                android:gravity="center_vertical"
                 android:padding="5dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
-                    android:layout_weight="3"
+                    android:layout_weight="2"
                     android:text="联系电话"
                     android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_key" />
@@ -107,7 +115,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="1368287328"
+                    android:text="----"
                     android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_value" />
 
@@ -115,16 +123,17 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/select_white"
                 android:orientation="horizontal"
+                android:gravity="center_vertical"
                 android:padding="5dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
-                    android:layout_weight="3"
+                    android:layout_weight="2"
                     android:text="传真"
                     android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_key" />
@@ -134,7 +143,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="0573-871213232"
+                    android:text="----"
                     android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_value" />
 
@@ -142,16 +151,17 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/select_white"
                 android:orientation="horizontal"
+                android:gravity="center_vertical"
                 android:padding="5dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
-                    android:layout_weight="3"
+                    android:layout_weight="2"
                     android:text="地址"
                     android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_key" />
@@ -161,7 +171,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="地址地址地址地址地址"
+                    android:text="----"
                     android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_value" />
 
@@ -169,16 +179,17 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/select_white"
                 android:orientation="horizontal"
+                android:gravity="center_vertical"
                 android:padding="5dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
-                    android:layout_weight="3"
+                    android:layout_weight="2"
                     android:text="邮政编码"
                     android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_key" />
@@ -188,7 +199,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="314400"
+                    android:text="----"
                     android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_value" />
 
@@ -196,26 +207,27 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/select_white"
                 android:orientation="horizontal"
+                android:gravity="center_vertical"
                 android:padding="5dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
-                    android:layout_weight="3"
-                    android:text="身份证"
+                    android:layout_weight="2"
+                    android:text="实际经营者"
                     android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_key" />
 
                 <TextView
-                    android:id="@+id/txt_identity"
+                    android:id="@+id/txt_actual_operator"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="330483123213121"
+                    android:text="----"
                     android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_value" />
 
@@ -223,16 +235,101 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/select_white"
                 android:orientation="horizontal"
+                android:gravity="center_vertical"
                 android:padding="5dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
-                    android:layout_weight="3"
+                    android:layout_weight="2"
+                    android:text="社会信用代码"
+                    android:textColor="@color/color_content"
+                    android:textSize="@dimen/text_size_key" />
+
+                <TextView
+                    android:id="@+id/txt_credit_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="----"
+                    android:textColor="@color/color_explain"
+                    android:textSize="@dimen/text_size_value" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/select_white"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="2"
+                    android:text="组织机构代码"
+                    android:textColor="@color/color_content"
+                    android:textSize="@dimen/text_size_key" />
+
+                <TextView
+                    android:id="@+id/txt_institution_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="----"
+                    android:textColor="@color/color_explain"
+                    android:textSize="@dimen/text_size_value" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/select_white"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="2"
+                    android:text="营业执照号码"
+                    android:textColor="@color/color_content"
+                    android:textSize="@dimen/text_size_key" />
+
+                <TextView
+                    android:id="@+id/txt_business_licence"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="----"
+                    android:textColor="@color/color_explain"
+                    android:textSize="@dimen/text_size_value" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/select_white"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="2"
                     android:text="贷款卡号"
                     android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_key" />
@@ -242,7 +339,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="2142324329423423"
+                    android:text="----"
                     android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_value" />
 
@@ -250,27 +347,28 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/select_white"
                 android:orientation="horizontal"
+                android:gravity="center_vertical"
                 android:padding="5dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
-                    android:layout_weight="3"
-                    android:text="所在公司"
+                    android:layout_weight="2"
+                    android:text="公司性质"
                     android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_key" />
 
                 <TextView
-                    android:id="@+id/txt_company"
+                    android:id="@+id/txt_company_nature"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="啦啦啦公司"
+                    android:text="----"
                     android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_value" />
 
@@ -278,26 +376,27 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/select_white"
                 android:orientation="horizontal"
+                android:gravity="center_vertical"
                 android:padding="5dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
-                    android:layout_weight="3"
-                    android:text="职位"
+                    android:layout_weight="2"
+                    android:text="主营业务"
                     android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_key" />
 
                 <TextView
-                    android:id="@+id/txt_job"
+                    android:id="@+id/txt_main_business"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="拉拉职位"
+                    android:text="----"
                     android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_value" />
 
@@ -305,26 +404,27 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/select_white"
                 android:orientation="horizontal"
+                android:gravity="center_vertical"
                 android:padding="5dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
-                    android:layout_weight="3"
-                    android:text="性别"
+                    android:layout_weight="2"
+                    android:text="成立时间"
                     android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_key" />
 
                 <TextView
-                    android:id="@+id/txt_sex"
+                    android:id="@+id/txt_founding_time"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="女"
+                    android:text="----"
                     android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_value" />
 
@@ -332,26 +432,27 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/select_white"
                 android:orientation="horizontal"
+                android:gravity="center_vertical"
                 android:padding="5dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
-                    android:layout_weight="3"
-                    android:text="婚姻状况"
+                    android:layout_weight="2"
+                    android:text="法人代表"
                     android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_key" />
 
                 <TextView
-                    android:id="@+id/txt_marital_status"
+                    android:id="@+id/txt_corporate_representative"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="未婚"
+                    android:text="----"
                     android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_value" />
 
@@ -360,16 +461,17 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/select_white"
                 android:orientation="horizontal"
+                android:gravity="center_vertical"
                 android:padding="5dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
-                    android:layout_weight="3"
+                    android:layout_weight="2"
                     android:text="网站"
                     android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_key" />
@@ -379,7 +481,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="www.lalala.com"
+                    android:text="----"
                     android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_value" />
 
@@ -390,13 +492,14 @@
                 android:layout_height="35dp"
                 android:background="@drawable/select_white"
                 android:orientation="horizontal"
+                android:gravity="center_vertical"
                 android:padding="5dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
-                    android:layout_weight="3"
+                    android:layout_weight="2"
                     android:text="邮箱"
                     android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_key" />
@@ -406,7 +509,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="sss.lalala.com"
+                    android:text="----"
                     android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_value" />
 
@@ -417,13 +520,14 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/select_white"
                 android:orientation="horizontal"
+                android:gravity="center_vertical"
                 android:padding="5dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
-                    android:layout_weight="3"
+                    android:layout_weight="2"
                     android:text="反担保情况"
                     android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_key" />
@@ -433,7 +537,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="反担保情况反担保情况反担保情况反担保情况反担保情况反担保情况"
+                    android:text="----"
                     android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_value" />
 
@@ -444,13 +548,14 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/select_white"
                 android:orientation="horizontal"
+                android:gravity="center_vertical"
                 android:padding="5dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
-                    android:layout_weight="3"
+                    android:layout_weight="2"
                     android:text="借款人情况"
                     android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_key" />
@@ -460,7 +565,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="借款人情况借款人情况借款人情况借款人情况借款人情况借款人情况"
+                    android:text="----"
                     android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_value" />
 
@@ -471,13 +576,14 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/select_white"
                 android:orientation="horizontal"
+                android:gravity="center_vertical"
                 android:padding="5dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
-                    android:layout_weight="3"
+                    android:layout_weight="2"
                     android:text="信用记录"
                     android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_key" />
@@ -487,7 +593,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="信用记录信用记录信用记录信用记录信用记录信用记录"
+                    android:text="----"
                     android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_value" />
 
@@ -498,13 +604,14 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/select_white"
                 android:orientation="horizontal"
+                android:gravity="center_vertical"
                 android:padding="5dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
-                    android:layout_weight="3"
+                    android:layout_weight="2"
                     android:text="备注"
                     android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_key" />
@@ -514,7 +621,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="备注备注备注备注备注备注备注"
+                    android:text="----"
                     android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_value" />
 

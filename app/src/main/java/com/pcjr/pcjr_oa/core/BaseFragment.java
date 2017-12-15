@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 import com.gyf.barlibrary.ImmersionBar;
 import com.pcjr.pcjr_oa.R;
+import com.pcjr.pcjr_oa.exception.LoginExpireException;
+import com.pcjr.pcjr_oa.ui.views.activity.LoginActivity;
 import com.pcjr.pcjr_oa.utils.ToastUtils;
 
 import butterknife.ButterKnife;
@@ -157,6 +159,19 @@ public abstract class BaseFragment extends Fragment {
         super.onHiddenChanged(hidden);
         if (!hidden && mImmersionBar != null)
             mImmersionBar.init();
+    }
+
+    /**
+     * 错误处理
+     */
+    protected void error(Throwable e){
+        if(e instanceof LoginExpireException){
+            showToast(getString(R.string.login_expire));
+            getActivity().finish();
+            startActivity(new Intent(getActivity(), LoginActivity.class));
+        } else {
+            showToast(getString(R.string.network_error));
+        }
     }
 }
 

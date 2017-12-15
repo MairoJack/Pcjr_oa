@@ -122,7 +122,7 @@ public class RepaymentInfoActivity extends BaseToolbarActivity implements Repaym
     @Override
     public void onFailure(Throwable e) {
         if(mSwipeRefreshLayout.isRefreshing()) mSwipeRefreshLayout.setRefreshing(false);
-        showToast(getString(R.string.network_error));
+        error(e);
     }
 
     @Override

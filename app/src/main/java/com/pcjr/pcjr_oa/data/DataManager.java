@@ -3,7 +3,11 @@ package com.pcjr.pcjr_oa.data;
 import com.pcjr.pcjr_oa.App;
 import com.pcjr.pcjr_oa.api.ApiConstant;
 import com.pcjr.pcjr_oa.bean.BaseBean;
+import com.pcjr.pcjr_oa.bean.Customer;
+import com.pcjr.pcjr_oa.bean.CustomerCompany;
+import com.pcjr.pcjr_oa.bean.CustomerPersonal;
 import com.pcjr.pcjr_oa.bean.Member;
+import com.pcjr.pcjr_oa.bean.Person;
 import com.pcjr.pcjr_oa.bean.PlatformData;
 import com.pcjr.pcjr_oa.bean.Product;
 import com.pcjr.pcjr_oa.bean.ProductSummary;
@@ -25,6 +29,7 @@ import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Function;
+import okhttp3.RequestBody;
 
 /**
  * Created by Mario on 2017/9/28下午3:08
@@ -87,6 +92,7 @@ public class DataManager {
 
     public Observable<BaseBean<RepaymentInfo>> getRepaymentDurationInfo(long startDate, long endDate) {
         return this.oAuthModel.getRepaymentDurationInfo(startDate, endDate)
+                .flatMap(new CheckAuth<>())
                 .compose(RxUtils.applyIOToMainThreadSchedulers());
 
     }
@@ -127,6 +133,70 @@ public class DataManager {
 
     }
 
+    public Observable<BaseBean<List<Customer>>> getBorrowerList(int page,String query) {
+        return this.oAuthModel.getBorrowerList(page,query)
+                .flatMap(new CheckAuth<>())
+                .compose(RxUtils.applyIOToMainThreadSchedulers())
+                .retryWhen(new RetryWithUnAuth());
+
+    }
+
+    public Observable<BaseBean<CustomerPersonal>> addPerson(CustomerPersonal customer) {
+        return this.oAuthModel.addPerson(customer)
+                .flatMap(new CheckAuth<>())
+                .compose(RxUtils.applyIOToMainThreadSchedulers())
+                .retryWhen(new RetryWithUnAuth());
+
+    }
+
+    public Observable<BaseBean> modifyPerson(CustomerPersonal customer) {
+        return this.oAuthModel.modifyPerson(customer)
+                .flatMap(new CheckAuthNoData())
+                .compose(RxUtils.applyIOToMainThreadSchedulers())
+                .retryWhen(new RetryWithUnAuth());
+
+    }
+
+    public Observable<BaseBean<CustomerPersonal>> getPersonDetail(String id) {
+        return this.oAuthModel.getPersonDetail(id)
+                .flatMap(new CheckAuth<>())
+                .compose(RxUtils.applyIOToMainThreadSchedulers())
+                .retryWhen(new RetryWithUnAuth());
+
+    }
+
+    public Observable<BaseBean<CustomerCompany>> addCompany(CustomerCompany customer) {
+        return this.oAuthModel.addCompany(customer)
+                .flatMap(new CheckAuth<>())
+                .compose(RxUtils.applyIOToMainThreadSchedulers())
+                .retryWhen(new RetryWithUnAuth());
+
+    }
+
+    public Observable<BaseBean> modifyCompany(CustomerCompany customer) {
+        return this.oAuthModel.modifyCompany(customer)
+                .flatMap(new CheckAuthNoData())
+                .compose(RxUtils.applyIOToMainThreadSchedulers())
+                .retryWhen(new RetryWithUnAuth());
+
+    }
+
+    public Observable<BaseBean<CustomerCompany>> getCompanyDetail(String id) {
+        return this.oAuthModel.getCompanyDetail(id)
+                .flatMap(new CheckAuth<>())
+                .compose(RxUtils.applyIOToMainThreadSchedulers())
+                .retryWhen(new RetryWithUnAuth());
+
+    }
+
+    public Observable<BaseBean<List<Person>>> getManagerList() {
+        return this.oAuthModel.getManagerList()
+                .flatMap(new CheckAuth<>())
+                .compose(RxUtils.applyIOToMainThreadSchedulers())
+                .retryWhen(new RetryWithUnAuth());
+
+    }
+
     /*
      * -------------------------- OAuthModel Over ------------------------------
      */
@@ -140,6 +210,22 @@ public class DataManager {
 
         @Override
         public ObservableSource<BaseBean<T>> apply(@NonNull BaseBean<T> result) throws Exception {
+            if (!result.isSuccess()) {
+                switch (result.getCode()) {
+                    case ApiConstant.TOKEN_EXPIRE:
+                        return Observable.error(new UnauthorizedException());
+                    case ApiConstant.LOGIN_EXPIRE:
+                        return Observable.error(new LoginExpireException(result.getMsg()));
+                }
+            }
+            return Observable.just(result);
+        }
+    }
+
+    private class CheckAuthNoData implements Function<BaseBean, ObservableSource<BaseBean>> {
+
+        @Override
+        public ObservableSource<BaseBean> apply(@NonNull BaseBean result) throws Exception {
             if (!result.isSuccess()) {
                 switch (result.getCode()) {
                     case ApiConstant.TOKEN_EXPIRE:

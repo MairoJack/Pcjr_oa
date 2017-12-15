@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="完善企业客户"
+            android:text="完善个人客户"
             android:textColor="#FFFFFF"
             android:textSize="18dp" />
 
@@ -59,7 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="7dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="7dp"
                 android:text="基本信息"
                 android:textColor="@color/color_content"
@@ -68,10 +68,12 @@
             <RelativeLayout
                 android:id="@+id/rl_customer_name"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="0.1dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/select_white"
-                android:padding="10dp">
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
 
                 <TextView
                     android:id="@+id/explain_name"
@@ -79,7 +81,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="客户名称"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
                 <TextView
@@ -92,40 +94,36 @@
                     android:textColor="@color/color_selected"
                     android:textSize="18dp" />
 
-                <TextView
+                <EditText
                     android:id="@+id/txt_customer_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="5dp"
-                    android:layout_toLeftOf="@+id/btn_right"
-                    android:text="目睹都"
-                    android:textColor="@color/color_explain"
-                    android:textSize="@dimen/text_size_value" />
-
-                <ImageView
-                    android:id="@id/btn_right"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:src="@mipmap/icon_right" />
+                    android:background="@null"
+                    android:gravity="right"
+                    android:hint="请填写"
+                    android:textColor="@color/color_content"
+                    android:textSize="@dimen/text_size_value" />
+
             </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/rl_customer_credit"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="0.1dp"
                 android:background="@drawable/select_white"
-                android:padding="10dp">
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="客户信用"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
                 <TextView
@@ -136,7 +134,7 @@
                     android:layout_marginRight="5dp"
                     android:layout_toLeftOf="@+id/btn_right"
                     android:text="请选择"
-                    android:textColor="@color/color_explain"
+                    android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
 
                 <ImageView
@@ -154,7 +152,10 @@
                 android:layout_height="45dp"
                 android:layout_marginTop="0.1dp"
                 android:background="@drawable/select_white"
-                android:padding="10dp">
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
 
                 <TextView
                     android:id="@+id/explain_manager"
@@ -162,7 +163,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="客户经理"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
                 <TextView
@@ -175,21 +176,18 @@
                     android:textColor="@color/color_selected"
                     android:textSize="18dp" />
 
-                <LinearLayout
-                    android:id="@+id/ll_manager_avatar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                <TextView
+                    android:id="@+id/txt_avatar"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="10dp"
-                    android:layout_toLeftOf="@+id/txt_customer_manager">
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_marginLeft="5dp"
-                        android:src="@mipmap/image_avatar" />
-
-                </LinearLayout>
+                    android:layout_toLeftOf="@+id/txt_customer_manager"
+                    android:background="@drawable/avatar_background_blue_48"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="--"
+                    android:textColor="@color/color_white"
+                    android:textSize="8dp" />
 
                 <TextView
                     android:id="@+id/txt_customer_manager"
@@ -198,8 +196,8 @@
                     android:layout_centerVertical="true"
                     android:layout_marginRight="5dp"
                     android:layout_toLeftOf="@+id/btn_right"
-                    android:text="拉拉都"
-                    android:textColor="@color/color_explain"
+                    android:text="请选择"
+                    android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
 
                 <ImageView
@@ -216,7 +214,10 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="0.1dp"
                 android:background="@drawable/select_white"
-                android:padding="10dp">
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
 
                 <TextView
                     android:id="@+id/explain_mobile"
@@ -224,7 +225,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="联系电话"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
                 <TextView
@@ -239,66 +240,77 @@
 
                 <EditText
                     android:id="@+id/txt_mobile"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:background="@null"
+                    android:gravity="right"
                     android:hint="请填写"
-                    android:textColor="@color/color_explain"
+                    android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
 
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="0.1dp"
                 android:background="@drawable/select_white"
-                android:padding="10dp">
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="传真"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
                 <EditText
                     android:id="@+id/txt_fax"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:background="@null"
+                    android:gravity="right"
                     android:hint="请填写"
-                    android:textColor="@color/color_explain"
+                    android:maxLength="20"
+                    android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
 
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="0.1dp"
                 android:background="@drawable/select_white"
-                android:padding="10dp">
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="地址"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
                 <EditText
                     android:id="@+id/txt_address"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:background="@null"
+                    android:gravity="right"
+                    android:maxLength="100"
                     android:hint="请填写"
-                    android:textColor="@color/color_explain"
+                    android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
 
             </RelativeLayout>
@@ -308,14 +320,17 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="0.1dp"
                 android:background="@drawable/select_white"
-                android:padding="10dp">
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="邮政编码"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
                 <EditText
@@ -324,8 +339,11 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:background="@null"
+                    android:gravity="right"
                     android:hint="请填写"
-                    android:textColor="@color/color_explain"
+                    android:inputType="numberDecimal"
+                    android:maxLength="20"
+                    android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
 
             </RelativeLayout>
@@ -335,7 +353,10 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="0.1dp"
                 android:background="@drawable/select_white"
-                android:padding="10dp">
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
 
                 <TextView
                     android:id="@+id/explain_identity"
@@ -343,7 +364,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="身份证"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
                 <TextView
@@ -362,8 +383,10 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:background="@null"
+                    android:gravity="right"
                     android:hint="请填写"
-                    android:textColor="@color/color_explain"
+                    android:maxLength="20"
+                    android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
 
             </RelativeLayout>
@@ -373,14 +396,17 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="0.1dp"
                 android:background="@drawable/select_white"
-                android:padding="10dp">
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="贷款卡号"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
                 <EditText
@@ -389,8 +415,10 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:background="@null"
+                    android:gravity="right"
                     android:hint="请填写"
-                    android:textColor="@color/color_explain"
+                    android:maxLength="20"
+                    android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
 
             </RelativeLayout>
@@ -427,27 +455,31 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:background="@drawable/select_white"
-                    android:padding="10dp">
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="10dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:text="所在公司"
-                        android:textColor="@color/color_title"
+                        android:textColor="@color/color_explain"
                         android:textSize="@dimen/text_size_key" />
 
                     <EditText
                         android:id="@+id/txt_company"
-                        android:layout_width="wrap_content"
+                        android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:background="@null"
+                        android:gravity="right"
                         android:hint="请填写"
-                        android:textColor="@color/color_explain"
+                        android:textColor="@color/color_content"
                         android:textSize="@dimen/text_size_value" />
 
                 </RelativeLayout>
@@ -457,14 +489,17 @@
                     android:layout_height="40dp"
                     android:layout_marginTop="0.1dp"
                     android:background="@drawable/select_white"
-                    android:padding="10dp">
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="10dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:text="职位"
-                        android:textColor="@color/color_title"
+                        android:textColor="@color/color_explain"
                         android:textSize="@dimen/text_size_key" />
 
                     <EditText
@@ -473,8 +508,10 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:background="@null"
+                        android:gravity="right"
+                        android:maxLength="50"
                         android:hint="请填写"
-                        android:textColor="@color/color_explain"
+                        android:textColor="@color/color_content"
                         android:textSize="@dimen/text_size_value" />
 
                 </RelativeLayout>
@@ -485,14 +522,17 @@
                     android:layout_height="40dp"
                     android:layout_marginTop="0.1dp"
                     android:background="@drawable/select_white"
-                    android:padding="10dp">
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="10dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:text="性别"
-                        android:textColor="@color/color_title"
+                        android:textColor="@color/color_explain"
                         android:textSize="@dimen/text_size_key" />
 
                     <TextView
@@ -503,7 +543,7 @@
                         android:layout_marginRight="5dp"
                         android:layout_toLeftOf="@+id/btn_right"
                         android:text="请选择"
-                        android:textColor="@color/color_explain"
+                        android:textColor="@color/color_content"
                         android:textSize="@dimen/text_size_value" />
 
                     <ImageView
@@ -522,14 +562,17 @@
                     android:layout_height="40dp"
                     android:layout_marginTop="0.1dp"
                     android:background="@drawable/select_white"
-                    android:padding="10dp">
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="10dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:text="婚姻状况"
-                        android:textColor="@color/color_title"
+                        android:textColor="@color/color_explain"
                         android:textSize="@dimen/text_size_key" />
 
                     <TextView
@@ -540,7 +583,7 @@
                         android:layout_marginRight="5dp"
                         android:layout_toLeftOf="@+id/btn_right"
                         android:text="请选择"
-                        android:textColor="@color/color_explain"
+                        android:textColor="@color/color_content"
                         android:textSize="@dimen/text_size_value" />
 
                     <ImageView
@@ -557,14 +600,17 @@
                     android:layout_height="40dp"
                     android:layout_marginTop="0.1dp"
                     android:background="@drawable/select_white"
-                    android:padding="10dp">
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="10dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:text="网站"
-                        android:textColor="@color/color_title"
+                        android:textColor="@color/color_explain"
                         android:textSize="@dimen/text_size_key" />
 
                     <EditText
@@ -573,8 +619,10 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:background="@null"
+                        android:gravity="right"
+                        android:maxLength="50"
                         android:hint="请填写"
-                        android:textColor="@color/color_explain"
+                        android:textColor="@color/color_content"
                         android:textSize="@dimen/text_size_value" />
 
                 </RelativeLayout>
@@ -584,14 +632,17 @@
                     android:layout_height="40dp"
                     android:layout_marginTop="0.1dp"
                     android:background="@drawable/select_white"
-                    android:padding="10dp">
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="10dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:text="邮箱"
-                        android:textColor="@color/color_title"
+                        android:textColor="@color/color_explain"
                         android:textSize="@dimen/text_size_key" />
 
                     <EditText
@@ -600,116 +651,135 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:background="@null"
+                        android:gravity="right"
                         android:hint="请填写"
-                        android:textColor="@color/color_explain"
+                        android:maxLength="50"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/color_content"
                         android:textSize="@dimen/text_size_value" />
 
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="0.1dp"
                     android:background="@drawable/select_white"
-                    android:padding="10dp">
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="10dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:text="反担保情况"
-                        android:textColor="@color/color_title"
+                        android:textColor="@color/color_explain"
                         android:textSize="@dimen/text_size_key" />
 
                     <EditText
                         android:id="@+id/txt_counter_guarantee"
-                        android:layout_width="wrap_content"
+                        android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:background="@null"
+                        android:gravity="right"
                         android:hint="请填写"
-                        android:textColor="@color/color_explain"
+                        android:textColor="@color/color_content"
                         android:textSize="@dimen/text_size_value" />
 
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="0.1dp"
                     android:background="@drawable/select_white"
-                    android:padding="10dp">
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="10dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:text="借款人情况"
-                        android:textColor="@color/color_title"
+                        android:textColor="@color/color_explain"
                         android:textSize="@dimen/text_size_key" />
 
                     <EditText
                         android:id="@+id/txt_borrower"
-                        android:layout_width="wrap_content"
+                        android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:background="@null"
+                        android:gravity="right"
                         android:hint="请填写"
-                        android:textColor="@color/color_explain"
+                        android:textColor="@color/color_content"
                         android:textSize="@dimen/text_size_value" />
 
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="0.1dp"
                     android:background="@drawable/select_white"
-                    android:padding="10dp">
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="10dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:text="信用记录"
-                        android:textColor="@color/color_title"
+                        android:textColor="@color/color_explain"
                         android:textSize="@dimen/text_size_key" />
 
                     <EditText
                         android:id="@+id/txt_credit_record"
-                        android:layout_width="wrap_content"
+                        android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:background="@null"
+                        android:gravity="right"
                         android:hint="请填写"
-                        android:textColor="@color/color_explain"
+                        android:textColor="@color/color_content"
                         android:textSize="@dimen/text_size_value" />
 
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="0.1dp"
                     android:background="@drawable/select_white"
-                    android:padding="10dp">
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="10dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:text="备注"
-                        android:textColor="@color/color_title"
+                        android:textColor="@color/color_explain"
                         android:textSize="@dimen/text_size_key" />
 
                     <EditText
                         android:id="@+id/txt_remark"
-                        android:layout_width="wrap_content"
+                        android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:background="@null"
+                        android:gravity="right"
                         android:hint="请填写"
-                        android:textColor="@color/color_explain"
+                        android:textColor="@color/color_content"
                         android:textSize="@dimen/text_size_value" />
 
                 </RelativeLayout>
@@ -744,7 +814,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="7dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="7dp"
                 android:text="资产及经营状况"
                 android:textColor="@color/color_content"
@@ -756,7 +826,10 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="0.1dp"
                 android:background="@color/color_content_background"
-                android:padding="10dp">
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -765,7 +838,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:text="相关附件"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
                 <TextView
@@ -776,7 +849,7 @@
                     android:layout_marginRight="5dp"
                     android:layout_toLeftOf="@+id/btn_right"
                     android:text="请选择"
-                    android:textColor="@color/color_explain"
+                    android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
 
                 <ImageView
@@ -792,7 +865,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="7dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="7dp"
                 android:text="关联事项"
                 android:textColor="@color/color_content"
@@ -804,7 +877,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="7dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="7dp"
                 android:text="意见反馈(20)"
                 android:textColor="@color/color_content"

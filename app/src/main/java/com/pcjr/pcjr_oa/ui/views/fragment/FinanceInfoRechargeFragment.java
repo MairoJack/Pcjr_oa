@@ -111,7 +111,7 @@ public class FinanceInfoRechargeFragment extends BaseFragment implements SwipeRe
     @Override
     public void onFailure(Throwable e) {
         if(mSwipeRefreshLayout.isRefreshing()) mSwipeRefreshLayout.setRefreshing(false);
-        showToast(getString(R.string.network_error));
+        error(e);
     }
 
     @Override

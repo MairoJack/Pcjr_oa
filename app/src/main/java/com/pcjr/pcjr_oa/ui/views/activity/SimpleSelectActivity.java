@@ -54,7 +54,7 @@ public class SimpleSelectActivity extends BaseToolbarActivity {
             lastPosition = position;
 
             Intent intent = new Intent();
-            intent.putExtra("result",selectedItem.getName());
+            intent.putExtra("result",selectedItem);
             setResult(RESULT_OK,intent);
             finish();
         });
@@ -68,7 +68,7 @@ public class SimpleSelectActivity extends BaseToolbarActivity {
         setTitle(intentSelect.getTitle());
         for(int i = 0; i < data.length; i++){
             String s = data[i];
-            SelectItem si = new SelectItem(s);
+            SelectItem si = new SelectItem(s,i);
             if(s.equals(intentSelect.getSelect())){
                 lastPosition = i;
                 si.setSelected(true);

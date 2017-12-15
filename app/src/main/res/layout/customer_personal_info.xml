@@ -5,7 +5,7 @@
     android:background="@color/color_background"
     android:orientation="vertical">
 
-    <include layout="@layout/include_toolbar"/>
+    <include layout="@layout/include_toolbar" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -15,76 +15,82 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@color/color_background">
+            android:background="@color/color_background"
+            android:orientation="vertical">
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="190dp"
+                android:layout_height="200dp"
                 android:layout_marginTop="15dp"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp"
+                android:background="@color/color_content_background"
                 android:paddingBottom="15dp"
-                android:background="@color/color_content_background">
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/img_avatar"
+
+                <TextView
+                    android:id="@+id/txt_avatar"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:layout_marginTop="20dp"
                     android:layout_marginBottom="20dp"
                     android:layout_marginRight="10dp"
-                    android:src="@mipmap/image_avatar" />
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/avatar_background_blue_48"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="--"
+                    android:textColor="@color/color_white"
+                    android:textSize="20dp" />
 
                 <TextView
                     android:id="@+id/txt_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="40dp"
-                    android:layout_toRightOf="@+id/img_avatar"
+                    android:layout_toRightOf="@+id/txt_avatar"
+                    android:text="--------------------"
                     android:textColor="@color/color_explain"
-                    android:textSize="16dp"
-                    android:text="海宁啦啦啦啦有限公司"/>
+                    android:textSize="16dp" />
 
                 <TextView
                     android:id="@+id/txt_customer_manager"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/img_avatar"
                     android:layout_below="@+id/txt_name"
+                    android:layout_toRightOf="@+id/txt_avatar"
+                    android:text="客户经理：----"
                     android:textColor="@color/color_content"
-                    android:textSize="14dp"
-                    android:text="客户经理：啦啦啦"/>
+                    android:textSize="14dp" />
 
                 <ImageView
                     android:id="@+id/img_address"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_avatar"
                     android:layout_marginTop="2dp"
-                    android:layout_below="@+id/img_avatar"
-                    android:src="@mipmap/icon_address"/>
+                    android:src="@mipmap/icon_address" />
 
                 <TextView
                     android:id="@+id/txt_address"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/img_avatar"
+                    android:layout_below="@+id/txt_avatar"
                     android:layout_toRightOf="@+id/img_address"
+                    android:text="----"
                     android:textColor="@color/color_explain"
-                    android:textSize="14dp"
-                    android:text="浙江省嘉兴市海宁市钱江西路288号网商大厦23楼"/>
+                    android:textSize="14dp" />
 
                 <TextView
                     android:id="@+id/txt_founder"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="2dp"
-                    android:paddingBottom="2dp"
-                    android:background="@drawable/corner_gray_5dp"
                     android:layout_alignParentBottom="true"
+                    android:background="@drawable/corner_gray_5dp"
+                    android:paddingBottom="2dp"
+                    android:paddingTop="2dp"
+                    android:paddingLeft="5dp"
+                    android:text="----"
                     android:textColor="@color/color_explain"
-                    android:textSize="14dp"
-                    android:text="  创建人：啦啦啦 2017-12-05" />
+                    android:textSize="14dp" />
 
                 <TextView
                     android:id="@+id/txt_credit"
@@ -93,12 +99,12 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="41dp"
                     android:layout_toRightOf="@+id/txt_name"
+                    android:background="@drawable/corner_blue"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp"
-                    android:background="@drawable/corner_blue"
+                    android:text="客户信用：----"
                     android:textColor="@color/color_white"
-                    android:textSize="14dp"
-                    android:text="客户信用：A级"/>
+                    android:textSize="14dp" />
             </RelativeLayout>
 
             <LinearLayout
@@ -263,9 +269,9 @@
         android:background="@color/color_content_background"
         android:columnCount="5"
         android:orientation="horizontal"
+        android:paddingBottom="2dp"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
-        android:paddingBottom="2dp"
         android:paddingTop="7dp">
 
         <LinearLayout

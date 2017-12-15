@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -18,14 +17,12 @@ import com.pcjr.pcjr_oa.bean.StaffCompany;
 import com.pcjr.pcjr_oa.bean.WorkItem;
 import com.pcjr.pcjr_oa.bean.WorkSection;
 import com.pcjr.pcjr_oa.core.BaseDropDownFragment;
-import com.pcjr.pcjr_oa.exception.LoginExpireException;
 import com.pcjr.pcjr_oa.ui.adapter.SectionWorkAdapter;
 import com.pcjr.pcjr_oa.ui.decorator.DividerGridItemDecoration;
 import com.pcjr.pcjr_oa.ui.presenter.WorkPresenter;
 import com.pcjr.pcjr_oa.ui.presenter.ivview.WorkView;
 import com.pcjr.pcjr_oa.ui.views.activity.ApprovalActivity;
-import com.pcjr.pcjr_oa.ui.views.activity.CustomerManagerActivity;
-import com.pcjr.pcjr_oa.ui.views.activity.LoginActivity;
+import com.pcjr.pcjr_oa.ui.views.activity.CustomerListActivity;
 import com.pcjr.pcjr_oa.ui.views.activity.ProjectManagerActivity;
 import com.pcjr.pcjr_oa.ui.views.activity.SearchActivity;
 import com.pcjr.pcjr_oa.ui.views.activity.TaskManagerActivity;
@@ -84,7 +81,7 @@ public class WorkFragment extends BaseDropDownFragment implements WorkView{
             if (!object.isHeader) {
                 switch (object.t.getName()) {
                     case "客户管理":
-                        startActivity(new Intent(getContext(), CustomerManagerActivity.class));
+                        startActivity(new Intent(getContext(), CustomerListActivity.class));
                         break;
                     case "审批管理":
                         startActivity(new Intent(getContext(), ApprovalActivity.class));
@@ -208,11 +205,7 @@ public class WorkFragment extends BaseDropDownFragment implements WorkView{
 
     @Override
     public void onFailure(Throwable e) {
-        if(e instanceof LoginExpireException){
-            showToast(e.getMessage());
-            getActivity().finish();
-            startActivity(new Intent(getContext(), LoginActivity.class));
-        }
+        error(e);
     }
 
     @Override

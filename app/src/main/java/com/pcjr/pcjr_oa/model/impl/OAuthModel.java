@@ -3,7 +3,11 @@ package com.pcjr.pcjr_oa.model.impl;
 
 import com.pcjr.pcjr_oa.api.RetrofitManager;
 import com.pcjr.pcjr_oa.bean.BaseBean;
+import com.pcjr.pcjr_oa.bean.Customer;
+import com.pcjr.pcjr_oa.bean.CustomerCompany;
+import com.pcjr.pcjr_oa.bean.CustomerPersonal;
 import com.pcjr.pcjr_oa.bean.Member;
+import com.pcjr.pcjr_oa.bean.Person;
 import com.pcjr.pcjr_oa.bean.PlatformData;
 import com.pcjr.pcjr_oa.bean.Product;
 import com.pcjr.pcjr_oa.bean.ProductSummary;
@@ -17,6 +21,7 @@ import com.pcjr.pcjr_oa.model.IOAuthModel;
 import java.util.List;
 
 import io.reactivex.Observable;
+import okhttp3.RequestBody;
 
 /**
  * Created by Mario on 2016/7/25.
@@ -83,6 +88,46 @@ public class OAuthModel implements IOAuthModel {
     @Override
     public Observable<BaseBean<PlatformData>> getPlatformData() {
         return RetrofitManager.getInstance().getAuthService().getPlatformData();
+    }
+
+    @Override
+    public Observable<BaseBean<List<Customer>>> getBorrowerList(int page,String query) {
+        return RetrofitManager.getInstance().getAuthService().getBorrowerList(page,query);
+    }
+
+    @Override
+    public Observable<BaseBean<CustomerPersonal>> addPerson(CustomerPersonal customer) {
+        return RetrofitManager.getInstance().getAuthService().addPerson(customer);
+    }
+
+    @Override
+    public Observable<BaseBean> modifyPerson(CustomerPersonal customer) {
+        return RetrofitManager.getInstance().getAuthService().modifyPerson(customer);
+    }
+
+    @Override
+    public Observable<BaseBean<CustomerPersonal>> getPersonDetail(String id) {
+        return RetrofitManager.getInstance().getAuthService().getPersonDetail(id);
+    }
+
+    @Override
+    public Observable<BaseBean<CustomerCompany>> addCompany(CustomerCompany customer) {
+        return RetrofitManager.getInstance().getAuthService().addCompany(customer);
+    }
+
+    @Override
+    public Observable<BaseBean> modifyCompany(CustomerCompany customer) {
+        return RetrofitManager.getInstance().getAuthService().modifyCompany(customer);
+    }
+
+    @Override
+    public Observable<BaseBean<CustomerCompany>> getCompanyDetail(String id) {
+        return RetrofitManager.getInstance().getAuthService().getCompanyDetail(id);
+    }
+
+    @Override
+    public Observable<BaseBean<List<Person>>> getManagerList() {
+        return RetrofitManager.getInstance().getAuthService().getManagerList();
     }
 
 

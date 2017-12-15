@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 import com.gyf.barlibrary.ImmersionBar;
 import com.pcjr.pcjr_oa.R;
+import com.pcjr.pcjr_oa.exception.LoginExpireException;
+import com.pcjr.pcjr_oa.ui.views.activity.LoginActivity;
 import com.pcjr.pcjr_oa.ui.views.activity.WebViewActivity;
 import com.pcjr.pcjr_oa.utils.ToastUtils;
 
@@ -139,4 +141,17 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+
+    /**
+     * 错误处理
+     */
+    protected void error(Throwable e){
+        if(e instanceof LoginExpireException){
+            showToast(getString(R.string.login_expire));
+            finish();
+            startActivity(new Intent(this, LoginActivity.class));
+        } else {
+            showToast(getString(R.string.network_error));
+        }
+    }
 }

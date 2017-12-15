@@ -76,7 +76,7 @@
             android:name=".ui.views.activity.TaskFullActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.views.activity.ParticipantActivity"
+            android:name=".ui.views.activity.PersonSingleSelectionActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.views.activity.TagListActivity"
@@ -169,28 +169,31 @@
             android:name=".ui.views.activity.WorkSettingActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.views.activity.CustomerManagerActivity"
+            android:name=".ui.views.activity.CustomerListActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.views.activity.CustomerAddActivity"
+            android:name=".ui.views.activity.CustomerPersonalAddActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.views.activity.CustomerFullPersonalActivity"
+            android:name=".ui.views.activity.CustomerPersonalFullActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.views.activity.CustomerFullCompanyActivity"
+            android:name=".ui.views.activity.CustomerPersonalInfoActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.views.activity.CustomerEditCompanyActivity"
+            android:name=".ui.views.activity.CustomerPersonalDetailActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.views.activity.CustomerEditPersonalActivity"
+            android:name=".ui.views.activity.CustomerCompanyAddActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.views.activity.CustomerInfoActivity"
+            android:name=".ui.views.activity.CustomerCompanyFullActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.views.activity.CustomerDetailActivity"
+            android:name=".ui.views.activity.CustomerCompanyInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.CustomerCompanyDetailActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.views.activity.FinanceInfoActivity"

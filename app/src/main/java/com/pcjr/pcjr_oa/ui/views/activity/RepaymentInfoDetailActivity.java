@@ -69,7 +69,7 @@ public class  RepaymentInfoDetailActivity extends BaseToolbarActivity implements
 
     @Override
     public void onFailure(Throwable e) {
-        showToast(getString(R.string.network_error));
+        error(e);
     }
 
     @Override

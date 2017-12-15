@@ -113,7 +113,7 @@ public class UserCountRealNameFragment extends BaseFragment implements SwipeRefr
     @Override
     public void onFailure(Throwable e) {
         if(mSwipeRefreshLayout.isRefreshing()) mSwipeRefreshLayout.setRefreshing(false);
-        showToast(getString(R.string.network_error));
+        error(e);
     }
 
     @Override

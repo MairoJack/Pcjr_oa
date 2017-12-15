@@ -2,7 +2,6 @@ package com.pcjr.pcjr_oa.ui.views.activity;
 
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -15,7 +14,9 @@ import android.view.MenuItem;
 import com.pcjr.pcjr_oa.R;
 import com.pcjr.pcjr_oa.bean.Person;
 import com.pcjr.pcjr_oa.core.BaseToolbarActivity;
-import com.pcjr.pcjr_oa.ui.adapter.ParticipantAdapter;
+import com.pcjr.pcjr_oa.core.mvp.MvpView;
+import com.pcjr.pcjr_oa.ui.adapter.PersonAdapter;
+import com.pcjr.pcjr_oa.ui.presenter.PersonPresenter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,19 +24,20 @@ import java.util.List;
 import butterknife.BindView;
 
 /**
- *  参与人
- *  Created by Mario on 2017/8/4上午8:54
+ *  人员单选
+ *  Created by Mario on 2017/12/14下午4:28
  */
-public class ParticipantActivity extends BaseToolbarActivity implements SwipeRefreshLayout.OnRefreshListener,SearchView.OnQueryTextListener {
+public class PersonSingleSelectionActivity extends BaseToolbarActivity implements SwipeRefreshLayout.OnRefreshListener,SearchView.OnQueryTextListener,MvpView<List<Person>> {
 
 
     @BindView(R.id.swipeLayout) SwipeRefreshLayout mSwipeRefreshLayout;
     @BindView(R.id.recycler_view) RecyclerView mRecyclerView;
     private List<Person> list;
-    private ParticipantAdapter adapter;
+    private PersonAdapter adapter;
     private SearchView searchView;
     private int lastPosition = -1;
     private Person selectedItem;
+    private PersonPresenter presenter;
     @Override
     protected int getLayoutId() {
         return R.layout.participant_list;
@@ -44,10 +46,15 @@ public class ParticipantActivity extends BaseToolbarActivity implements SwipeRef
     @Override
     protected void initViews(Bundle savedInstanceState) {
         showBack();
-        setTitle("参与人");
+        setTitle("客户经理");
         mSwipeRefreshLayout.setOnRefreshListener(this);
-        mSwipeRefreshLayout.setColorSchemeColors(Color.rgb(47, 223, 189));
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        adapter = new PersonAdapter();
+        adapter.bindToRecyclerView(mRecyclerView);
+
+        presenter = new PersonPresenter();
+        presenter.attachView(this);
     }
 
 
@@ -68,32 +75,13 @@ public class ParticipantActivity extends BaseToolbarActivity implements SwipeRef
 
     @Override
     protected void initData() {
-        list = new ArrayList<>();
-
-        Person p = new Person();
-        p.setName("杜拉拉");
-        p.setDepartment("部门111111");
-        p.setJob("职位11");
-        list.add(p);
-
-        p = new Person();
-        p.setName("萧拉拉");
-        p.setDepartment("部门2222111");
-        p.setJob("职位22");
-        list.add(p);
-        adapter = new ParticipantAdapter(list);
-        mRecyclerView.setAdapter(adapter);
+        mSwipeRefreshLayout.post(()->mSwipeRefreshLayout.setRefreshing(true));
+        onRefresh();
     }
 
     @Override
     public void onRefresh() {
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                mSwipeRefreshLayout.setRefreshing(false);
-            }
-        }, 1000);
-
+        presenter.getManagerList();
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -125,7 +113,7 @@ public class ParticipantActivity extends BaseToolbarActivity implements SwipeRef
         int id = item.getItemId();
         if (id == R.id.btn_ok) {
             Intent intent = new Intent();
-            intent.putExtra("result",selectedItem.getName());
+            intent.putExtra("result",selectedItem);
             setResult(RESULT_OK,intent);
             finish();
             return true;
@@ -133,4 +121,16 @@ public class ParticipantActivity extends BaseToolbarActivity implements SwipeRef
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onFailure(Throwable e) {
+        mSwipeRefreshLayout.setRefreshing(false);
+        error(e);
+    }
+
+    @Override
+    public void onSuccess(List<Person> data) {
+        mSwipeRefreshLayout.setRefreshing(false);
+        list = data;
+        adapter.setNewData(list);
+    }
 }
