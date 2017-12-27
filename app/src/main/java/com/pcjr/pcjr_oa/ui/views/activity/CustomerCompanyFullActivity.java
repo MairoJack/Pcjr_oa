@@ -152,7 +152,7 @@ public class CustomerCompanyFullActivity extends CustomerActivity implements Cus
             txtWebsite.setText(customer.getWebsite());
             txtEmail.setText(customer.getEmail());
             txtCounterGuarantee.setText(customer.getCounterGuarantee());
-            txtBorrower.setText(customer.getBorrowerIntruduction());
+            txtBorrower.setText(customer.getBorrowerIntroduction());
             txtCreditRecord.setText(customer.getCreditHistory());
             txtRemark.setText(customer.getRemarks());
         }
@@ -199,7 +199,7 @@ public class CustomerCompanyFullActivity extends CustomerActivity implements Cus
         customer.setWebsite(website);
         customer.setEmail(email);
         customer.setCounterGuarantee(counterGuarantee);
-        customer.setBorrowerIntruduction(borrower);
+        customer.setBorrowerIntroduction(borrower);
         customer.setCreditHistory(creditRecord);
         customer.setRemarks(remark);
 

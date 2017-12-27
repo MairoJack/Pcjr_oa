@@ -88,7 +88,7 @@ public class CustomerCompanyDetailActivity extends BaseToolbarActivity{
         txtWebsite.setText(customer.getWebsite());
         txtEmail.setText(customer.getEmail());
         txtCounterGuarantee.setText(customer.getCounterGuarantee());
-        txtBorrower.setText(customer.getBorrowerIntruduction());
+        txtBorrower.setText(customer.getBorrowerIntroduction());
         txtCreditRecord.setText(customer.getCreditHistory());
         txtRemark.setText(customer.getRemarks());
 

@@ -3,8 +3,13 @@ package com.pcjr.pcjr_oa.data;
 import com.pcjr.pcjr_oa.App;
 import com.pcjr.pcjr_oa.api.ApiConstant;
 import com.pcjr.pcjr_oa.bean.BaseBean;
+import com.pcjr.pcjr_oa.bean.BusinessApproval;
+import com.pcjr.pcjr_oa.bean.Contact;
+import com.pcjr.pcjr_oa.bean.Contract;
 import com.pcjr.pcjr_oa.bean.Customer;
 import com.pcjr.pcjr_oa.bean.CustomerCompany;
+import com.pcjr.pcjr_oa.bean.CustomerContact;
+import com.pcjr.pcjr_oa.bean.CustomerContactRelation;
 import com.pcjr.pcjr_oa.bean.CustomerPersonal;
 import com.pcjr.pcjr_oa.bean.Member;
 import com.pcjr.pcjr_oa.bean.Person;
@@ -12,7 +17,6 @@ import com.pcjr.pcjr_oa.bean.PlatformData;
 import com.pcjr.pcjr_oa.bean.Product;
 import com.pcjr.pcjr_oa.bean.ProductSummary;
 import com.pcjr.pcjr_oa.bean.Recharge;
-import com.pcjr.pcjr_oa.bean.Repayment;
 import com.pcjr.pcjr_oa.bean.RepaymentInfo;
 import com.pcjr.pcjr_oa.bean.StaffCompany;
 import com.pcjr.pcjr_oa.bean.Token;
@@ -24,12 +28,13 @@ import com.pcjr.pcjr_oa.model.impl.ApiModel;
 import com.pcjr.pcjr_oa.model.impl.OAuthModel;
 import com.pcjr.pcjr_oa.utils.RxUtils;
 import com.pcjr.pcjr_oa.utils.SPUtils;
+
 import java.util.List;
+
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Function;
-import okhttp3.RequestBody;
 
 /**
  * Created by Mario on 2017/9/28下午3:08
@@ -133,8 +138,8 @@ public class DataManager {
 
     }
 
-    public Observable<BaseBean<List<Customer>>> getBorrowerList(int page,String query) {
-        return this.oAuthModel.getBorrowerList(page,query)
+    public Observable<BaseBean<List<Customer>>> getBorrowerList(int page, String query, String id, int type) {
+        return this.oAuthModel.getBorrowerList(page, query, id, type)
                 .flatMap(new CheckAuth<>())
                 .compose(RxUtils.applyIOToMainThreadSchedulers())
                 .retryWhen(new RetryWithUnAuth());
@@ -189,9 +194,122 @@ public class DataManager {
 
     }
 
+
     public Observable<BaseBean<List<Person>>> getManagerList() {
         return this.oAuthModel.getManagerList()
                 .flatMap(new CheckAuth<>())
+                .compose(RxUtils.applyIOToMainThreadSchedulers())
+                .retryWhen(new RetryWithUnAuth());
+
+    }
+
+    public Observable<BaseBean<List<Contact>>> getContactList(int page, String query, String id, int type) {
+        return this.oAuthModel.getContactList(page, query, id, type)
+                .flatMap(new CheckAuth<>())
+                .compose(RxUtils.applyIOToMainThreadSchedulers())
+                .retryWhen(new RetryWithUnAuth());
+
+    }
+
+    public Observable<BaseBean<Contact>> addContact(Contact contact) {
+        return this.oAuthModel.addContact(contact)
+                .flatMap(new CheckAuth<>())
+                .compose(RxUtils.applyIOToMainThreadSchedulers())
+                .retryWhen(new RetryWithUnAuth());
+
+    }
+
+    public Observable<BaseBean> modifyContact(Contact contact) {
+        return this.oAuthModel.modifyContact(contact)
+                .flatMap(new CheckAuthNoData())
+                .compose(RxUtils.applyIOToMainThreadSchedulers())
+                .retryWhen(new RetryWithUnAuth());
+
+    }
+
+    public Observable<BaseBean<Contact>> getContactDetail(String id) {
+        return this.oAuthModel.getContactDetail(id)
+                .flatMap(new CheckAuth<>())
+                .compose(RxUtils.applyIOToMainThreadSchedulers())
+                .retryWhen(new RetryWithUnAuth());
+
+    }
+
+    public Observable<BaseBean> modifyRelationship(CustomerContact customerContact) {
+        return this.oAuthModel.modifyRelationship(customerContact)
+                .flatMap(new CheckAuthNoData())
+                .compose(RxUtils.applyIOToMainThreadSchedulers())
+                .retryWhen(new RetryWithUnAuth());
+
+    }
+
+    public Observable<BaseBean<List<CustomerContactRelation>>> getRelationshipList(String id, int type) {
+        return this.oAuthModel.getRelationshipList(id, type)
+                .flatMap(new CheckAuth<>())
+                .compose(RxUtils.applyIOToMainThreadSchedulers())
+                .retryWhen(new RetryWithUnAuth());
+
+    }
+
+    public Observable<BaseBean<List<Contract>>> getContractList(int page, String query) {
+        return this.oAuthModel.getContractList(page, query)
+                .flatMap(new CheckAuth<>())
+                .compose(RxUtils.applyIOToMainThreadSchedulers())
+                .retryWhen(new RetryWithUnAuth());
+
+    }
+
+    public Observable<BaseBean<Contract>> addContract(Contract contract) {
+        return this.oAuthModel.addContract(contract)
+                .flatMap(new CheckAuth<>())
+                .compose(RxUtils.applyIOToMainThreadSchedulers())
+                .retryWhen(new RetryWithUnAuth());
+
+    }
+
+    public Observable<BaseBean> modifyContract(Contract contract) {
+        return this.oAuthModel.modifyContract(contract)
+                .flatMap(new CheckAuthNoData())
+                .compose(RxUtils.applyIOToMainThreadSchedulers())
+                .retryWhen(new RetryWithUnAuth());
+
+    }
+
+    public Observable<BaseBean<Contract>> getContractDetail(String id) {
+        return this.oAuthModel.getContractDetail(id)
+                .flatMap(new CheckAuth<>())
+                .compose(RxUtils.applyIOToMainThreadSchedulers())
+                .retryWhen(new RetryWithUnAuth());
+
+    }
+
+    public Observable<BaseBean<List<BusinessApproval>>> getBusinessApproveList(int page, String query) {
+        return this.oAuthModel.getBusinessApproveList(page, query)
+                .flatMap(new CheckAuth<>())
+                .compose(RxUtils.applyIOToMainThreadSchedulers())
+                .retryWhen(new RetryWithUnAuth());
+
+    }
+
+    public Observable<BaseBean<BusinessApproval>> addBusinessApprove(BusinessApproval businessApproval) {
+        return this.oAuthModel.addBusinessApprove(businessApproval)
+                .flatMap(new CheckAuth<>())
+                .compose(RxUtils.applyIOToMainThreadSchedulers())
+                .retryWhen(new RetryWithUnAuth());
+
+    }
+
+    public Observable<BaseBean> modifyBusinessApprove(BusinessApproval businessApproval) {
+        return this.oAuthModel.modifyBusinessApprove(businessApproval)
+                .flatMap(new CheckAuthNoData())
+                .compose(RxUtils.applyIOToMainThreadSchedulers())
+                .retryWhen(new RetryWithUnAuth());
+
+    }
+
+    public Observable<BaseBean> deleteBusinessApprove(String id) {
+        return this.oAuthModel.deleteBusinessApprove(id)
+                .flatMap(new CheckAuthNoData())
                 .compose(RxUtils.applyIOToMainThreadSchedulers())
                 .retryWhen(new RetryWithUnAuth());
 

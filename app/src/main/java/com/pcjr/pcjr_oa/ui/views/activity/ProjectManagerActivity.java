@@ -11,14 +11,16 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.pcjr.pcjr_oa.R;
 import com.pcjr.pcjr_oa.bean.Classify;
 import com.pcjr.pcjr_oa.bean.ClassifySection;
 import com.pcjr.pcjr_oa.bean.Project;
-import com.pcjr.pcjr_oa.core.BaseDropDownActivity;
+import com.pcjr.pcjr_oa.core.BaseToolbarActivity;
 import com.pcjr.pcjr_oa.ui.adapter.ProjectAdapter;
+import com.pcjr.pcjr_oa.widget.PopTopDialog;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,8 +30,9 @@ import butterknife.BindView;
  *  项目管理
  *  Created by Mario on 2017/8/17下午2:42
  */
-public class ProjectManagerActivity extends BaseDropDownActivity implements SwipeRefreshLayout.OnRefreshListener,SearchView.OnQueryTextListener{
+public class ProjectManagerActivity extends BaseToolbarActivity implements SwipeRefreshLayout.OnRefreshListener,SearchView.OnQueryTextListener{
 
+    @BindView(R.id.btn_down) ImageView btnDown;
     @BindView(R.id.tab_layout) TabLayout tabLayout;
 
     @BindView(R.id.swipeLayout) SwipeRefreshLayout mSwipeRefreshLayout;
@@ -41,6 +44,8 @@ public class ProjectManagerActivity extends BaseDropDownActivity implements Swip
     private List<Project> list;
     private List<String> titleList;
 
+    private PopTopDialog.Builder builder;
+
     @Override
     protected int getLayoutId() {
         return R.layout.project_manager;
@@ -50,8 +55,6 @@ public class ProjectManagerActivity extends BaseDropDownActivity implements Swip
     protected void initViews(Bundle savedInstanceState) {
         showBack();
         setTitle("项目管理");
-
-        initGridPop();
 
         mSwipeRefreshLayout.setOnRefreshListener(this);
         mSwipeRefreshLayout.setColorSchemeColors(Color.rgb(47, 223, 189));
@@ -73,8 +76,9 @@ public class ProjectManagerActivity extends BaseDropDownActivity implements Swip
 
     @Override
     protected void initListeners() {
-        mPopTop.setOnDismissListener(() -> {
-            showToast(closeGridPop());
+        btnDown.setOnClickListener(v->{
+            builder.show();
+            backgroundAlpha(0.7f);
         });
 
         adapter.setOnItemClickListener((adapter,view,position)-> {
@@ -101,7 +105,7 @@ public class ProjectManagerActivity extends BaseDropDownActivity implements Swip
 
     @Override
     protected void initData() {
-        classifySectionList = new ArrayList<>();
+        List<ClassifySection> classifySectionList = new ArrayList<>();
         ClassifySection cs = new ClassifySection(true, "项目分类");
         classifySectionList.add(cs);
         Classify c = new Classify("全部项目",0);
@@ -144,8 +148,15 @@ public class ProjectManagerActivity extends BaseDropDownActivity implements Swip
         c = new Classify("按结束时间倒序",1);
         cs = new ClassifySection(c);
         classifySectionList.add(cs);
-        positions = new int[]{1,10};
-        initGridPopData();
+
+        builder = new PopTopDialog.Builder(this, PopTopDialog.TYPE.GRID)
+                .setGridData(classifySectionList)
+                .setPositions(new int[]{1,10})
+                .setDropDownBtn(btnDown)
+                .setOnCloseListener(result -> {
+                    showToast(result);
+                    backgroundAlpha(1f);
+                }).create();
 
         list = new ArrayList<>();
         Project p = new Project("杜拉拉",1501055624,"容内容内容内容容内容内容内容容内容内容内容容内容内容内容容");

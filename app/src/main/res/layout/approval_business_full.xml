@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="完善联系人"
+            android:text="完善业务审批"
             android:textColor="#FFFFFF"
             android:textSize="18dp" />
 
@@ -66,13 +66,14 @@
                 android:textSize="14dp" />
 
             <RelativeLayout
+                android:id="@+id/rl_actual_borrower"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:background="@drawable/select_white"
-                android:paddingTop="10dp"
-                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
                 android:paddingLeft="15dp"
-                android:paddingBottom="10dp">
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
 
                 <TextView
                     android:id="@+id/explain_actual_borrower"
@@ -80,7 +81,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="实际借款人"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
                 <TextView
@@ -93,15 +94,24 @@
                     android:textColor="@color/color_selected"
                     android:textSize="18dp" />
 
-                <EditText
+                <TextView
                     android:id="@+id/txt_actual_borrower"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:background="@null"
-                    android:hint="请填写"
-                    android:textColor="@color/color_explain"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_toLeftOf="@+id/btn_right"
+                    android:text="请选择"
+                    android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
+
+                <ImageView
+                    android:id="@id/btn_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/icon_right" />
 
             </RelativeLayout>
 
@@ -112,13 +122,14 @@
                 android:background="@color/color_line" />
 
             <RelativeLayout
+                android:id="@+id/rl_show_borrower"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:background="@drawable/select_white"
-                android:paddingTop="10dp"
-                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
                 android:paddingLeft="15dp"
-                android:paddingBottom="10dp">
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
 
                 <TextView
                     android:id="@+id/explain_show_borrower"
@@ -126,7 +137,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="出面借款人"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
                 <TextView
@@ -139,15 +150,24 @@
                     android:textColor="@color/color_selected"
                     android:textSize="18dp" />
 
-                <EditText
+                <TextView
                     android:id="@+id/txt_show_borrower"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:background="@null"
-                    android:hint="请填写"
-                    android:textColor="@color/color_explain"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_toLeftOf="@+id/btn_right"
+                    android:text="请选择"
+                    android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
+
+                <ImageView
+                    android:id="@id/btn_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/icon_right" />
 
             </RelativeLayout>
 
@@ -159,12 +179,12 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/select_white"
-                android:paddingTop="10dp"
-                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
                 android:paddingLeft="15dp"
-                android:paddingBottom="10dp">
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
 
                 <TextView
                     android:id="@+id/explain_project_source"
@@ -172,7 +192,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="项目来源"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
                 <TextView
@@ -187,12 +207,15 @@
 
                 <EditText
                     android:id="@+id/txt_project_source"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
                     android:background="@null"
+                    android:gravity="right"
                     android:hint="请填写"
-                    android:textColor="@color/color_explain"
+                    android:maxLength="50"
+                    android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
 
             </RelativeLayout>
@@ -204,13 +227,14 @@
                 android:background="@color/color_line" />
 
             <RelativeLayout
+                android:id="@+id/rl_project_type"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:background="@drawable/select_white"
-                android:paddingTop="10dp"
-                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
                 android:paddingLeft="15dp"
-                android:paddingBottom="10dp">
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
 
                 <TextView
                     android:id="@+id/explain_project_type"
@@ -218,7 +242,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="项目类型"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
                 <TextView
@@ -231,154 +255,15 @@
                     android:textColor="@color/color_selected"
                     android:textSize="18dp" />
 
-                <EditText
+                <TextView
                     android:id="@+id/txt_project_type"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:background="@null"
-                    android:hint="请填写"
-                    android:textColor="@color/color_explain"
-                    android:textSize="@dimen/text_size_value" />
-
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.1dp"
-                android:layout_marginLeft="15dp"
-                android:background="@color/color_line" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:background="@drawable/select_white"
-                android:paddingTop="10dp"
-                android:paddingRight="15dp"
-                android:paddingLeft="15dp"
-                android:paddingBottom="10dp">
-
-                <TextView
-                    android:id="@+id/explain_expect_amount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="意向金额(元)"
-                    android:textColor="@color/color_title"
-                    android:textSize="@dimen/text_size_key" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_toRightOf="@+id/explain_expect_amount"
-                    android:text="*"
-                    android:textColor="@color/color_selected"
-                    android:textSize="18dp" />
-
-                <EditText
-                    android:id="@+id/txt_expect_amount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:background="@null"
-                    android:hint="请填写"
-                    android:textColor="@color/color_explain"
-                    android:textSize="@dimen/text_size_value" />
-
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.1dp"
-                android:layout_marginLeft="15dp"
-                android:background="@color/color_line" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:background="@drawable/select_white"
-                android:paddingTop="10dp"
-                android:paddingRight="15dp"
-                android:paddingLeft="15dp"
-                android:paddingBottom="10dp">
-
-                <TextView
-                    android:id="@+id/explain_approval_amount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="审批金额(元)"
-                    android:textColor="@color/color_title"
-                    android:textSize="@dimen/text_size_key" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_toRightOf="@+id/explain_approval_amount"
-                    android:text="*"
-                    android:textColor="@color/color_selected"
-                    android:textSize="18dp" />
-
-                <EditText
-                    android:id="@+id/txt_approval_amount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:background="@null"
-                    android:hint="请填写"
-                    android:textColor="@color/color_explain"
-                    android:textSize="@dimen/text_size_value" />
-
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.1dp"
-                android:layout_marginLeft="15dp"
-                android:background="@color/color_line" />
-
-            <RelativeLayout
-                android:id="@+id/rl_guarantee_method"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:background="@drawable/select_white"
-                android:paddingTop="10dp"
-                android:paddingRight="15dp"
-                android:paddingLeft="15dp"
-                android:paddingBottom="10dp">
-
-                <TextView
-                    android:id="@+id/explain_guarantee_method"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="担保方式"
-                    android:textColor="@color/color_title"
-                    android:textSize="@dimen/text_size_key" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_toRightOf="@+id/explain_guarantee_method"
-                    android:text="*"
-                    android:textColor="@color/color_selected"
-                    android:textSize="18dp" />
-
-                <TextView
-                    android:id="@+id/txt_guarantee_method"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="5dp"
                     android:layout_toLeftOf="@+id/btn_right"
                     android:text="请选择"
-                    android:textColor="@color/color_explain"
+                    android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
 
                 <ImageView
@@ -401,10 +286,157 @@
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:background="@drawable/select_white"
-                android:paddingTop="10dp"
-                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
                 android:paddingLeft="15dp"
-                android:paddingBottom="10dp">
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:id="@+id/explain_expect_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="意向金额(元)"
+                    android:textColor="@color/color_explain"
+                    android:textSize="@dimen/text_size_key" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_toRightOf="@+id/explain_expect_amount"
+                    android:text="*"
+                    android:textColor="@color/color_selected"
+                    android:textSize="18dp" />
+
+                <EditText
+                    android:id="@+id/txt_expect_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@null"
+                    android:gravity="right"
+                    android:hint="请填写"
+                    android:maxLength="30"
+                    android:textColor="@color/color_content"
+                    android:textSize="@dimen/text_size_value" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_marginLeft="15dp"
+                android:background="@color/color_line" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/select_white"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:id="@+id/explain_approval_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="审批金额(元)"
+                    android:textColor="@color/color_explain"
+                    android:textSize="@dimen/text_size_key" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_toRightOf="@+id/explain_approval_amount"
+                    android:text="*"
+                    android:textColor="@color/color_selected"
+                    android:textSize="18dp" />
+
+                <EditText
+                    android:id="@+id/txt_approval_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@null"
+                    android:gravity="right"
+                    android:hint="请填写"
+                    android:maxLength="30"
+                    android:textColor="@color/color_content"
+                    android:textSize="@dimen/text_size_value" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_marginLeft="15dp"
+                android:background="@color/color_line" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/select_white"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:id="@+id/explain_guarantee_method"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="担保方式"
+                    android:textColor="@color/color_explain"
+                    android:textSize="@dimen/text_size_key" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_toRightOf="@+id/explain_guarantee_method"
+                    android:text="*"
+                    android:textColor="@color/color_selected"
+                    android:textSize="18dp" />
+
+                <EditText
+                    android:id="@+id/txt_guarantee_method"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@null"
+                    android:gravity="right"
+                    android:hint="请填写"
+                    android:maxLength="50"
+                    android:textColor="@color/color_content"
+                    android:textSize="@dimen/text_size_value" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_marginLeft="15dp"
+                android:background="@color/color_line" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/select_white"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
 
                 <TextView
                     android:id="@+id/explain_loan_usage"
@@ -412,7 +444,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="借款用途"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
                 <TextView
@@ -427,12 +459,15 @@
 
                 <EditText
                     android:id="@+id/txt_loan_usage"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
                     android:background="@null"
+                    android:gravity="right"
                     android:hint="请填写"
-                    android:textColor="@color/color_explain"
+                    android:maxLength="100"
+                    android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
 
             </RelativeLayout>
@@ -445,12 +480,12 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/select_white"
-                android:paddingTop="10dp"
-                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
                 android:paddingLeft="15dp"
-                android:paddingBottom="10dp">
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
 
                 <TextView
                     android:id="@+id/explain_main_risk"
@@ -458,7 +493,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="主要风险点"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
                 <TextView
@@ -473,12 +508,15 @@
 
                 <EditText
                     android:id="@+id/txt_main_risk"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
                     android:background="@null"
+                    android:gravity="right"
                     android:hint="请填写"
-                    android:textColor="@color/color_explain"
+                    android:maxLength="100"
+                    android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
 
             </RelativeLayout>
@@ -491,12 +529,12 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/select_white"
-                android:paddingTop="10dp"
-                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
                 android:paddingLeft="15dp"
-                android:paddingBottom="10dp">
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
 
                 <TextView
                     android:id="@+id/explain_prevention"
@@ -504,7 +542,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="防范措施"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
                 <TextView
@@ -519,12 +557,15 @@
 
                 <EditText
                     android:id="@+id/txt_prevention"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
                     android:background="@null"
+                    android:gravity="right"
                     android:hint="请填写"
-                    android:textColor="@color/color_explain"
+                    android:maxLength="100"
+                    android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
 
             </RelativeLayout>
@@ -534,31 +575,6 @@
                 android:layout_height="0.1dp"
                 android:layout_marginLeft="15dp"
                 android:background="@color/color_line" />
-
-
-            <LinearLayout
-                android:id="@+id/ll_customer_close"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginBottom="0.1dp"
-                android:layout_marginTop="0.1dp"
-                android:background="@drawable/select_white"
-                android:gravity="center_horizontal|center_vertical"
-                android:visibility="gone">
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="收起"
-                android:textColor="#3a9af8"
-                android:textSize="14dp" />
-
-                <ImageView
-                    android:layout_width="14dp"
-                    android:layout_height="14dp"
-                    android:layout_marginLeft="5dp"
-                    android:src="@mipmap/icon_up_up" />
-
-            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -574,17 +590,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:background="@drawable/select_white"
-                android:paddingTop="10dp"
-                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
                 android:paddingLeft="15dp"
-                android:paddingBottom="10dp">
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="担保费金额(元)"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
 
@@ -593,9 +609,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="right"
+                    android:maxLength="30"
                     android:background="@null"
                     android:hint="请填写"
-                    android:textColor="@color/color_explain"
+                    android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
 
             </RelativeLayout>
@@ -610,17 +629,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:background="@drawable/select_white"
-                android:paddingTop="10dp"
-                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
                 android:paddingLeft="15dp"
-                android:paddingBottom="10dp">
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="缴费形式"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
 
@@ -629,9 +648,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="right"
+                    android:maxLength="30"
                     android:background="@null"
                     android:hint="请填写"
-                    android:textColor="@color/color_explain"
+                    android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
 
             </RelativeLayout>
@@ -646,17 +668,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:background="@drawable/select_white"
-                android:paddingTop="10dp"
-                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
                 android:paddingLeft="15dp"
-                android:paddingBottom="10dp">
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="服务费金额(元)"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
 
@@ -665,9 +687,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="right"
+                    android:maxLength="30"
                     android:background="@null"
                     android:hint="请填写"
-                    android:textColor="@color/color_explain"
+                    android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
 
             </RelativeLayout>
@@ -682,17 +707,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:background="@drawable/select_white"
-                android:paddingTop="10dp"
-                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
                 android:paddingLeft="15dp"
-                android:paddingBottom="10dp">
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="缴费形式"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
 
@@ -701,9 +726,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="right"
+                    android:maxLength="30"
                     android:background="@null"
                     android:hint="请填写"
-                    android:textColor="@color/color_explain"
+                    android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
 
             </RelativeLayout>
@@ -718,17 +746,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:background="@drawable/select_white"
-                android:paddingTop="10dp"
-                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
                 android:paddingLeft="15dp"
-                android:paddingBottom="10dp">
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="保证金金额(元)"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
 
@@ -737,9 +765,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="right"
+                    android:maxLength="30"
                     android:background="@null"
                     android:hint="请填写"
-                    android:textColor="@color/color_explain"
+                    android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
 
             </RelativeLayout>
@@ -754,17 +785,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:background="@drawable/select_white"
-                android:paddingTop="10dp"
-                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
                 android:paddingLeft="15dp"
-                android:paddingBottom="10dp">
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="缴费形式"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
 
@@ -773,9 +804,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="right"
+                    android:maxLength="30"
                     android:background="@null"
                     android:hint="请填写"
-                    android:textColor="@color/color_explain"
+                    android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
 
             </RelativeLayout>

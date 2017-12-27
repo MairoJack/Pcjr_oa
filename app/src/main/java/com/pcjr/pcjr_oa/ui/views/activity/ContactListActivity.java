@@ -1,42 +1,36 @@
 package com.pcjr.pcjr_oa.ui.views.activity;
 
 
+import android.Manifest;
 import android.content.Intent;
-import android.graphics.Color;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
+import android.support.v4.app.ActivityCompat;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
+
 import com.pcjr.pcjr_oa.R;
+import com.pcjr.pcjr_oa.bean.BaseBean;
 import com.pcjr.pcjr_oa.bean.Contact;
-import com.pcjr.pcjr_oa.core.BaseToolbarActivity;
+import com.pcjr.pcjr_oa.core.mvp.BaseSwipeRefreshActivity;
+import com.pcjr.pcjr_oa.core.mvp.MvpView;
 import com.pcjr.pcjr_oa.ui.adapter.ContactAdapter;
-import java.util.ArrayList;
+import com.pcjr.pcjr_oa.ui.presenter.ContactListPresenter;
+import com.pcjr.pcjr_oa.widget.Dialog;
+import com.tbruyelle.rxpermissions2.RxPermissions;
+
 import java.util.List;
 
-import butterknife.BindView;
 
 /**
  *  客户联系人列表
  *  Created by Mario on 2017/10/30上午10:53
  */
-public class ContactListActivity extends BaseToolbarActivity implements SwipeRefreshLayout.OnRefreshListener, SearchView.OnQueryTextListener {
+public class ContactListActivity extends BaseSwipeRefreshActivity implements MvpView<BaseBean<List<Contact>>> {
 
-
-    @BindView(R.id.swipeLayout) SwipeRefreshLayout mSwipeRefreshLayout;
-    @BindView(R.id.recycler_view) RecyclerView mRecyclerView;
-
-    private SearchView searchView;
-
-    private List<Contact> list;
-    private ContactAdapter adapter;
-    private View notDataView;
+    private ContactListPresenter presenter;
+    private RxPermissions rxPermissions;
 
     @Override
     protected int getLayoutId() {
@@ -45,83 +39,59 @@ public class ContactListActivity extends BaseToolbarActivity implements SwipeRef
 
     @Override
     protected void initViews(Bundle savedInstanceState) {
+        super.initViews(savedInstanceState);
         showBack();
         setTitle("客户联系人");
 
-        mSwipeRefreshLayout.setOnRefreshListener(this);
-        mSwipeRefreshLayout.setColorSchemeColors(Color.rgb(47, 223, 189));
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        notDataView = getLayoutInflater().inflate(R.layout.empty_view, (ViewGroup) mRecyclerView.getParent(), false);
-
         adapter = new ContactAdapter();
-        mRecyclerView.setAdapter(adapter);
+        adapter.bindToRecyclerView(mRecyclerView);
 
+        presenter = new ContactListPresenter();
+        presenter.attachView(this);
+
+        rxPermissions = new RxPermissions(this);
     }
-
 
     @Override
     protected void initListeners() {
 
-        adapter.setOnItemClickListener((adapter,view,position)-> {
-            startActivity(new Intent(this,ContactDetailActivity.class));
+        adapter.setOnItemClickListener((a, view, position) -> {
+            Contact contact = (Contact) a.getItem(position);
+            Intent intent = new Intent(this, ContactDetailActivity.class);
+            intent.putExtra("id", contact.getId());
+            startActivity(intent);
+        });
+
+        adapter.setOnItemChildClickListener((a, view, position) -> {
+            rxPermissions
+                    .requestEach(Manifest.permission.CALL_PHONE)
+                    .subscribe(permission -> {
+                        if (permission.granted) {
+                            Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:400-101-3339"));
+                            //startActivity(intent);
+                        }
+                        else if (permission.shouldShowRequestPermissionRationale) {
+                        } else {
+                            Dialog.show("您未开启拨打电话的权限，您可以在“设置-应用”中为此应用打开该权限",this);
+                        }
+                    });
         });
     }
 
     @Override
     protected void initData() {
-        mSwipeRefreshLayout.post(()->mSwipeRefreshLayout.setRefreshing(true));
-        onRefresh();
-    }
-
-    private void getData(){
-        list = new ArrayList<>();
-
-        Contact c = new Contact("神啦啦","无所属客户",1501055624);
-        list.add(c);
-
-        c = new Contact("成啦啦","神啦啦",1501055624);
-        list.add(c);
-
-        c = new Contact("神啦啦","无所属客户",1501055624);
-        list.add(c);
-
-        c = new Contact("神啦啦","成啦啦",1501055624);
-        list.add(c);
-        adapter.setNewData(list);
+       super.initData();
     }
 
     @Override
     public void onRefresh() {
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                getData();
-                mSwipeRefreshLayout.setRefreshing(false);
-            }
-        }, 1000);
-
+        super.onRefresh();
+        presenter.getContactList(page,query);
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_search_add,menu);
-        MenuItem menuItem = menu.findItem(R.id.btn_search);
-        searchView = (SearchView) menuItem.getActionView();
-        searchView.setOnQueryTextListener(this);
-        searchView.setSubmitButtonEnabled(true);
-        searchView.setQueryHint("搜索联系人");
-        searchView.setIconifiedByDefault(true);
-        return true;
-    }
-
-    @Override
-    public boolean onQueryTextSubmit(String query) {
-        return false;
-    }
-
-    @Override
-    public boolean onQueryTextChange(String newText) {
-        return false;
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
@@ -131,4 +101,22 @@ public class ContactListActivity extends BaseToolbarActivity implements SwipeRef
         }
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void onFailure(Throwable e) {
+        super.error(e);
+    }
+
+    @Override
+    public void onSuccess(BaseBean<List<Contact>> data) {
+        super.success(data);
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        presenter.detachView();
+    }
+
 }

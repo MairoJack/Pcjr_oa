@@ -120,11 +120,6 @@ public class LoginActivity extends BaseAppCompatActivity implements MvpView<Base
     @Override
     public void onSuccess(BaseBean<Token> data) {
         if(dialog.isShowing()) dialog.dismiss();
-//        try {
-//            Thread.sleep(1000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
         Token result = data.getData();
         if(result.isSuccess()){
             SPUtils.put(this,Constant.ACCESS_TOKEN,result.getAccessToken());
@@ -133,5 +128,11 @@ public class LoginActivity extends BaseAppCompatActivity implements MvpView<Base
         }else{
             Dialog.show(result.getMsg(),this);
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        presenter.detachView();
     }
 }

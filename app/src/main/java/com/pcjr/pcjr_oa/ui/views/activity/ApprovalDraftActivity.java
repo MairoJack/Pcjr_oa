@@ -9,13 +9,15 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 import com.pcjr.pcjr_oa.R;
-import com.pcjr.pcjr_oa.bean.Approval;
+import com.pcjr.pcjr_oa.bean.BusinessApproval;
 import com.pcjr.pcjr_oa.bean.Classify;
 import com.pcjr.pcjr_oa.bean.ClassifySection;
-import com.pcjr.pcjr_oa.core.BaseDropDownActivity;
+import com.pcjr.pcjr_oa.core.BaseToolbarActivity;
 import com.pcjr.pcjr_oa.ui.adapter.ApprovalAdapter;
+import com.pcjr.pcjr_oa.widget.PopTopDialog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,17 +28,18 @@ import butterknife.BindView;
  *  草稿审批/回收站审批
  *  Created by Mario on 2017/9/13上午9:35
  */
-public class ApprovalDraftActivity extends BaseDropDownActivity implements SwipeRefreshLayout.OnRefreshListener,SearchView.OnQueryTextListener{
+public class ApprovalDraftActivity extends BaseToolbarActivity implements SwipeRefreshLayout.OnRefreshListener,SearchView.OnQueryTextListener{
 
-
+    @BindView(R.id.btn_down) ImageView btnDown;
     @BindView(R.id.swipeLayout) SwipeRefreshLayout mSwipeRefreshLayout;
     @BindView(R.id.recycler_view) RecyclerView mRecyclerView;
     
     private SearchView searchView;
     
     private ApprovalAdapter adapter;
-    private List<Approval> list;
+    private List<BusinessApproval> list;
 
+    private PopTopDialog.Builder builder;
     @Override
     protected int getLayoutId() {
         return R.layout.simple_swipe_dropdown_list;
@@ -46,8 +49,6 @@ public class ApprovalDraftActivity extends BaseDropDownActivity implements Swipe
     protected void initViews(Bundle savedInstanceState) {
         showBack();
         setTitle("草稿审批");
-
-        initGridPop();
 
         mSwipeRefreshLayout.setOnRefreshListener(this);
         mSwipeRefreshLayout.setColorSchemeColors(Color.rgb(47, 223, 189));
@@ -60,9 +61,10 @@ public class ApprovalDraftActivity extends BaseDropDownActivity implements Swipe
 
     @Override
     protected void initListeners() {
-        mPopTop.setOnDismissListener(() -> {
-            showToast(closeGridPop());
-        });
+       btnDown.setOnClickListener(v->{
+           builder.show();
+           backgroundAlpha(0.7f);
+       });
 
         adapter.setOnItemClickListener((adapter,view,position)-> {
             //startActivity(new Intent(this,ApprovalEditActivity.class));
@@ -72,45 +74,30 @@ public class ApprovalDraftActivity extends BaseDropDownActivity implements Swipe
 
     @Override
     protected void initData() {
-        classifySectionList = new ArrayList<>();
+        List<ClassifySection> classifySectionList = new ArrayList<>();
         ClassifySection cs = new ClassifySection(true, "类型");
         classifySectionList.add(cs);
-        Classify c = new Classify("全部审批",0);
+        Classify c = new Classify("全部审批", 0);
         c.setSelected(true);
-        cs= new ClassifySection(c);
+        cs = new ClassifySection(c);
         classifySectionList.add(cs);
-        c = new Classify("业务审批",0);
-        cs= new ClassifySection(c);
+        c = new Classify("业务审批", 0);
+        cs = new ClassifySection(c);
         classifySectionList.add(cs);
-        c = new Classify("上线审批",0);
-        cs= new ClassifySection(c);
+        c = new Classify("上线审批", 0);
+        cs = new ClassifySection(c);
         classifySectionList.add(cs);
 
-        positions = new int[]{1};
-        initGridPopData();
+        builder = new PopTopDialog.Builder(this, PopTopDialog.TYPE.GRID)
+                .setGridData(classifySectionList)
+                .setPositions(new int[]{1})
+                .setDropDownBtn(btnDown)
+                .setOnCloseListener(result -> {
+                    showToast(result);
+                    backgroundAlpha(1f);
+                }).create();
 
         list = new ArrayList<>();
-        Approval p = new Approval("审批名称审批名称审批名称审批名","杜拉拉",1501055624);
-        list.add(p);
-        p = new Approval("名字显示审批表申请人","杜拉拉",1501055624);
-        list.add(p);
-        p = new Approval("审批名称审批名称审批名称审批名","杜拉拉",1501055624);
-        list.add(p);
-        p= new Approval("名字显示审批表申请人","杜拉拉",1501055624);
-        list.add(p);
-        p= new Approval("审批名称审批名称审批名称审批名","杜拉拉",1501055624);
-        list.add(p);
-        p= new Approval("名字显示审批表申请人","杜拉拉",1501055624);
-        list.add(p);
-        p= new Approval("审批名称审批名称审批名称审批名","杜拉拉",1501055624);
-        list.add(p);
-        p= new Approval("名字显示审批表申请人","杜拉拉",1501055624);
-        list.add(p);
-        p= new Approval("审批名称审批名称审批名称审批名","杜拉拉",1501055624);
-        list.add(p);
-        p= new Approval("名字显示审批表申请人","杜拉拉",1501055624);
-        list.add(p);
-        adapter.setNewData(list);
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {

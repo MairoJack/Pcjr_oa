@@ -14,15 +14,14 @@ import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 
 /**
- *
- *  Created by Mario on 2017/9/28下午3:54
+ * Created by Mario on 2017/9/28下午3:54
  */
 public class CustomerListPresenter extends BasePresenter<MvpView<BaseBean<List<Customer>>>> {
 
     public static String TAG = CustomerListPresenter.class.getSimpleName();
 
-    public void getBorrowerList(int page,String query) {
-        this.mDataManager.getBorrowerList(page,query)
+    public void getBorrowerList(int page, String query) {
+        this.mDataManager.getBorrowerList(page, query, "0", 0)
                 .subscribe(new Observer<BaseBean<List<Customer>>>() {
                     @Override
                     public void onComplete() {

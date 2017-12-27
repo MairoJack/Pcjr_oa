@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.pcjr.pcjr_oa"
-        minSdkVersion 16
+        minSdkVersion 19
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -74,4 +74,6 @@ dependencies {
     compile 'com.prolificinteractive:material-calendarview:1.4.3'
     compile 'com.gyf.barlibrary:barlibrary:2.2.8'
     compileOnly "org.projectlombok:lombok:1.16.18"
+    //权限申请
+    compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
 }

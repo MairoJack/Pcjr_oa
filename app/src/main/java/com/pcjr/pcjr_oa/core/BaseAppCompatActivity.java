@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 
@@ -139,6 +140,21 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity {
         intent.putExtra("title", title);
         intent.putExtra("url", url);
         startActivity(intent);
+    }
+
+    /**
+     * 背景遮罩
+     * @param f
+     */
+    protected void backgroundAlpha(float f) {
+        WindowManager.LayoutParams lp = getWindow().getAttributes();
+        lp.alpha = f;
+        if (f == 1) {
+            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+        } else {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+        }
+        getWindow().setAttributes(lp);
     }
 
 

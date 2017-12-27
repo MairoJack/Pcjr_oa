@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/btn_modify"
+        android:title="修改"
+        android:icon="@mipmap/icon_edit"
+        android:orderInCategory="80"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/btn_save"
+        android:title="保存"
+        android:icon="@mipmap/icon_ok"
+        android:orderInCategory="80"
+        app:showAsAction="ifRoom" />
+</menu>

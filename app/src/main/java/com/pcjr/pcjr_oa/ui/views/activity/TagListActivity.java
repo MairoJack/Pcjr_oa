@@ -19,8 +19,9 @@ import android.widget.TextView;
 import com.pcjr.pcjr_oa.R;
 import com.pcjr.pcjr_oa.bean.Classify;
 import com.pcjr.pcjr_oa.bean.Tag;
-import com.pcjr.pcjr_oa.core.BaseDropDownActivity;
+import com.pcjr.pcjr_oa.core.BaseToolbarActivity;
 import com.pcjr.pcjr_oa.widget.Dialog;
+import com.pcjr.pcjr_oa.widget.PopTopDialog;
 import com.zhy.view.flowlayout.FlowLayout;
 import com.zhy.view.flowlayout.TagAdapter;
 import com.zhy.view.flowlayout.TagFlowLayout;
@@ -36,7 +37,7 @@ import butterknife.BindView;
  *  标签列表
  *  Created by Mario on 2017/8/7上午11:04
  */
-public class TagListActivity extends BaseDropDownActivity implements SearchView.OnQueryTextListener{
+public class TagListActivity extends BaseToolbarActivity implements SearchView.OnQueryTextListener{
 
 
     @BindView(R.id.btn_down) ImageView btnDown;
@@ -50,6 +51,8 @@ public class TagListActivity extends BaseDropDownActivity implements SearchView.
     private SearchView searchView;
     private TagAdapter tagAdapter;
     private int tagNumber;
+
+    private PopTopDialog.Builder builder;
     @Override
     protected int getLayoutId() {
         return R.layout.tag_list;
@@ -59,14 +62,14 @@ public class TagListActivity extends BaseDropDownActivity implements SearchView.
     protected void initViews(Bundle savedInstanceState) {
         showBack();
         setTitle("标签");
-
-        initListPop();
     }
 
     @Override
     protected void initListeners() {
-        mPopTop.setOnDismissListener(() -> {
-            showToast(closeListPop());
+
+        btnDown.setOnClickListener(v->{
+            builder.show();
+            backgroundAlpha(0.7f);
         });
 
         checkAll.setOnCheckedChangeListener((compoundButton,b)-> {
@@ -102,14 +105,21 @@ public class TagListActivity extends BaseDropDownActivity implements SearchView.
 
     @Override
     protected void initData() {
-        classifyList = new ArrayList<>();
+        List<Classify> classifyList = new ArrayList<>();
         Classify c = new Classify("全部标签",0);
         classifyList.add(c);
         c = new Classify("我的标签",1);
         classifyList.add(c);
         c = new Classify("公告标签",2);
         classifyList.add(c);
-        initListPopData();
+
+        builder = new PopTopDialog.Builder(this, PopTopDialog.TYPE.LIST)
+                .setListData(classifyList)
+                .setDropDownBtn(btnDown)
+                .setOnCloseListener(result -> {
+                    showToast(result);
+                    backgroundAlpha(1f);
+                }).create();
 
 
         tagList = new ArrayList<>();

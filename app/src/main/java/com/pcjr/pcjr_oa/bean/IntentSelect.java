@@ -12,10 +12,10 @@ import lombok.Data;
 @Data
 public class IntentSelect implements Serializable{
 
-    private String title;
-    private String select;
-    private String[] data;
-    private boolean isSetting = false;
+    private String title;                          //选择项
+    private String select;                         //当前选择项
+    private String[] data;                         //选择项数据
+    private boolean isSetting = false;             //是否需要设置
 
     public IntentSelect(String title, String select, String[] data) {
         this.title = title;

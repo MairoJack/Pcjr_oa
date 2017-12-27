@@ -109,14 +109,17 @@
                 android:layout_height="45dp"
                 android:layout_marginTop="0.1dp"
                 android:background="@color/color_content_background"
-                android:padding="10dp">
+                android:paddingTop="10dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="全天"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
                 <android.support.v7.widget.SwitchCompat
@@ -135,14 +138,17 @@
                 android:layout_height="45dp"
                 android:layout_marginTop="0.1dp"
                 android:background="@drawable/select_white"
-                android:padding="10dp">
+                android:paddingTop="10dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="开始时间"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
                 <TextView
@@ -153,7 +159,7 @@
                     android:layout_marginRight="5dp"
                     android:layout_toLeftOf="@+id/btn_right"
                     android:text="请选择"
-                    android:textColor="@color/color_explain"
+                    android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
 
                 <ImageView
@@ -171,14 +177,17 @@
                 android:layout_height="45dp"
                 android:layout_marginTop="0.1dp"
                 android:background="@drawable/select_white"
-                android:padding="10dp">
+                android:paddingTop="10dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="到期时间"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
                 <TextView
@@ -189,7 +198,7 @@
                     android:layout_marginRight="5dp"
                     android:layout_toLeftOf="@+id/btn_right"
                     android:text="请选择"
-                    android:textColor="@color/color_explain"
+                    android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
 
                 <ImageView
@@ -206,14 +215,17 @@
                 android:layout_height="45dp"
                 android:layout_marginTop="15dp"
                 android:background="@color/color_content_background"
-                android:padding="10dp">
+                android:paddingTop="10dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="重复"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
                 <android.support.v7.widget.SwitchCompat
@@ -232,7 +244,10 @@
                 android:layout_height="45dp"
                 android:layout_marginTop="0.1dp"
                 android:background="@drawable/select_white"
-                android:padding="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
                 android:visibility="gone">
 
                 <TextView
@@ -240,7 +255,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="结果"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
                 <TextView
@@ -251,7 +266,7 @@
                     android:layout_marginRight="5dp"
                     android:layout_toLeftOf="@+id/btn_right"
                     android:text="请设置"
-                    android:textColor="@color/color_explain"
+                    android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
 
                 <ImageView
@@ -268,14 +283,17 @@
                 android:layout_height="45dp"
                 android:layout_marginTop="15dp"
                 android:background="@color/color_content_background"
-                android:padding="10dp">
+                android:paddingTop="10dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="提醒"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
                 <android.support.v7.widget.SwitchCompat
@@ -294,7 +312,10 @@
                 android:layout_height="45dp"
                 android:layout_marginTop="0.1dp"
                 android:background="@drawable/select_white"
-                android:padding="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
                 android:visibility="gone">
 
                 <TextView
@@ -302,7 +323,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="提醒设置"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
                 <TextView
@@ -313,7 +334,7 @@
                     android:layout_marginRight="5dp"
                     android:layout_toLeftOf="@+id/btn_right"
                     android:text="请设置"
-                    android:textColor="@color/color_explain"
+                    android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
 
                 <ImageView
@@ -332,7 +353,10 @@
                 android:layout_height="45dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/select_white"
-                android:padding="10dp">
+                android:paddingTop="10dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -341,7 +365,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:text="参与人"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
                 <LinearLayout
@@ -374,7 +398,7 @@
                     android:layout_marginRight="5dp"
                     android:layout_toLeftOf="@+id/btn_right"
                     android:text="2"
-                    android:textColor="@color/color_explain"
+                    android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
 
                 <ImageView
@@ -392,14 +416,17 @@
                 android:layout_height="45dp"
                 android:layout_marginTop="0.1dp"
                 android:background="@drawable/select_white"
-                android:padding="10dp">
+                android:paddingTop="10dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="公开程度"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
                 <TextView
@@ -410,7 +437,7 @@
                     android:layout_marginRight="5dp"
                     android:layout_toLeftOf="@+id/btn_right"
                     android:text="上级可见(默认)"
-                    android:textColor="@color/color_explain"
+                    android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
 
                 <ImageView
@@ -428,14 +455,17 @@
                 android:layout_height="45dp"
                 android:layout_marginTop="0.1dp"
                 android:background="@drawable/select_white"
-                android:padding="10dp">
+                android:paddingTop="10dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="标签"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
                 <TextView
@@ -446,7 +476,7 @@
                     android:layout_marginRight="5dp"
                     android:layout_toLeftOf="@+id/btn_right"
                     android:text="请选择"
-                    android:textColor="@color/color_explain"
+                    android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
 
                 <ImageView
@@ -464,14 +494,17 @@
                 android:layout_height="45dp"
                 android:layout_marginTop="0.1dp"
                 android:background="@drawable/select_white"
-                android:padding="10dp">
+                android:paddingTop="10dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="附件"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
                 <TextView
@@ -482,7 +515,7 @@
                     android:layout_marginRight="5dp"
                     android:layout_toLeftOf="@+id/btn_right"
                     android:text="请选择"
-                    android:textColor="@color/color_explain"
+                    android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
 
                 <ImageView

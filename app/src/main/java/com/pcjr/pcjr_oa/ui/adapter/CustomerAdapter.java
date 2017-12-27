@@ -5,6 +5,7 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import com.pcjr.pcjr_oa.R;
 import com.pcjr.pcjr_oa.bean.Customer;
 import com.pcjr.pcjr_oa.utils.DateUtils;
+import com.pcjr.pcjr_oa.utils.StringUtils;
 
 /**
  * Created by mario on 2017/7/25.
@@ -19,12 +20,8 @@ public class CustomerAdapter extends BaseQuickAdapter<Customer, BaseViewHolder> 
     protected void convert(BaseViewHolder helper, Customer item) {
         String name = item.getName();
         if (item.getCustomerType() == 0) {
-            if (name.length() < 2) {
-                helper.setText(R.id.txt_avatar, name);
-            } else {
-                helper.setText(R.id.txt_avatar, name.substring(name.length() - 2));
-                helper.setBackgroundRes(R.id.txt_avatar, R.drawable.avatar_background_blue_48);
-            }
+            helper.setText(R.id.txt_avatar, StringUtils.getLast2(name));
+            helper.setBackgroundRes(R.id.txt_avatar, R.drawable.avatar_background_blue_48);
         } else {
             helper.setText(R.id.txt_avatar, "公司");
             helper.setBackgroundRes(R.id.txt_avatar, R.drawable.avatar_background_green_48);

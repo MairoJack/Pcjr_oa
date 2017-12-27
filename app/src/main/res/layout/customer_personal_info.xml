@@ -125,10 +125,31 @@
                     android:paddingBottom="10dp"
                     android:paddingTop="10dp">
 
-                    <ImageView
+
+                    <RelativeLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@mipmap/icon_customer_linkman" />
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true"
+                            android:src="@mipmap/icon_customer_linkman" />
+
+                        <TextView
+                            android:id="@+id/txt_contact_num"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:text="10"
+                            android:textSize="10dp"
+                            android:layout_marginLeft="40dp"
+                            android:layout_alignParentTop="true"
+                            android:textColor="@color/color_white"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:background="@drawable/avatar_background_red_48"
+                            android:visibility="gone"/>
+                    </RelativeLayout>
 
                     <TextView
                         android:layout_width="wrap_content"

@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.pcjr.pcjr_oa.R;
 import com.pcjr.pcjr_oa.bean.CustomerPersonal;
+import com.pcjr.pcjr_oa.constant.Constant;
 import com.pcjr.pcjr_oa.core.BaseToolbarActivity;
 import com.pcjr.pcjr_oa.utils.DateUtils;
 import com.pcjr.pcjr_oa.utils.StringUtils;
@@ -85,14 +86,12 @@ public class CustomerPersonalDetailActivity extends BaseToolbarActivity{
         txtBankCard.setText(customer.getCardNo());
         txtCompany.setText(customer.getCompany());
         txtJob.setText(customer.getPosition());
-        if(customer.getSex() == 0) txtSex.setText("男");else txtSex.setText("女");
-        if(customer.getMarriage() == 0) txtMaritalStatus.setText("未婚");
-        else if(customer.getMarriage() == 1) txtSex.setText("已婚");
-        else txtSex.setText("离异");
+        txtSex.setText(Constant.SELECT_SEX[customer.getSex()]);
+        txtMaritalStatus.setText(Constant.SELECT_MARITAL_STATUS[customer.getMarriage()]);
         txtWebsite.setText(customer.getWebsite());
         txtEmail.setText(customer.getEmail());
         txtCounterGuarantee.setText(customer.getCounterGuarantee());
-        txtBorrower.setText(customer.getBorrowerIntruduction());
+        txtBorrower.setText(customer.getBorrowerIntroduction());
         txtCreditRecord.setText(customer.getCreditHistory());
         txtRemark.setText(customer.getRemarks());
     }

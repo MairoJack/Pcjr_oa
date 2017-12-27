@@ -11,14 +11,16 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 import com.pcjr.pcjr_oa.R;
 import com.pcjr.pcjr_oa.bean.CategorySection;
 import com.pcjr.pcjr_oa.bean.CategoryTask;
 import com.pcjr.pcjr_oa.bean.Classify;
 import com.pcjr.pcjr_oa.bean.ClassifySection;
-import com.pcjr.pcjr_oa.core.BaseDropDownActivity;
+import com.pcjr.pcjr_oa.core.BaseToolbarActivity;
 import com.pcjr.pcjr_oa.ui.adapter.CategoryTaskAdapter;
+import com.pcjr.pcjr_oa.widget.PopTopDialog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,8 +31,9 @@ import butterknife.BindView;
  * 任务管理
  * Created by Mario on 2017/7/31下午2:34
  */
-public class TaskManagerActivity extends BaseDropDownActivity implements SwipeRefreshLayout.OnRefreshListener, SearchView.OnQueryTextListener{
+public class TaskManagerActivity extends BaseToolbarActivity implements SwipeRefreshLayout.OnRefreshListener, SearchView.OnQueryTextListener{
 
+    @BindView(R.id.btn_down) ImageView btnDown;
     @BindView(R.id.tab_layout) TabLayout tabLayout;
 
     @BindView(R.id.swipeLayout) SwipeRefreshLayout mSwipeRefreshLayout;
@@ -41,6 +44,7 @@ public class TaskManagerActivity extends BaseDropDownActivity implements SwipeRe
     private CategoryTaskAdapter adapter;
     private List<String> titleList;
 
+    private PopTopDialog.Builder builder;
     @Override
     protected int getLayoutId() {
         return R.layout.task_manager;
@@ -50,8 +54,6 @@ public class TaskManagerActivity extends BaseDropDownActivity implements SwipeRe
     protected void initViews(Bundle savedInstanceState) {
         showBack();
         setTitle("任务管理");
-
-        initGridPop();
 
         mSwipeRefreshLayout.setOnRefreshListener(this);
         mSwipeRefreshLayout.setColorSchemeColors(Color.rgb(47, 223, 189));
@@ -72,8 +74,9 @@ public class TaskManagerActivity extends BaseDropDownActivity implements SwipeRe
 
     @Override
     protected void initListeners() {
-        mPopTop.setOnDismissListener(() -> {
-            showToast(closeGridPop());
+        btnDown.setOnClickListener(v->{
+            builder.show();
+            backgroundAlpha(0.7f);
         });
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -100,7 +103,7 @@ public class TaskManagerActivity extends BaseDropDownActivity implements SwipeRe
 
     @Override
     protected void initData() {
-        classifySectionList = new ArrayList<>();
+        List<ClassifySection> classifySectionList = new ArrayList<>();
         ClassifySection cs = new ClassifySection(true, "任务分类");
         classifySectionList.add(cs);
         Classify c = new Classify("全部任务",0);
@@ -146,8 +149,15 @@ public class TaskManagerActivity extends BaseDropDownActivity implements SwipeRe
         c = new Classify("按紧急程度",1);
         cs = new ClassifySection(c);
         classifySectionList.add(cs);
-        positions = new int[]{1,10};
-        initGridPopData();
+
+        builder = new PopTopDialog.Builder(this, PopTopDialog.TYPE.GRID)
+                .setGridData(classifySectionList)
+                .setPositions(new int[]{1,10})
+                .setDropDownBtn(btnDown)
+                .setOnCloseListener(result -> {
+                    showToast(result);
+                    backgroundAlpha(1f);
+                }).create();
 
         list = new ArrayList<>();
         CategorySection cas = new CategorySection(true,"任务1");

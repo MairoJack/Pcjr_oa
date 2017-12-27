@@ -79,15 +79,15 @@
                 android:layout_height="60dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/select_white"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp">
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="主负责人"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
 
@@ -123,7 +123,7 @@
                     android:layout_marginRight="5dp"
                     android:layout_toLeftOf="@+id/btn_right"
                     android:text="杜拉拉"
-                    android:textColor="@color/color_explain"
+                    android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
 
                 <ImageView
@@ -141,14 +141,17 @@
                 android:layout_height="45dp"
                 android:layout_marginTop="0.1dp"
                 android:background="@drawable/select_white"
-                android:padding="10dp">
+                android:paddingTop="10dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="开始时间"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
                 <TextView
@@ -159,7 +162,7 @@
                     android:layout_marginRight="5dp"
                     android:layout_toLeftOf="@+id/btn_right"
                     android:text="请选择"
-                    android:textColor="@color/color_explain"
+                    android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
 
                 <ImageView
@@ -177,14 +180,17 @@
                 android:layout_height="45dp"
                 android:layout_marginTop="0.1dp"
                 android:background="@drawable/select_white"
-                android:padding="10dp">
+                android:paddingTop="10dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="到期时间"
-                    android:textColor="@color/color_title"
+                    android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 
                 <TextView
@@ -195,7 +201,7 @@
                     android:layout_marginRight="5dp"
                     android:layout_toLeftOf="@+id/btn_right"
                     android:text="请选择"
-                    android:textColor="@color/color_explain"
+                    android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
 
                 <ImageView

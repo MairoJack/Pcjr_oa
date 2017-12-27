@@ -2,6 +2,7 @@ package com.pcjr.pcjr_oa.bean;
 
 import com.google.gson.annotations.SerializedName;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  *  客户 - 公司
@@ -13,7 +14,7 @@ public class CustomerCompany extends Customer{
     private String business;                  //主营业务
     private String leader;                    //企业负责人
     private String regtime;                   //注册时间
-    private int nature;                       //公司性质 0：金融服务机构  1：商圈管理者，
+    private Integer nature;                   //公司性质 0：金融服务机构  1：商圈管理者，
                                               //        2：政府机关/团体  3：实体企业  4：为其他
 
     @SerializedName("social_credit_code")

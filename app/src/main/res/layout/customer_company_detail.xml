@@ -36,7 +36,6 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/avatar_background_red_48"
-                    android:backgroundTint="@color/color_selected"
                     android:gravity="center_vertical|center_horizontal"
                     android:text="公司"
                     android:textColor="@color/color_white"

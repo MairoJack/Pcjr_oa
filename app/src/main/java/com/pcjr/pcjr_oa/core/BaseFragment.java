@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 
@@ -159,6 +160,21 @@ public abstract class BaseFragment extends Fragment {
         super.onHiddenChanged(hidden);
         if (!hidden && mImmersionBar != null)
             mImmersionBar.init();
+    }
+
+    /**
+     * 背景遮罩
+     * @param f
+     */
+    protected void backgroundAlpha(float f) {
+        WindowManager.LayoutParams lp = getActivity().getWindow().getAttributes();
+        lp.alpha = f;
+        if (f == 1) {
+            getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+        } else {
+            getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+        }
+        getActivity().getWindow().setAttributes(lp);
     }
 
     /**

@@ -32,7 +32,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="25dp"
-                    android:text="联系人：恩啦啦"
+                    android:text="联系人：---"
                     android:textColor="@color/color_explain"
                     android:textSize="16dp" />
 
@@ -42,7 +42,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/txt_name"
                     android:layout_marginTop="5dp"
-                    android:text="所属客户：啦啦啦、啦啦啦、啦啦啦"
+                    android:text="无所属客户"
                     android:textColor="#4caafe"
                     android:textSize="14dp" />
 
@@ -54,7 +54,7 @@
                     android:background="@drawable/corner_gray_5dp"
                     android:paddingBottom="2dp"
                     android:paddingTop="2dp"
-                    android:text="  2017-12-05"
+                    android:text="  ---"
                     android:textColor="@color/color_explain"
                     android:textSize="14dp" />
 
@@ -83,7 +83,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="1368287328"
+                    android:text="---"
                     android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_value" />
 
@@ -91,7 +91,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/select_white"
                 android:orientation="horizontal"
                 android:padding="5dp">
@@ -110,7 +110,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="地址地址地址地址地址"
+                    android:text="---"
                     android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_value" />
 
@@ -137,7 +137,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="啦啦啦公司"
+                    android:text="---"
                     android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_value" />
 
@@ -164,7 +164,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="拉拉职位"
+                    android:text="---"
                     android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_value" />
 
@@ -191,7 +191,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="女"
+                    android:text="---"
                     android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_value" />
 
@@ -218,61 +218,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="sss.lalala.com"
-                    android:textColor="@color/color_explain"
-                    android:textSize="@dimen/text_size_value" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:background="@drawable/select_white"
-                android:orientation="horizontal"
-                android:padding="5dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_weight="3"
-                    android:text="角色关系"
-                    android:textColor="@color/color_content"
-                    android:textSize="@dimen/text_size_key" />
-
-                <TextView
-                    android:id="@+id/txt_role"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="拉拉职位"
-                    android:textColor="@color/color_explain"
-                    android:textSize="@dimen/text_size_value" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:background="@drawable/select_white"
-                android:orientation="horizontal"
-                android:padding="5dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_weight="3"
-                    android:text="亲密度"
-                    android:textColor="@color/color_content"
-                    android:textSize="@dimen/text_size_key" />
-
-                <TextView
-                    android:id="@+id/txt_intimacy"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="拉拉职位"
+                    android:text="---"
                     android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_value" />
 
@@ -299,7 +245,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="备注备注备注备注备注备注备注"
+                    android:text="---"
                     android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_value" />
 

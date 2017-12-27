@@ -14,15 +14,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.pcjr.pcjr_oa.R;
 import com.pcjr.pcjr_oa.bean.Classify;
 import com.pcjr.pcjr_oa.bean.ClassifySection;
 import com.pcjr.pcjr_oa.bean.Schedule;
-import com.pcjr.pcjr_oa.core.BaseDropDownActivity;
+import com.pcjr.pcjr_oa.core.BaseToolbarActivity;
 import com.pcjr.pcjr_oa.ui.adapter.ScheduleAdapter;
 import com.pcjr.pcjr_oa.ui.decorator.DotDecorator;
 import com.pcjr.pcjr_oa.ui.decorator.DotGrayDecorator;
+import com.pcjr.pcjr_oa.widget.PopTopDialog;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 
 import java.util.ArrayList;
@@ -35,9 +37,9 @@ import butterknife.BindView;
  *  日程列表
  *  Created by Mario on 2017/8/10上午11:15
  */
-public class ScheduleListActivity extends BaseDropDownActivity implements SwipeRefreshLayout.OnRefreshListener, SearchView.OnQueryTextListener {
+public class ScheduleListActivity extends BaseToolbarActivity implements SwipeRefreshLayout.OnRefreshListener, SearchView.OnQueryTextListener {
 
-
+    @BindView(R.id.btn_down) ImageView btnDown;
     @BindView(R.id.swipeLayout) SwipeRefreshLayout mSwipeRefreshLayout;
     @BindView(R.id.recycler_view) RecyclerView mRecyclerView;
     @BindView(R.id.calendarView) MaterialCalendarView calendarView;
@@ -48,6 +50,8 @@ public class ScheduleListActivity extends BaseDropDownActivity implements SwipeR
     private ScheduleAdapter adapter;
     private View notDataView;
 
+    private PopTopDialog.Builder builder;
+
     @Override
     protected int getLayoutId() {
         return R.layout.schedule;
@@ -57,7 +61,6 @@ public class ScheduleListActivity extends BaseDropDownActivity implements SwipeR
     protected void initViews(Bundle savedInstanceState) {
         showBack();
         setTitle("日程");
-        initGridPop();
 
         mSwipeRefreshLayout.setOnRefreshListener(this);
         mSwipeRefreshLayout.setColorSchemeColors(Color.rgb(47, 223, 189));
@@ -75,9 +78,9 @@ public class ScheduleListActivity extends BaseDropDownActivity implements SwipeR
 
     @Override
     protected void initListeners() {
-        mPopTop.setOnDismissListener(() -> {
-            String result = closeGridPop();
-            showToast(result);
+        btnDown.setOnClickListener(v->{
+            builder.show();
+            backgroundAlpha(0.7f);
         });
 
         adapter.setOnItemClickListener((adapter,view,position)-> {
@@ -88,7 +91,7 @@ public class ScheduleListActivity extends BaseDropDownActivity implements SwipeR
     @Override
     protected void initData() {
 
-        classifySectionList = new ArrayList<>();
+        List<ClassifySection> classifySectionList = new ArrayList<>();
         ClassifySection cs = new ClassifySection(true, "项目分类");
         classifySectionList.add(cs);
         Classify c = new Classify("直接下属",0);
@@ -117,9 +120,15 @@ public class ScheduleListActivity extends BaseDropDownActivity implements SwipeR
         c = new Classify("项目",1);
         cs = new ClassifySection(c);
         classifySectionList.add(cs);
- 
-        positions = new int[]{1,6};
-        initGridPopData();
+
+        builder = new PopTopDialog.Builder(this, PopTopDialog.TYPE.GRID)
+                .setGridData(classifySectionList)
+                .setPositions(new int[]{1,6})
+                .setDropDownBtn(btnDown)
+                .setOnCloseListener(result -> {
+                    showToast(result);
+                    backgroundAlpha(1f);
+                }).create();
 
         DotDecorator dot = new DotDecorator();
         dot.setDate(new Date(1502380800000l));

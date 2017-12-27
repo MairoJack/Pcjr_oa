@@ -1,5 +1,7 @@
 package com.pcjr.pcjr_oa.api;
 
+import android.util.Log;
+
 import com.pcjr.pcjr_oa.App;
 import com.pcjr.pcjr_oa.constant.Constant;
 import com.pcjr.pcjr_oa.utils.DeviceUtils;
@@ -12,6 +14,7 @@ import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
+import okio.Buffer;
 
 
 /**
@@ -42,10 +45,18 @@ public class OAuthInterceptor implements Interceptor {
                 .header("User-Agent", "Android-" + currentApiVersion)
                 .url(authorizedUrlBuilder.build())
                 .build();
+        Buffer buffer = new Buffer();
+        try {
+            authorised.body().writeTo(buffer);
+            Log.i("requestBody", buffer.buffer().readUtf8());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         Response response = chain.proceed(authorised);
+
+
         return response;
     }
-
 
 }

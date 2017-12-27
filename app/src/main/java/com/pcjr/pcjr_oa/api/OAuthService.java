@@ -2,8 +2,13 @@ package com.pcjr.pcjr_oa.api;
 
 
 import com.pcjr.pcjr_oa.bean.BaseBean;
+import com.pcjr.pcjr_oa.bean.BusinessApproval;
+import com.pcjr.pcjr_oa.bean.Contact;
+import com.pcjr.pcjr_oa.bean.Contract;
 import com.pcjr.pcjr_oa.bean.Customer;
 import com.pcjr.pcjr_oa.bean.CustomerCompany;
+import com.pcjr.pcjr_oa.bean.CustomerContact;
+import com.pcjr.pcjr_oa.bean.CustomerContactRelation;
 import com.pcjr.pcjr_oa.bean.CustomerPersonal;
 import com.pcjr.pcjr_oa.bean.Member;
 import com.pcjr.pcjr_oa.bean.Person;
@@ -58,7 +63,7 @@ public interface OAuthService {
     Observable<BaseBean<PlatformData>> getPlatformData();
 
     @GET("pcjr/borrower/borrowerList")
-    Observable<BaseBean<List<Customer>>> getBorrowerList(@Query("page") int page , @Query("query") String query);
+    Observable<BaseBean<List<Customer>>> getBorrowerList(@Query("page") int page, @Query("query") String query, @Query("id") String id, @Query("type") int type);
 
     @POST("pcjr/borrower/addPerson")
     Observable<BaseBean<CustomerPersonal>> addPerson(@Body CustomerPersonal customer);
@@ -80,4 +85,47 @@ public interface OAuthService {
 
     @GET("pcjr/borrower/getManagerList")
     Observable<BaseBean<List<Person>>> getManagerList();
+
+    @GET("pcjr/contact/contactList")
+    Observable<BaseBean<List<Contact>>> getContactList(@Query("page") int page, @Query("query") String query, @Query("id") String id, @Query("type") int type);
+
+    @POST("pcjr/contact/addContact")
+    Observable<BaseBean<Contact>> addContact(@Body Contact contact);
+
+    @POST("pcjr/contact/modifyContact")
+    Observable<BaseBean> modifyContact(@Body Contact contact);
+
+    @GET("pcjr/contact/contactDetail")
+    Observable<BaseBean<Contact>> getContactDetail(@Query("id") String id);
+
+    @POST("pcjr/contact/modifyRelationship")
+    Observable<BaseBean> modifyRelationship(@Body CustomerContact customerContact);
+
+    @GET("pcjr/contact/getRelationshipList")
+    Observable<BaseBean<List<CustomerContactRelation>>> getRelationshipList(@Query("id") String id, @Query("type") int type);
+
+    @GET("pcjr/contract/contractList")
+    Observable<BaseBean<List<Contract>>> getContractList(@Query("page") int page, @Query("query") String query);
+
+    @POST("pcjr/contract/addContract")
+    Observable<BaseBean<Contract>> addContract(@Body Contract contract);
+
+    @POST("pcjr/contract/modifyContract")
+    Observable<BaseBean> modifyContract(@Body Contract contract);
+
+    @GET("pcjr/contract/contractDetail")
+    Observable<BaseBean<Contract>> getContractDetail(@Query("id") String id);
+
+    @GET("pcjr/approve/businessApproveList")
+    Observable<BaseBean<List<BusinessApproval>>> getBusinessApproveList(@Query("page") int page, @Query("query") String query);
+
+    @POST("pcjr/approve/addBusinessApprove")
+    Observable<BaseBean<BusinessApproval>> addBusinessApprove(@Body BusinessApproval businessApproval);
+
+    @POST("pcjr/approve/modifyBusinessApprove")
+    Observable<BaseBean> modifyBusinessApprove(@Body BusinessApproval businessApproval);
+
+    @GET("pcjr/approve/deleteBusinessApprove")
+    Observable<BaseBean> deleteBusinessApprove(@Query("id") String id);
+
 }
