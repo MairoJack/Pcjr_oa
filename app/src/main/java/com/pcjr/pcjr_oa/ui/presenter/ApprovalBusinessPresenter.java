@@ -77,6 +77,35 @@ public class ApprovalBusinessPresenter extends BasePresenter<ApprovalBusinessVie
                 });
     }
 
+    public void getBusinessApproveDetail(String id) {
+        this.mDataManager.getBusinessApproveDetail(id)
+                .subscribe(new Observer<BaseBean<BusinessApproval>>() {
+                    @Override
+                    public void onComplete() {
+                        if (ApprovalBusinessPresenter.this.mCompositeDisposable != null) {
+                            ApprovalBusinessPresenter.this.mCompositeDisposable.clear();
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Log.e(TAG, e.getMessage());
+                        ApprovalBusinessPresenter.this.getMvpView().onFailure(e);
+                    }
+
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
+                        mCompositeDisposable.add(d);
+                    }
+
+                    @Override
+                    public void onNext(BaseBean<BusinessApproval> data) {
+                        if (ApprovalBusinessPresenter.this.getMvpView() != null)
+                            ApprovalBusinessPresenter.this.getMvpView().onGetBusinessApprovalDetailSuccess(data.getData());
+                    }
+                });
+    }
+
     public void deleteBusinessApprove(String id) {
         this.mDataManager.deleteBusinessApprove(id)
                 .subscribe(new Observer<BaseBean>() {

@@ -48,7 +48,7 @@ public class BusinessApproval implements Serializable{
     private String guaranteeType;             //担保方式
     @SerializedName("intro")
     private String intro;                     //借款用途
-    @SerializedName("mainRisk")
+    @SerializedName("main_risk")
     private String mainRisk;                  //主要风险点
     @SerializedName("precautions")
     private String precautions;               //防范措施

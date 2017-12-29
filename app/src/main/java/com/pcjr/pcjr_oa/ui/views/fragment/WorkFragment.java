@@ -90,6 +90,7 @@ public class WorkFragment extends BaseFragment implements WorkView {
                 switch (object.t.getName()) {
                     case "客户管理":
                         startActivity(new Intent(getContext(), CustomerListActivity.class));
+                        break;
                     case "客户联系人":
                         startActivity(new Intent(getContext(), ContactListActivity.class));
                         break;

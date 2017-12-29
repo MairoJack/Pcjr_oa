@@ -15,17 +15,24 @@
             android:layout_marginTop="20dp"
             android:gravity="center_vertical">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/img_avatar"
-                android:layout_width="0dp"
+            <TextView
+                android:id="@+id/txt_avatar"
+                android:layout_width="64dp"
                 android:layout_height="64dp"
-                android:layout_weight="1"
-                android:src="@mipmap/image_avatar" />
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/avatar_background_red_48"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="拉拉"
+                android:textColor="@color/color_white"
+                android:textSize="14dp" />
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:layout_marginLeft="5dp"
                 android:layout_weight="3">
 
                 <LinearLayout

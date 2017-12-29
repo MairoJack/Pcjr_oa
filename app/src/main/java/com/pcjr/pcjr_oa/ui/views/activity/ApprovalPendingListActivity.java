@@ -57,8 +57,11 @@ public class ApprovalPendingListActivity extends BaseSwipeRefreshActivity implem
             backgroundAlpha(0.7f);
         });
 
-        adapter.setOnItemClickListener((adapter,view,position)-> {
-            startActivity(new Intent(this,ApprovalPendingDetailActivity.class));
+        adapter.setOnItemClickListener((a,view,position)-> {
+            BusinessApproval businessApproval = (BusinessApproval) a.getItem(position);
+            Intent intent = new Intent(this, ApprovalPendingDetailActivity.class);
+            intent.putExtra("id", businessApproval.getId());
+            startActivity(intent);
         });
 
     }
@@ -104,6 +107,7 @@ public class ApprovalPendingListActivity extends BaseSwipeRefreshActivity implem
                     backgroundAlpha(1f);
                 }).create();
 
+        super.initData();
     }
 
     @Override

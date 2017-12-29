@@ -42,7 +42,7 @@ public class RelationshipListActivity extends BaseSwipeRefreshActivity implement
     private CustomerContactRelation relation;
     private CustomerContact customerContact;
     private String[] settings = new String[]{"客户联系人关系设置", "删除"};
-
+    private BottomMenuDialog pmd;
     @Override
     protected int getLayoutId() {
         return R.layout.simple_swipe_list;
@@ -52,7 +52,7 @@ public class RelationshipListActivity extends BaseSwipeRefreshActivity implement
     protected void initViews(Bundle savedInstanceState) {
         super.initViews(savedInstanceState);
         showBack();
-
+        setTitle("客户联系人设置");
 
         adapter = new RelationshipAdapter();
         adapter.bindToRecyclerView(mRecyclerView);
@@ -66,7 +66,7 @@ public class RelationshipListActivity extends BaseSwipeRefreshActivity implement
 
         adapter.setOnItemChildClickListener((a, view, position) -> {
             if (ViewUtil.isFastDoubleClick()) return;
-            BottomMenuDialog pmd = new BottomMenuDialog.Builder(this)
+            pmd = new BottomMenuDialog.Builder(this)
                     .setMenus(settings)
                     .setOnItemClickListener((dialog, menuPosition) -> {
                         if (menuPosition == 0) {
@@ -188,5 +188,6 @@ public class RelationshipListActivity extends BaseSwipeRefreshActivity implement
     protected void onDestroy() {
         super.onDestroy();
         presenter.detachView();
+        pmd.dismiss();
     }
 }

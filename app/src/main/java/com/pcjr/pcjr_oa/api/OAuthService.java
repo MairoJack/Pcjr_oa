@@ -125,6 +125,9 @@ public interface OAuthService {
     @POST("pcjr/approve/modifyBusinessApprove")
     Observable<BaseBean> modifyBusinessApprove(@Body BusinessApproval businessApproval);
 
+    @GET("pcjr/approve/businessApproveDetail")
+    Observable<BaseBean<BusinessApproval>> getBusinessApproveDetail(@Query("id") String id);
+
     @GET("pcjr/approve/deleteBusinessApprove")
     Observable<BaseBean> deleteBusinessApprove(@Query("id") String id);
 

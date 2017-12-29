@@ -38,6 +38,7 @@ public class ApprovalBusinessFullActivity extends UnionActivity implements Appro
     @BindView(R.id.rl_show_borrower) RelativeLayout rlShowBorrower;
     @BindView(R.id.rl_project_type) RelativeLayout rlProjectType;
 
+    @BindView(R.id.txt_approval_name) TextView txtApprovalName;
     @BindView(R.id.txt_actual_borrower) TextView txtActualBorrower;
     @BindView(R.id.txt_show_borrower) TextView txtShowBorrower;
     @BindView(R.id.txt_project_source) EditText txtProjectSource;
@@ -118,6 +119,7 @@ public class ApprovalBusinessFullActivity extends UnionActivity implements Appro
         if(businessApproval.isUpdate()){
             txtTitle.setText("修改业务审批");
         }
+        txtApprovalName.setText(businessApproval.getTitle());
         txtActualBorrower.setText(businessApproval.getActualBorrowerName());
         txtShowBorrower.setText(businessApproval.getFormBorrowerName());
         txtProjectSource.setText(businessApproval.getProjectSource());
@@ -131,6 +133,7 @@ public class ApprovalBusinessFullActivity extends UnionActivity implements Appro
     }
 
     private void addData(){
+        String approvalName = txtApprovalName.getText().toString();
         String projectSource = txtProjectSource.getText().toString();
         String expectAmount = txtExpectAmount.getText().toString();
         String approvalAmount = txtApprovalAmount.getText().toString();
@@ -139,6 +142,7 @@ public class ApprovalBusinessFullActivity extends UnionActivity implements Appro
         String mainRisk = txtMainRisk.getText().toString();
         String prevention = txtPrevention.getText().toString();
 
+        businessApproval.setTitle(approvalName);
         String guaranteeAmount = txtGuaranteeAmount.getText().toString();
         String guaranteePaymentMethod = txtGuaranteePaymentMethod.getText().toString();
         String serviceAmount = txtServiceAmount.getText().toString();

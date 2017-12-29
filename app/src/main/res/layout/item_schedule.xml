@@ -7,15 +7,19 @@
     android:background="@drawable/select_corner_white"
     android:gravity="center_vertical">
 
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/img"
+    <TextView
+        android:id="@+id/txt_avatar"
         android:layout_width="40dp"
         android:layout_height="40dp"
+        android:layout_marginLeft="15dp"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="15dp"
-        android:src="@mipmap/image_avatar" />
+        android:background="@drawable/avatar_background_blue_48"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="拉拉"
+        android:textColor="@color/color_white"
+        android:textSize="14dp" />
+
 
     <TextView
         android:id="@+id/txt_title"
@@ -24,7 +28,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="15dp"
-        android:layout_toRightOf="@id/img"
+        android:layout_toRightOf="@id/txt_avatar"
         tools:text="标题标题标题"
         android:textColor="@color/color_explain"
         android:textSize="15dp" />
@@ -39,7 +43,7 @@
         android:layout_marginBottom="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:layout_toRightOf="@+id/img"
+        android:layout_toRightOf="@+id/txt_avatar"
         android:layout_toLeftOf="@+id/txt_time"
         android:ellipsize="end"
         android:maxLines="1"

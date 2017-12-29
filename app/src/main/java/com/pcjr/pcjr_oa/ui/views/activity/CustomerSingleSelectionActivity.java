@@ -23,7 +23,6 @@ public class CustomerSingleSelectionActivity extends BaseSwipeRefreshActivity im
 
 
     private int lastPosition;
-    private List<Customer> list;
     private Customer selectedItem;
     private CustomerListPresenter presenter;
 
@@ -47,17 +46,22 @@ public class CustomerSingleSelectionActivity extends BaseSwipeRefreshActivity im
 
     @Override
     protected void initListeners() {
-        adapter.setOnItemClickListener((adapter, view, position) -> {
+        adapter.setOnItemClickListener((a, view, position) -> {
             if (lastPosition != -1) {
-                Customer lastItem = list.get(lastPosition);
+                Customer lastItem = (Customer) adapter.getItem(lastPosition);
                 lastItem.setIsSelected(false);
                 adapter.notifyItemChanged(lastPosition, lastItem);
             }
-            selectedItem = list.get(position);
+            selectedItem = (Customer) adapter.getItem(position);
             selectedItem.setIsSelected(true);
             adapter.notifyItemChanged(position, selectedItem);
             lastPosition = position;
         });
+
+        adapter.setOnLoadMoreListener(() -> {
+            refresh = false;
+            presenter.getBorrowerList(++page, query);
+        }, mRecyclerView);
     }
 
     @Override
@@ -96,7 +100,6 @@ public class CustomerSingleSelectionActivity extends BaseSwipeRefreshActivity im
     @Override
     public void onSuccess(BaseBean<List<Customer>> data) {
         lastPosition = -1;
-        list = data.getData();
         super.success(data);
     }
 

@@ -25,11 +25,10 @@ public abstract class ContractActivity extends UnionActivity {
 
     @BindView(R.id.btn_cancel) Button btnCancel;
 
-    @BindView(R.id.txt_agreement_code) EditText txtAgreementCode;
-    @BindView(R.id.txt_borrower) EditText txtBorrower;
+    @BindView(R.id.txt_agreement_code) TextView txtAgreementCode;
+    @BindView(R.id.txt_borrower) TextView txtBorrower;
+    @BindView(R.id.txt_platform_show) TextView txtPlatformShow;
     @BindView(R.id.txt_borrowing_amount) EditText txtBorrowingAmount;
-    @BindView(R.id.txt_split) EditText txtSplit;
-    @BindView(R.id.txt_split_amount) EditText txtSplitAmount;
     @BindView(R.id.txt_expected_rate) EditText txtExpectedRate;
     @BindView(R.id.txt_deadline) EditText txtDeadline;
     @BindView(R.id.txt_remark) EditText txtRemark;

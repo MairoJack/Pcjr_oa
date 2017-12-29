@@ -13,6 +13,7 @@ import com.pcjr.pcjr_oa.constant.Constant;
 import com.pcjr.pcjr_oa.core.BaseToolbarActivity;
 import com.pcjr.pcjr_oa.utils.DateUtils;
 import com.pcjr.pcjr_oa.utils.StringUtils;
+import com.pcjr.pcjr_oa.widget.BottomOperateView;
 
 import butterknife.BindView;
 
@@ -45,11 +46,13 @@ public class CustomerPersonalDetailActivity extends BaseToolbarActivity{
     @BindView(R.id.txt_credit_record) TextView txtCreditRecord;
     @BindView(R.id.txt_remark) TextView txtRemark;
 
-    @BindView(R.id.ll_feedback) LinearLayout llFeedback;
-    @BindView(R.id.ll_query_records) LinearLayout llQueryRecords;
-    @BindView(R.id.ll_log) LinearLayout llLog;
-    @BindView(R.id.ll_delete) LinearLayout llDelete;
+//    @BindView(R.id.ll_feedback) LinearLayout llFeedback;
+//    @BindView(R.id.ll_query_records) LinearLayout llQueryRecords;
+//    @BindView(R.id.ll_log) LinearLayout llLog;
+//    @BindView(R.id.ll_delete) LinearLayout llDelete;
 
+    @BindView(R.id.bottom_operate_view) BottomOperateView bov;
+    private String[] operate = new String[]{"反馈","同意","驳回","删除","流程","查询记录","操作日志"};
     private CustomerPersonal customer;
     @Override
     protected int getLayoutId() {
@@ -60,6 +63,8 @@ public class CustomerPersonalDetailActivity extends BaseToolbarActivity{
     protected void initViews(Bundle savedInstanceState) {
         setTitle("查看个人客户");
         showBack();
+
+        bov.setData(operate);
     }
 
 

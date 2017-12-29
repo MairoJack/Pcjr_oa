@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="fill_horizontal"
             android:layout_marginTop="10dp"
-            android:columnCount="4"
+            android:columnCount="5"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -103,6 +103,7 @@
                     android:textColor="@color/color_explain"
                     android:textSize="12dp" />
             </LinearLayout>
+
         </GridLayout>
 
     </LinearLayout>

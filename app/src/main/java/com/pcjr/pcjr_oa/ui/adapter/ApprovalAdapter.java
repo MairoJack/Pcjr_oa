@@ -5,6 +5,7 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import com.pcjr.pcjr_oa.R;
 import com.pcjr.pcjr_oa.bean.BusinessApproval;
 import com.pcjr.pcjr_oa.utils.DateUtils;
+import com.pcjr.pcjr_oa.utils.StringUtils;
 
 /**
  * Created by mario on 2017/7/25.
@@ -19,7 +20,8 @@ public class ApprovalAdapter extends BaseQuickAdapter<BusinessApproval, BaseView
     @Override
     protected void convert(BaseViewHolder helper, BusinessApproval item) {
         helper.setText(R.id.txt_title, item.getTitle());
-        helper.setText(R.id.txt_name, item.getTitle());
+        helper.setText(R.id.txt_name, item.getApplyPersonName());
+        helper.setText(R.id.txt_avatar, StringUtils.getLast2(item.getApplyPersonName()));
         if(item.getStatus() == -1){
             helper.setVisible(R.id.txt_status,false);
         } else {

@@ -91,6 +91,8 @@ public interface IOAuthModel {
 
     Observable<BaseBean> modifyBusinessApprove(BusinessApproval businessApproval);
 
+    Observable<BaseBean<BusinessApproval>> getBusinessApproveDetail(String id);
+
     Observable<BaseBean> deleteBusinessApprove(String id);
 
 }

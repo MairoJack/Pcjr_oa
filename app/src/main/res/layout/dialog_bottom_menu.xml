@@ -13,7 +13,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dip"
-        android:orientation="vertical"/>
+        android:background="@drawable/dialog_selection_selector_singleton"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="更多操作"
+            android:textColor="@color/color_explain"
+            android:textSize="14dp" />
+
+        <GridLayout
+            android:id="@+id/gl_operate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:columnCount="5"
+            android:orientation="horizontal">
+
+        </GridLayout>
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/btn_cancel"

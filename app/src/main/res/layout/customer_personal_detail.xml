@@ -1010,105 +1010,111 @@
         android:layout_height="0.1dp"
         android:background="@color/color_content" />
 
-    <LinearLayout
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@color/color_content_background"-->
+        <!--android:columnCount="5"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:paddingBottom="2dp"-->
+        <!--android:paddingLeft="5dp"-->
+        <!--android:paddingRight="5dp"-->
+        <!--android:paddingTop="7dp">-->
+
+        <!--<LinearLayout-->
+            <!--android:id="@+id/ll_feedback"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@drawable/select_text"-->
+            <!--android:gravity="center_vertical|center_horizontal"-->
+            <!--android:orientation="vertical">-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:src="@mipmap/icon_feedback_48" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="反馈"-->
+                <!--android:textColor="@color/color_explain"-->
+                <!--android:textSize="12dp" />-->
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:id="@+id/ll_query_records"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@drawable/select_text"-->
+            <!--android:gravity="center_vertical|center_horizontal"-->
+            <!--android:orientation="vertical">-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:src="@mipmap/icon_query_record_light_48" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="查询记录"-->
+                <!--android:textColor="@color/color_explain"-->
+                <!--android:textSize="12dp" />-->
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:id="@+id/ll_log"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@drawable/select_text"-->
+            <!--android:gravity="center_vertical|center_horizontal"-->
+            <!--android:orientation="vertical">-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:src="@mipmap/icon_log_light_48" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="操作日志"-->
+                <!--android:textColor="@color/color_explain"-->
+                <!--android:textSize="12dp" />-->
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:id="@+id/ll_delete"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@drawable/select_text"-->
+            <!--android:gravity="center_vertical|center_horizontal"-->
+            <!--android:orientation="vertical">-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:src="@mipmap/icon_delete_48" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="删除"-->
+                <!--android:textColor="@color/color_explain"-->
+                <!--android:textSize="12dp" />-->
+        <!--</LinearLayout>-->
+
+    <!--</LinearLayout>-->
+
+    <com.pcjr.pcjr_oa.widget.BottomOperateView
+        android:id="@+id/bottom_operate_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/color_content_background"
-        android:columnCount="5"
-        android:orientation="horizontal"
-        android:paddingBottom="2dp"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        android:paddingTop="7dp">
-
-        <LinearLayout
-            android:id="@+id/ll_feedback"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/select_text"
-            android:gravity="center_vertical|center_horizontal"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/icon_feedback_48" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="反馈"
-                android:textColor="@color/color_explain"
-                android:textSize="12dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_query_records"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/select_text"
-            android:gravity="center_vertical|center_horizontal"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/icon_query_record_light_48" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="查询记录"
-                android:textColor="@color/color_explain"
-                android:textSize="12dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_log"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/select_text"
-            android:gravity="center_vertical|center_horizontal"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/icon_log_light_48" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="操作日志"
-                android:textColor="@color/color_explain"
-                android:textSize="12dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_delete"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/select_text"
-            android:gravity="center_vertical|center_horizontal"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/icon_delete_48" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="删除"
-                android:textColor="@color/color_explain"
-                android:textSize="12dp" />
-        </LinearLayout>
-
-    </LinearLayout>
-
+        android:orientation="horizontal" />
 </LinearLayout>

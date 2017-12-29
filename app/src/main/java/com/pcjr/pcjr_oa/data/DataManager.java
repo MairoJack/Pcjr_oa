@@ -315,6 +315,14 @@ public class DataManager {
 
     }
 
+    public Observable<BaseBean<BusinessApproval>> getBusinessApproveDetail(String id) {
+        return this.oAuthModel.getBusinessApproveDetail(id)
+                .flatMap(new CheckAuth<>())
+                .compose(RxUtils.applyIOToMainThreadSchedulers())
+                .retryWhen(new RetryWithUnAuth());
+
+    }
+
     /*
      * -------------------------- OAuthModel Over ------------------------------
      */

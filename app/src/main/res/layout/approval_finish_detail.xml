@@ -27,21 +27,27 @@
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp">
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/img_avatar"
+                <TextView
+                    android:id="@+id/txt_avatar"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_marginBottom="20dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="20dp"
-                    android:src="@mipmap/image_avatar" />
+                    android:layout_toLeftOf="@+id/txt_manager"
+                    android:background="@drawable/avatar_background_blue_48"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="拉拉"
+                    android:textColor="@color/color_white"
+                    android:textSize="14dp" />
+
 
                 <TextView
                     android:id="@+id/txt_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="25dp"
-                    android:layout_toRightOf="@+id/img_avatar"
+                    android:layout_toRightOf="@+id/txt_avatar"
                     android:text="申请人：杜拉拉"
                     android:textColor="@color/color_explain"
                     android:textSize="16dp" />
@@ -62,7 +68,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/txt_name"
-                    android:layout_toRightOf="@+id/img_avatar"
+                    android:layout_toRightOf="@+id/txt_avatar"
                     android:text="审批中"
                     android:textColor="#4caafe"
                     android:textSize="14dp" />

@@ -75,7 +75,6 @@
                 android:paddingTop="10dp">
 
                 <TextView
-                    android:id="@+id/explain_agreement_code"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -84,23 +83,11 @@
                     android:textSize="@dimen/text_size_key" />
 
                 <TextView
+                    android:id="@+id/txt_agreement_code"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_toRightOf="@+id/explain_agreement_code"
-                    android:text="*"
-                    android:textColor="@color/color_selected"
-                    android:textSize="18dp" />
-
-                <EditText
-                    android:id="@+id/txt_agreement_code"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:background="@null"
-                    android:gravity="right"
-                    android:hint="请填写"
+                    android:text="----"
                     android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
 
@@ -116,7 +103,6 @@
                 android:paddingTop="10dp">
 
                 <TextView
-                    android:id="@+id/explain_borrower"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -125,23 +111,39 @@
                     android:textSize="@dimen/text_size_key" />
 
                 <TextView
+                    android:id="@+id/txt_borrower"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_toRightOf="@+id/explain_borrower"
-                    android:text="*"
-                    android:textColor="@color/color_selected"
-                    android:textSize="18dp" />
+                    android:layout_alignParentRight="true"
+                    android:text="----"
+                    android:textColor="@color/color_content"
+                    android:textSize="@dimen/text_size_value" />
 
-                <EditText
-                    android:id="@+id/txt_borrower"
-                    android:layout_width="200dp"
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/select_white"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="平台出面人"
+                    android:textColor="@color/color_explain"
+                    android:textSize="@dimen/text_size_key" />
+
+                <TextView
+                    android:id="@+id/txt_platform_show"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:background="@null"
-                    android:gravity="right"
-                    android:hint="请填写"
+                    android:text="----"
                     android:textColor="@color/color_content"
                     android:textSize="@dimen/text_size_value" />
 
@@ -191,70 +193,6 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="0.1dp"
-                android:background="@drawable/select_white"
-                android:paddingBottom="10dp"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp"
-                android:paddingTop="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="拆分标"
-                    android:textColor="@color/color_explain"
-                    android:textSize="@dimen/text_size_key" />
-
-                <EditText
-                    android:id="@+id/txt_split"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:background="@null"
-                    android:gravity="right"
-                    android:hint="请填写"
-                    android:maxLength="50"
-                    android:textColor="@color/color_content"
-                    android:textSize="@dimen/text_size_value" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="0.1dp"
-                android:background="@drawable/select_white"
-                android:paddingBottom="10dp"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp"
-                android:paddingTop="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="拆分金额（元）"
-                    android:textColor="@color/color_explain"
-                    android:textSize="@dimen/text_size_key" />
-
-                <EditText
-                    android:id="@+id/txt_split_amount"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:background="@null"
-                    android:gravity="right"
-                    android:hint="请填写"
-                    android:maxLength="50"
-                    android:textColor="@color/color_content"
-                    android:textSize="@dimen/text_size_value" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:background="@drawable/select_white"
                 android:paddingBottom="10dp"
                 android:paddingLeft="15dp"
@@ -266,7 +204,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="预期利率"
+                    android:text="预期利率（%）"
                     android:textColor="@color/color_explain"
                     android:textSize="@dimen/text_size_key" />
 

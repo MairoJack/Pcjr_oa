@@ -39,7 +39,7 @@ public class PersonalFragment extends BaseFragment {
     @BindView(R.id.ll_follow) LinearLayout follow;
 
     @BindView(R.id.btn_logout) Button logout;
-    @BindView(R.id.img_avatar) ImageView imgAvatar;
+    @BindView(R.id.txt_avatar) TextView txtAvatar;
 
     @Override
     protected int getLayoutId() {
@@ -54,7 +54,7 @@ public class PersonalFragment extends BaseFragment {
     protected void initListeners() {
         setting.setOnClickListener(v->startActivity(new Intent(getContext(), PersonalSettingActivity.class)));
         safe.setOnClickListener(v->startActivity(new Intent(getContext(), AccountSafeActivity.class)));
-        imgAvatar.setOnClickListener(v->startActivity(new Intent(getContext(), StaffDetailActivity.class)));
+        txtAvatar.setOnClickListener(v->startActivity(new Intent(getContext(), StaffDetailActivity.class)));
 
     }
 

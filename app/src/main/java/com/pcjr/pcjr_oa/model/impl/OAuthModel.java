@@ -199,6 +199,11 @@ public class OAuthModel implements IOAuthModel {
     }
 
     @Override
+    public Observable<BaseBean<BusinessApproval>> getBusinessApproveDetail(String id) {
+        return RetrofitManager.getInstance().getAuthService().getBusinessApproveDetail(id);
+    }
+
+    @Override
     public Observable<BaseBean> deleteBusinessApprove(String id) {
         return RetrofitManager.getInstance().getAuthService().deleteBusinessApprove(id);
     }

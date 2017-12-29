@@ -60,6 +60,7 @@ public class Constant {
     public final static String[] SELECT_INTIMACY = new String[]{"初相识", "一般关系", "朋友关系"};
     public final static String[] SELECT_REPAYMENT_METHOD = new String[]{"一次还本付息", "先息后本(按月付息)", "先息后本(按季付息)","等额本息,按月付款"};
     public final static String[] SELECT_PROJECT_TYPE = new String[]{"大城小爱", "国泰明安", "珠联璧合","商通宝盈"};
+    public final static String[] SELECT_APPROVAL_STATUS = new String[]{"审批中", "已完成"};
 
     public final static String KEY = "key";
     public final static String ACCESS_TOKEN = "access_token";

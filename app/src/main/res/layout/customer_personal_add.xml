@@ -143,16 +143,6 @@
                     android:textColor="@color/color_white"
                     android:textSize="12dp" />
 
-                <!--<de.hdodenhof.circleimageview.CircleImageView-->
-                <!--android:id="@+id/img_avatar"-->
-                <!--android:layout_width="48dp"-->
-                <!--android:layout_height="48dp"-->
-                <!--android:layout_centerVertical="true"-->
-                <!--android:layout_marginRight="5dp"-->
-                <!--android:layout_toLeftOf="@+id/txt_manager"-->
-                <!--android:gravity="center_vertical"-->
-                <!--android:src="@mipmap/image_avatar" />-->
-
                 <TextView
                     android:id="@+id/txt_manager"
                     android:layout_width="wrap_content"

@@ -76,6 +76,11 @@ public class ContactListActivity extends BaseSwipeRefreshActivity implements Mvp
                         }
                     });
         });
+
+        adapter.setOnLoadMoreListener(() -> {
+            refresh = false;
+            presenter.getContactList(++page, query);
+        }, mRecyclerView);
     }
 
     @Override
